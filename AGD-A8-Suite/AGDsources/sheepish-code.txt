@@ -1,0 +1,2299 @@
+EVENT PLAYER 
+IF F =  1 
+ELSE 
+  IF CANGODOWN 
+  ELSE 
+    IF CUSTOM 
+      LET F  3 
+    ENDIF 
+    ADD  8 TO X 
+    IF CUSTOM 
+      LET F  3 
+    ENDIF 
+    SUBTRACT  16 TO X 
+    IF CUSTOM 
+      LET F  3 
+    ENDIF 
+    ADD  8 TO X 
+  ENDIF 
+ENDIF 
+IF F =  3 
+  REMOVE 
+  IF B =  1 
+    SUBTRACT  8 TO X 
+  ENDIF 
+  SPAWN  8  3 
+  IF B =  1 
+    ADD  8 TO X 
+  ENDIF 
+ENDIF 
+IF F =  1 
+ELSE 
+  IF COLLISION  3 
+    OTHER 
+    REMOVE 
+    ENDSPRITE 
+    REMOVE 
+    SUBTRACT  8 TO X 
+    SPAWN  8  2 
+    ADD  8 TO X 
+  ENDIF 
+ENDIF 
+LET H X 
+LET I Y 
+IF CANGODOWN 
+ELSE 
+  IF KEY  4 
+    IF KEY  1 
+    ELSE 
+      IF KEY  0 
+      ELSE 
+        IF G =  0 
+          REMOVE 
+          SPAWN  8  1 
+          LET G  1 
+        ENDIF 
+      ELSE 
+      ENDIF 
+    ENDIF 
+  ELSE 
+    LET G  0 
+  ENDIF 
+ENDIF 
+IF F =  2 
+  IF SCREEN <=  9 
+    BORDER  0 
+    COLOUR  70 
+    CLS 
+    LET LINE  8 
+    LET COLUMN  14 
+    PUTBLOCK  230 
+    LET LINE  8 
+    LET COLUMN  15 
+    PUTBLOCK  231 
+    LET LINE  8 
+    LET COLUMN  16 
+    PUTBLOCK  232 
+    LET LINE  10 
+    LET COLUMN  11 
+    MESSAGE  1 
+  ENDIF 
+  DELAY  100 
+  IF SCREEN =  14 
+    LET SCREEN  0 
+  ELSE 
+    NEXTLEVEL 
+  ENDIF 
+ENDIF 
+IF DIRECTION <=  1 
+  LET B DIRECTION 
+ENDIF 
+IF Y >  168 
+  REMOVE 
+  SPAWN  8  0 
+  SPAWNED 
+  LET DIRECTION  0 
+  LET SETTINGB B 
+  ENDSPRITE 
+ENDIF 
+IF CANGODOWN 
+  IF C =  0 
+    LET A  2 
+  ENDIF 
+  IF C =  1 
+    LET A  3 
+  ENDIF 
+  IF DIRECTION =  0 
+    LET DIRECTION  20 
+  ENDIF 
+  IF DIRECTION =  1 
+    IF CANGODOWN 
+      IF C =  1 
+        ADD  8 TO X 
+        IF CANGODOWN 
+        ELSE 
+          SUBTRACT  8 TO X 
+        ENDIF 
+        SUBTRACT  8 TO X 
+      ENDIF 
+      ADD  8 TO X 
+      SUBTRACT  8 TO Y 
+      DIVIDE X BY  8 
+      DIVIDE Y BY  8 
+      ADD C TO X 
+      REPEAT  2 
+      LET LINE Y 
+      LET COLUMN X 
+      PUTBLOCK  0 
+      ADD  1 TO Y 
+      ENDREPEAT 
+      SUBTRACT C TO X 
+      MULTIPLY X BY  8 
+      MULTIPLY Y BY  8 
+      SUBTRACT  16 TO X 
+      SUBTRACT  8 TO Y 
+      LET DIRECTION  21 
+    ENDIF 
+  ENDIF 
+ENDIF 
+IF DIRECTION >  19 
+  IF CANGODOWN 
+    ADD  8 TO Y 
+    IF DIRECTION =  20 
+      IF C =  0 
+        LET SETTINGB  1 
+        LET A  2 
+      ELSE 
+        LET SETTINGB  46 
+        LET A  3 
+      ENDIF 
+    ENDIF 
+    IF DIRECTION =  21 
+      IF C =  0 
+        LET SETTINGB  18 
+        LET A  2 
+      ELSE 
+        LET SETTINGB  176 
+        LET A  3 
+      ENDIF 
+    ENDIF 
+  ELSE 
+    IF DIRECTION =  20 
+      LET DIRECTION  0 
+    ENDIF 
+    IF DIRECTION =  21 
+      ADD  8 TO X 
+      LET DIRECTION  1 
+    ENDIF 
+  ENDIF 
+ELSE 
+  IF DIRECTION =  0 
+    IF SETTINGA =  1 
+      ADD  8 TO X 
+    ENDIF 
+  ENDIF 
+  IF DIRECTION =  1 
+    IF KEY  1 
+      IF SETTINGA =  0 
+        SUBTRACT  8 TO X 
+      ENDIF 
+    ENDIF 
+  ENDIF 
+  IF F =  1 
+  ELSE 
+    IF KEY  0 
+      LET DIRECTION  0 
+      LET E  1 
+      IF SETTINGA <=  2 
+        ADD  1 TO SETTINGA 
+      ELSE 
+        LET SETTINGA  0 
+      ENDIF 
+    ELSE 
+      IF KEY  1 
+        LET E  1 
+        LET DIRECTION  1 
+        IF SETTINGA <=  2 
+          ADD  1 TO SETTINGA 
+        ELSE 
+          LET SETTINGA  0 
+        ENDIF 
+      ELSE 
+        LET E  0 
+        IF SETTINGA >  0 
+          IF SETTINGA <=  2 
+            ADD  1 TO SETTINGA 
+          ELSE 
+            LET SETTINGA  0 
+          ENDIF 
+        ENDIF 
+      ENDIF 
+    ENDIF 
+  ENDIF 
+  IF C =  0 
+    IF SETTINGA =  1 
+      LET A  3 
+    ELSE 
+      LET A  2 
+    ENDIF 
+  ELSE 
+    IF C =  1 
+      LET A  3 
+    ENDIF 
+  ENDIF 
+  IF E =  1 
+    IF SETTINGA =  0 
+      IF C =  0 
+        IF DIRECTION =  0 
+          LET SETTINGB  1 
+        ENDIF 
+        IF DIRECTION =  1 
+          LET SETTINGB  18 
+        ENDIF 
+      ELSE 
+        IF DIRECTION =  0 
+          LET SETTINGB  46 
+        ENDIF 
+        IF DIRECTION =  1 
+          LET SETTINGB  176 
+        ENDIF 
+      ENDIF 
+    ENDIF 
+    IF SETTINGA =  1 
+      IF C =  0 
+        IF DIRECTION =  0 
+          LET SETTINGB  5 
+        ENDIF 
+        IF DIRECTION =  1 
+          LET SETTINGB  22 
+        ENDIF 
+      ELSE 
+        IF DIRECTION =  0 
+          LET SETTINGB  52 
+        ENDIF 
+        IF DIRECTION =  1 
+          LET SETTINGB  182 
+        ENDIF 
+      ENDIF 
+    ENDIF 
+    IF SETTINGA >  1 
+      IF C =  0 
+        IF DIRECTION =  0 
+          LET SETTINGB  11 
+        ENDIF 
+        IF DIRECTION =  1 
+          LET SETTINGB  28 
+        ENDIF 
+      ELSE 
+        IF DIRECTION =  0 
+          LET SETTINGB  58 
+        ENDIF 
+        IF DIRECTION =  1 
+          LET SETTINGB  188 
+        ENDIF 
+      ENDIF 
+    ENDIF 
+  ELSE 
+    IF C =  1 
+      IF D <=  2 
+        IF DIRECTION =  0 
+          LET SETTINGB  46 
+        ENDIF 
+        IF DIRECTION =  1 
+          LET SETTINGB  176 
+        ENDIF 
+      ELSE 
+        IF D <=  4 
+          IF DIRECTION =  0 
+            LET SETTINGB  52 
+          ENDIF 
+          IF DIRECTION =  1 
+            LET SETTINGB  182 
+          ENDIF 
+        ELSE 
+          IF DIRECTION =  0 
+            LET SETTINGB  58 
+          ENDIF 
+          IF DIRECTION =  1 
+            LET SETTINGB  188 
+          ENDIF 
+        ENDIF 
+      ENDIF 
+    ELSE 
+      IF DIRECTION =  0 
+        LET SETTINGB  1 
+      ENDIF 
+      IF DIRECTION =  1 
+        LET SETTINGB  18 
+      ENDIF 
+    ENDIF 
+  ENDIF 
+ENDIF 
+IF F =  0 
+  DIVIDE X BY  8 
+  DIVIDE Y BY  8 
+  IF DIRECTION =  0 
+    SUBTRACT  1 TO X 
+  ENDIF 
+  IF DIRECTION =  1 
+    ADD  1 TO X 
+    ADD C TO X 
+  ENDIF 
+  SUBTRACT  1 TO Y 
+  REPEAT  2 
+  LET LINE Y 
+  LET COLUMN X 
+  IF X >  1 
+    IF X <=  29 
+      IF Y <=  21 
+        PUTBLOCK  0 
+      ENDIF 
+    ENDIF 
+  ENDIF 
+  ADD  1 TO Y 
+  ENDREPEAT 
+  IF DIRECTION =  0 
+    ADD  1 TO X 
+  ENDIF 
+  IF DIRECTION =  1 
+    SUBTRACT  1 TO X 
+    SUBTRACT C TO X 
+  ENDIF 
+  SUBTRACT  1 TO Y 
+  IF DIRECTION >  19 
+    SUBTRACT  2 TO Y 
+    REPEAT A 
+    LET LINE Y 
+    LET COLUMN X 
+    PUTBLOCK  0 
+    ADD  1 TO X 
+    ENDREPEAT 
+    SUBTRACT A TO X 
+    ADD  2 TO Y 
+  ENDIF 
+  SUBTRACT  1 TO Y 
+  IF DIRECTION =  1 
+    SUBTRACT  1 TO X 
+  ENDIF 
+  REPEAT A 
+  LET LINE Y 
+  LET COLUMN X 
+  IF X <=  29 
+    IF X >  1 
+      PUTBLOCK SETTINGB 
+    ENDIF 
+  ENDIF 
+  ADD  1 TO X 
+  ADD  1 TO SETTINGB 
+  ENDREPEAT 
+  SUBTRACT A TO X 
+  ADD  1 TO Y 
+  REPEAT A 
+  LET LINE Y 
+  LET COLUMN X 
+  IF X >  1 
+    IF X <=  29 
+      IF Y <=  21 
+        PUTBLOCK SETTINGB 
+      ENDIF 
+    ENDIF 
+  ENDIF 
+  ADD  1 TO X 
+  ADD  1 TO SETTINGB 
+  ENDREPEAT 
+  SUBTRACT A TO X 
+  IF DIRECTION =  1 
+    ADD  1 TO X 
+  ENDIF 
+  IF DIRECTION =  20 
+    LET SETTINGB  1 
+  ENDIF 
+  IF DIRECTION =  21 
+    LET SETTINGB  18 
+  ENDIF 
+  MULTIPLY X BY  8 
+  MULTIPLY Y BY  8 
+ENDIF 
+
+EVENT SPRITETYPE1 
+IF F =  5 
+ELSE 
+  IF IMAGE =  0 
+    IF KEY  5 
+      IF SCREEN =  14 
+        LET SCREEN  0 
+        RESTART 
+      ELSE 
+        IF SCREEN <=  9 
+          BORDER  0 
+          COLOUR  71 
+          CLS 
+          LET LINE  12 
+          LET COLUMN  10 
+          COLOUR  66 
+          MESSAGE  7 
+          DELAY  30 
+          NEXTLEVEL 
+        ENDIF 
+      ENDIF 
+    ENDIF 
+    IF SCREEN =  14 
+      LET LINE  0 
+      LET COLUMN  13 
+      COLOUR  70 
+      MESSAGE  13 
+      LET LINE  23 
+      LET COLUMN  10 
+      IF F =  0 
+        IF SETTINGA <=  5 
+          COLOUR  69 
+        ELSE 
+          COLOUR  0 
+        ENDIF 
+      ELSE 
+        COLOUR  0 
+      ENDIF 
+      IF P =  0 
+      ELSE 
+        IF C =  0 
+          MESSAGE  0 
+        ENDIF 
+      ENDIF 
+      IF C =  1 
+        MESSAGE  4 
+      ENDIF 
+      IF P =  0 
+        MESSAGE  5 
+      ENDIF 
+    ELSE 
+      IF SCREEN <=  10 
+        LET LINE  0 
+        LET COLUMN  24 
+        COLOUR  71 
+        SHOWSCORE 
+      ENDIF 
+    ENDIF 
+    IF SETTINGA =  10 
+      LET SETTINGA  0 
+    ELSE 
+      ADD  1 TO SETTINGA 
+    ENDIF 
+    IF P >  0 
+      LET SETTINGB  65 
+    ELSE 
+      IF SETTINGA <=  5 
+        LET SETTINGB  65 
+      ELSE 
+        LET SETTINGB  79 
+      ENDIF 
+    ENDIF 
+    IF P =  0 
+      IF SCREEN <=  10 
+        IF T =  0 
+          SILENCE  4 
+          LET T  1 
+        ENDIF 
+      ENDIF 
+      IF COLLISION  0 
+        LET F  1 
+      ENDIF 
+    ENDIF 
+    IF F =  1 
+      IF SETTINGA =  0 
+        IF X >  0 
+          SUBTRACT  8 TO X 
+          BEEP  20 
+          IF SCREEN <=  9 
+            IF T =  1 
+              SILENCE  5 
+              LET T  2 
+            ENDIF 
+          ENDIF 
+        ELSE 
+          REMOVE 
+          LET F  2 
+        ENDIF 
+      ENDIF 
+    ENDIF 
+    LET DIRECTION  4 
+  ENDIF 
+  IF IMAGE =  1 
+    LET SETTINGB  73 
+    LET DIRECTION  3 
+    IF Y <=  160 
+      ADD  8 TO Y 
+    ELSE 
+      BEEP  40 
+      REMOVE 
+      IF SCREEN =  14 
+      ELSE 
+        SCORE  100 
+      ENDIF 
+      IF P >  0 
+        SUBTRACT  1 TO P 
+      ENDIF 
+    ENDIF 
+  ENDIF 
+  DIVIDE X BY  8 
+  DIVIDE Y BY  8 
+  IF IMAGE =  1 
+    IF Y <=  21 
+      SUBTRACT  2 TO Y 
+      REPEAT  3 
+      LET LINE Y 
+      LET COLUMN X 
+      PUTBLOCK  0 
+      ADD  1 TO X 
+      ENDREPEAT 
+      SUBTRACT  3 TO X 
+      ADD  2 TO Y 
+    ENDIF 
+  ENDIF 
+  IF IMAGE =  0 
+    IF F =  1 
+      ADD  3 TO X 
+      SUBTRACT  1 TO Y 
+      REPEAT  2 
+      LET LINE Y 
+      LET COLUMN X 
+      PUTBLOCK  0 
+      ADD  1 TO Y 
+      ENDREPEAT 
+      SUBTRACT  3 TO X 
+      SUBTRACT  1 TO Y 
+    ENDIF 
+  ENDIF 
+  IF IMAGE =  0 
+    SUBTRACT  1 TO X 
+  ENDIF 
+  SUBTRACT  1 TO Y 
+  REPEAT DIRECTION 
+  LET LINE Y 
+  LET COLUMN X 
+  IF X >  1 
+    IF X <=  20 
+      PUTBLOCK SETTINGB 
+    ENDIF 
+  ENDIF 
+  ADD  1 TO X 
+  ADD  1 TO SETTINGB 
+  ENDREPEAT 
+  SUBTRACT DIRECTION TO X 
+  ADD  1 TO Y 
+  REPEAT DIRECTION 
+  LET LINE Y 
+  LET COLUMN X 
+  IF X >  1 
+    IF X <=  20 
+      PUTBLOCK SETTINGB 
+    ENDIF 
+  ENDIF 
+  ADD  1 TO SETTINGB 
+  ADD  1 TO X 
+  ENDREPEAT 
+  SUBTRACT DIRECTION TO X 
+  IF IMAGE =  0 
+    ADD  1 TO X 
+  ENDIF 
+  MULTIPLY X BY  8 
+  MULTIPLY Y BY  8 
+
+EVENT SPRITETYPE2 
+IF F =  5 
+ELSE 
+  IF IMAGE =  4 
+    IF DIRECTION <=  1 
+      IF SETTINGB =  195 
+        LET SETTINGB  196 
+      ELSE 
+        LET SETTINGB  195 
+      ENDIF 
+    ELSE 
+      IF SETTINGB =  151 
+        LET SETTINGB  152 
+      ELSE 
+        LET SETTINGB  151 
+      ENDIF 
+    ENDIF 
+    IF COLLISION  0 
+      LET F  3 
+    ENDIF 
+    IF SETTINGA =  1 
+      LET SETTINGA  0 
+    ELSE 
+      ADD  1 TO SETTINGA 
+    ENDIF 
+    DIVIDE X BY  8 
+    DIVIDE Y BY  8 
+    LET LINE Y 
+    LET COLUMN X 
+    PUTBLOCK  0 
+    MULTIPLY Y BY  8 
+    MULTIPLY X BY  8 
+    IF SETTINGA =  0 
+      IF DIRECTION <=  19 
+        IF DIRECTION =  0 
+          IF X <=  224 
+            ADD  8 TO X 
+            IF CANGODOWN 
+              IF X <=  200 
+                IF Y =  40 
+                  LET DIRECTION  0 
+                ENDIF 
+              ELSE 
+                LET DIRECTION  20 
+              ENDIF 
+            ENDIF 
+          ELSE 
+            LET DIRECTION  1 
+          ENDIF 
+        ELSE 
+          IF DIRECTION =  1 
+            IF X >  16 
+              SUBTRACT  8 TO X 
+              IF CANGODOWN 
+                IF X >  32 
+                  IF Y =  40 
+                    LET DIRECTION  1 
+                  ENDIF 
+                ELSE 
+                  LET DIRECTION  21 
+                ENDIF 
+              ENDIF 
+            ELSE 
+              LET DIRECTION  0 
+            ENDIF 
+          ENDIF 
+        ENDIF 
+      ELSE 
+        IF Y <=  168 
+          IF CANGODOWN 
+            ADD  8 TO Y 
+          ELSE 
+            IF DIRECTION =  21 
+              LET DIRECTION  1 
+            ENDIF 
+            IF DIRECTION =  20 
+              LET DIRECTION  0 
+            ENDIF 
+          ENDIF 
+        ELSE 
+          REMOVE 
+        ENDIF 
+      ENDIF 
+    ENDIF 
+    DIVIDE X BY  8 
+    DIVIDE Y BY  8 
+    LET LINE Y 
+    LET COLUMN X 
+    IF Y <=  21 
+      PUTBLOCK SETTINGB 
+    ENDIF 
+    MULTIPLY X BY  8 
+    MULTIPLY Y BY  8 
+  ELSE 
+    IF IMAGE =  1 
+      IF C =  1 
+        LET SETTINGA  0 
+      ENDIF 
+      LET DIRECTION  2 
+      IF C =  1 
+        IF D <=  3 
+          LET SETTINGB  37 
+        ELSE 
+          LET SETTINGB  87 
+        ENDIF 
+      ELSE 
+        LET SETTINGB  37 
+      ENDIF 
+      IF COLLISION  0 
+        OTHER 
+        IF DIRECTION =  0 
+          DIVIDE X BY  8 
+          DIVIDE Y BY  8 
+          SUBTRACT  1 TO Y 
+          ADD  2 TO X 
+          REPEAT  2 
+          LET LINE Y 
+          LET COLUMN X 
+          PUTBLOCK  0 
+          ADD  1 TO Y 
+          ENDREPEAT 
+          SUBTRACT  2 TO X 
+          SUBTRACT  1 TO Y 
+          MULTIPLY X BY  8 
+          MULTIPLY Y BY  8 
+        ENDIF 
+        ENDSPRITE 
+        IF C =  1 
+          ADD  32 TO Y 
+          SPAWN  1  1 
+          SUBTRACT  32 TO Y 
+          LET C  0 
+        ENDIF 
+      ENDIF 
+    ENDIF 
+    IF IMAGE =  0 
+      IF J =  0 
+        LET SETTINGA  0 
+        LET SETTINGB  40 
+      ENDIF 
+      IF J =  10 
+        LET SETTINGA  0 
+        LET SETTINGB  89 
+      ENDIF 
+      LET DIRECTION  3 
+      IF C =  0 
+        IF COLLISION  0 
+          BEEP  20 
+          REMOVE 
+          LET C  1 
+        ENDIF 
+      ENDIF 
+    ENDIF 
+    IF SETTINGA =  0 
+      DIVIDE X BY  8 
+      DIVIDE Y BY  8 
+      IF IMAGE =  1 
+        ADD  2 TO Y 
+      ENDIF 
+      IF IMAGE =  0 
+        SUBTRACT  1 TO X 
+      ENDIF 
+      SUBTRACT  1 TO Y 
+      REPEAT DIRECTION 
+      LET LINE Y 
+      LET COLUMN X 
+      PUTBLOCK SETTINGB 
+      ADD  1 TO SETTINGB 
+      ADD  1 TO X 
+      ENDREPEAT 
+      SUBTRACT DIRECTION TO X 
+      IF IMAGE =  0 
+        ADD  1 TO Y 
+        REPEAT DIRECTION 
+        LET LINE Y 
+        LET COLUMN X 
+        PUTBLOCK SETTINGB 
+        ADD  1 TO SETTINGB 
+        ADD  1 TO X 
+        ENDREPEAT 
+        SUBTRACT DIRECTION TO X 
+      ELSE 
+        ADD  1 TO Y 
+      ENDIF 
+      IF IMAGE =  0 
+        ADD  1 TO X 
+      ENDIF 
+      IF IMAGE =  1 
+        SUBTRACT  2 TO Y 
+      ENDIF 
+      MULTIPLY X BY  8 
+      MULTIPLY Y BY  8 
+      LET SETTINGA  1 
+    ENDIF 
+  ENDIF 
+
+EVENT SPRITETYPE3 
+IF Y <=  176 
+  IF DIRECTION <=  3 
+    IF DIRECTION =  0 
+      IF SETTINGA <=  3 
+        LET SETTINGB  113 
+        LET K  2 
+      ELSE 
+        IF SETTINGA <=  6 
+          LET SETTINGB  117 
+          LET K  3 
+        ELSE 
+          LET SETTINGB  123 
+          LET K  2 
+        ENDIF 
+      ENDIF 
+    ELSE 
+      LET K  2 
+      IF DIRECTION =  3 
+        LET SETTINGB  139 
+      ELSE 
+        LET SETTINGB  113 
+      ENDIF 
+    ENDIF 
+  ELSE 
+    IF DIRECTION =  10 
+      IF SETTINGA <=  3 
+        LET SETTINGB  99 
+        LET K  2 
+      ELSE 
+        IF SETTINGA <=  6 
+          LET SETTINGB  103 
+          LET K  3 
+        ELSE 
+          LET SETTINGB  109 
+          LET K  2 
+        ENDIF 
+      ENDIF 
+    ELSE 
+      LET K  2 
+      IF DIRECTION =  13 
+        LET SETTINGB  135 
+      ELSE 
+        LET SETTINGB  99 
+      ENDIF 
+    ENDIF 
+  ENDIF 
+ELSE 
+  LET K  2 
+  LET SETTINGB  0 
+ENDIF 
+IF SETTINGA =  10 
+  LET SETTINGA  0 
+ELSE 
+  ADD  1 TO SETTINGA 
+ENDIF 
+IF L =  0 
+  IF Y = I 
+    IF DIRECTION =  10 
+      IF X > H 
+        IF D =  0 
+          GETRANDOM  10 
+          IF RND <=  3 
+            IF SETTINGA <=  3 
+              LET DIRECTION  13 
+              LET OPT  80 
+              SUBTRACT  8 TO X 
+              SPAWN  4  1 
+              SPAWNED 
+              LET DIRECTION  1 
+              LET SETTINGB  20 
+              ENDSPRITE 
+              ADD  8 TO X 
+            ENDIF 
+          ENDIF 
+        ENDIF 
+      ENDIF 
+    ENDIF 
+    IF DIRECTION =  0 
+      IF H > X 
+        IF D =  0 
+          GETRANDOM  10 
+          IF RND <=  3 
+            IF SETTINGA <=  3 
+              LET DIRECTION  3 
+              LET OPT  80 
+              LET SETTINGA  0 
+              ADD  8 TO X 
+              SPAWN  4  1 
+              SPAWNED 
+              LET DIRECTION  0 
+              LET SETTINGB  20 
+              ENDSPRITE 
+              SUBTRACT  8 TO X 
+            ENDIF 
+          ENDIF 
+        ENDIF 
+      ENDIF 
+    ENDIF 
+  ENDIF 
+ENDIF 
+IF DIRECTION >  2 
+  IF DIRECTION =  10 
+  ELSE 
+    IF DIRECTION =  12 
+    ELSE 
+      IF Y = I 
+        IF OPT >  0 
+          SUBTRACT  1 TO OPT 
+        ELSE 
+          GETRANDOM  2 
+          IF RND =  0 
+            LET DIRECTION  0 
+          ELSE 
+            LET DIRECTION  10 
+          ENDIF 
+        ENDIF 
+      ELSE 
+        IF OPT <=  20 
+          GETRANDOM  2 
+          IF RND =  0 
+            LET DIRECTION  0 
+          ELSE 
+            LET DIRECTION  10 
+          ENDIF 
+        ELSE 
+          SUBTRACT  1 TO OPT 
+        ENDIF 
+      ENDIF 
+    ENDIF 
+  ENDIF 
+ENDIF 
+IF DIRECTION =  2 
+  IF Y <=  172 
+    IF CANGODOWN 
+      ADD  8 TO Y 
+    ELSE 
+      GETRANDOM  20 
+      IF RND <=  10 
+        ADD  8 TO X 
+        LET DIRECTION  10 
+      ELSE 
+        LET DIRECTION  0 
+      ENDIF 
+    ENDIF 
+  ELSE 
+    REMOVE 
+    SUBTRACT  16 TO Y 
+    SPAWN  8  0 
+    SPAWNED 
+    LET DIRECTION  3 
+    ENDSPRITE 
+    ADD  16 TO Y 
+  ENDIF 
+ENDIF 
+IF DIRECTION =  12 
+  IF Y <=  172 
+    IF CANGODOWN 
+      ADD  8 TO Y 
+    ELSE 
+      GETRANDOM  20 
+      IF RND <=  10 
+        SUBTRACT  8 TO X 
+        LET DIRECTION  0 
+      ELSE 
+        LET DIRECTION  10 
+      ENDIF 
+    ENDIF 
+  ELSE 
+    REMOVE 
+    SUBTRACT  8 TO X 
+    SUBTRACT  16 TO Y 
+    SPAWN  8  0 
+    SPAWNED 
+    LET DIRECTION  13 
+    ENDSPRITE 
+    ADD  16 TO Y 
+    ADD  8 TO X 
+  ENDIF 
+ENDIF 
+IF DIRECTION =  0 
+  ADD  8 TO X 
+  IF CANGORIGHT 
+    SUBTRACT  8 TO X 
+    IF SETTINGA =  8 
+      ADD  8 TO X 
+    ENDIF 
+    IF CANGODOWN 
+      GETRANDOM  10 
+      IF RND <=  5 
+        SUBTRACT  8 TO X 
+        DIVIDE X BY  8 
+        DIVIDE Y BY  8 
+        SUBTRACT  1 TO Y 
+        REPEAT  2 
+        LET LINE Y 
+        LET COLUMN X 
+        PUTBLOCK  0 
+        ADD  1 TO Y 
+        ENDREPEAT 
+        SUBTRACT  1 TO Y 
+        MULTIPLY X BY  8 
+        MULTIPLY Y BY  8 
+        ADD  16 TO X 
+        LET DIRECTION  2 
+      ELSE 
+        LET DIRECTION  10 
+      ENDIF 
+    ENDIF 
+  ELSE 
+    SUBTRACT  8 TO X 
+    LET DIRECTION  10 
+  ENDIF 
+ELSE 
+  IF DIRECTION =  10 
+    SUBTRACT  8 TO X 
+    IF CANGOLEFT 
+      ADD  8 TO X 
+      IF SETTINGA =  8 
+        SUBTRACT  8 TO X 
+      ENDIF 
+      IF CANGODOWN 
+        GETRANDOM  10 
+        IF RND <=  5 
+          ADD  8 TO X 
+          DIVIDE Y BY  8 
+          DIVIDE X BY  8 
+          SUBTRACT  1 TO Y 
+          REPEAT  2 
+          LET LINE Y 
+          LET COLUMN X 
+          PUTBLOCK  0 
+          ADD  1 TO Y 
+          ENDREPEAT 
+          SUBTRACT  1 TO Y 
+          MULTIPLY Y BY  8 
+          MULTIPLY X BY  8 
+          SUBTRACT  16 TO X 
+          LET DIRECTION  12 
+        ELSE 
+          LET DIRECTION  0 
+        ENDIF 
+      ENDIF 
+    ELSE 
+      ADD  8 TO X 
+      LET DIRECTION  0 
+    ENDIF 
+  ENDIF 
+ENDIF 
+DIVIDE X BY  8 
+DIVIDE Y BY  8 
+SUBTRACT  1 TO Y 
+REPEAT K 
+LET LINE Y 
+LET COLUMN X 
+IF X >  1 
+  IF X <=  29 
+    IF Y <=  21 
+      PUTBLOCK SETTINGB 
+    ENDIF 
+  ENDIF 
+ENDIF 
+IF DIRECTION >  3 
+  SUBTRACT  1 TO X 
+ELSE 
+  ADD  1 TO X 
+ENDIF 
+IF Y <=  21 
+  ADD  1 TO SETTINGB 
+ENDIF 
+ENDREPEAT 
+IF DIRECTION >  3 
+  ADD K TO X 
+ELSE 
+  SUBTRACT K TO X 
+ENDIF 
+ADD  1 TO Y 
+REPEAT K 
+LET LINE Y 
+LET COLUMN X 
+IF X >  1 
+  IF X <=  29 
+    IF Y <=  21 
+      PUTBLOCK SETTINGB 
+    ENDIF 
+  ENDIF 
+ENDIF 
+IF DIRECTION >  3 
+  SUBTRACT  1 TO X 
+ELSE 
+  ADD  1 TO X 
+ENDIF 
+IF Y <=  21 
+  ADD  1 TO SETTINGB 
+ENDIF 
+ENDREPEAT 
+IF DIRECTION >  3 
+  ADD K TO X 
+ELSE 
+  SUBTRACT K TO X 
+ENDIF 
+IF DIRECTION >  3 
+  ADD  1 TO X 
+ELSE 
+  SUBTRACT  1 TO X 
+ENDIF 
+SUBTRACT  1 TO Y 
+REPEAT  2 
+LET LINE Y 
+LET COLUMN X 
+IF X >  1 
+  IF X <=  29 
+    PUTBLOCK  0 
+  ENDIF 
+ENDIF 
+ADD  1 TO Y 
+ENDREPEAT 
+IF DIRECTION >  3 
+  SUBTRACT  1 TO X 
+ELSE 
+  ADD  1 TO X 
+ENDIF 
+SUBTRACT  1 TO Y 
+IF Y >  3 
+  IF DIRECTION =  2 
+    SUBTRACT  2 TO Y 
+    REPEAT  2 
+    LET LINE Y 
+    LET COLUMN X 
+    PUTBLOCK  0 
+    ADD  1 TO X 
+    ENDREPEAT 
+    SUBTRACT  2 TO X 
+    ADD  2 TO Y 
+  ENDIF 
+  IF DIRECTION =  12 
+    SUBTRACT  2 TO Y 
+    REPEAT  2 
+    LET LINE Y 
+    LET COLUMN X 
+    PUTBLOCK  0 
+    SUBTRACT  1 TO X 
+    ENDREPEAT 
+    ADD  2 TO X 
+    ADD  2 TO Y 
+  ENDIF 
+ENDIF 
+MULTIPLY X BY  8 
+MULTIPLY Y BY  8 
+
+EVENT SPRITETYPE4 
+IF F >  0 
+  IF F <=  3 
+    REMOVE 
+  ENDIF 
+ENDIF 
+IF COLLISION  3 
+  IF SETTINGA =  0 
+    REMOVE 
+    LET L  0 
+    LET OPT  0 
+    OTHER 
+    IF DIRECTION =  13 
+      LET DIRECTION  10 
+    ENDIF 
+    IF DIRECTION =  3 
+      LET DIRECTION  0 
+    ENDIF 
+    ENDSPRITE 
+  ENDIF 
+ENDIF 
+IF IMAGE =  1 
+  IF DIRECTION =  0 
+    LET SETTINGB  98 
+    IF SETTINGA <=  10 
+      IF CANGORIGHT 
+        IF N =  0 
+          ADD  8 TO X 
+          ADD  1 TO SETTINGA 
+        ENDIF 
+      ELSE 
+        LET DIRECTION  11 
+      ENDIF 
+    ELSE 
+      LET DIRECTION  11 
+    ENDIF 
+  ENDIF 
+  IF DIRECTION =  1 
+    LET SETTINGB  96 
+    IF SETTINGA <=  10 
+      IF CANGOLEFT 
+        IF N =  0 
+          SUBTRACT  8 TO X 
+          ADD  1 TO SETTINGA 
+        ENDIF 
+      ELSE 
+        LET DIRECTION  10 
+      ENDIF 
+    ELSE 
+      LET DIRECTION  10 
+    ENDIF 
+  ENDIF 
+ENDIF 
+ENDIF 
+IF DIRECTION =  10 
+  LET SETTINGB  96 
+  IF SETTINGA >  0 
+    ADD  8 TO X 
+    SUBTRACT  1 TO SETTINGA 
+  ELSE 
+    REMOVE 
+  ENDIF 
+ENDIF 
+IF DIRECTION =  11 
+  LET SETTINGB  98 
+  IF SETTINGA >  0 
+    SUBTRACT  1 TO SETTINGA 
+    SUBTRACT  8 TO X 
+  ELSE 
+    REMOVE 
+  ENDIF 
+ENDIF 
+DIVIDE X BY  8 
+DIVIDE Y BY  8 
+LET LINE Y 
+LET COLUMN X 
+IF X <=  29 
+  IF X >  1 
+    PUTBLOCK SETTINGB 
+  ENDIF 
+ENDIF 
+IF DIRECTION =  0 
+  SUBTRACT  1 TO X 
+  LET LINE Y 
+  LET COLUMN X 
+  IF X <=  29 
+    IF X >  1 
+      PUTBLOCK  97 
+    ENDIF 
+  ENDIF 
+  ADD  1 TO X 
+ENDIF 
+IF DIRECTION =  10 
+  SUBTRACT  1 TO X 
+  LET LINE Y 
+  LET COLUMN X 
+  PUTBLOCK  0 
+  ADD  1 TO X 
+ENDIF 
+IF DIRECTION =  1 
+  ADD  1 TO X 
+  LET LINE Y 
+  LET COLUMN X 
+  IF X <=  29 
+    IF X >  1 
+      PUTBLOCK  97 
+    ENDIF 
+  ENDIF 
+  SUBTRACT  1 TO X 
+ENDIF 
+IF DIRECTION =  11 
+  ADD  1 TO X 
+  LET LINE Y 
+  LET COLUMN X 
+  PUTBLOCK  0 
+  SUBTRACT  1 TO X 
+ENDIF 
+MULTIPLY X BY  8 
+MULTIPLY Y BY  8 
+
+EVENT SPRITETYPE5 
+IF F >  1 
+ELSE 
+  LET SETTINGB  158 
+  IF DIRECTION >  1 
+  ELSE 
+    IF IMAGE =  0 
+      IF D =  0 
+        IF DIRECTION =  0 
+          IF X <=  192 
+            ADD  8 TO X 
+          ELSE 
+            LET DIRECTION  1 
+          ENDIF 
+        ELSE 
+          IF DIRECTION =  1 
+            IF X >  40 
+              SUBTRACT  8 TO X 
+            ELSE 
+              LET DIRECTION  0 
+            ENDIF 
+          ELSE 
+            LET DIRECTION  0 
+          ENDIF 
+        ENDIF 
+      ENDIF 
+    ENDIF 
+  ENDIF 
+  IF IMAGE =  0 
+    IF D =  6 
+      GETRANDOM  10 
+      IF RND <=  1 
+        LET DIRECTION  2 
+      ENDIF 
+    ENDIF 
+  ELSE 
+    IF J =  0 
+      LET DIRECTION  2 
+    ELSE 
+      LET DIRECTION  0 
+    ENDIF 
+  ENDIF 
+  IF DIRECTION =  2 
+    IF SETTINGA =  0 
+      ADD  8 TO Y 
+      SPAWN  6  1 
+      SUBTRACT  8 TO Y 
+      LET SETTINGA  1 
+    ENDIF 
+  ENDIF 
+  IF COLLISION  6 
+    LET SETTINGA  0 
+    IF IMAGE =  0 
+      GETRANDOM  2 
+      LET DIRECTION RND 
+    ENDIF 
+  ENDIF 
+  IF D =  0 
+    DIVIDE X BY  8 
+    DIVIDE Y BY  8 
+    REPEAT  2 
+    LET LINE Y 
+    LET COLUMN X 
+    PUTBLOCK SETTINGB 
+    SUBTRACT  1 TO Y 
+    SUBTRACT  1 TO SETTINGB 
+    ENDREPEAT 
+    ADD  2 TO Y 
+    IF IMAGE =  0 
+      SUBTRACT  1 TO X 
+      REPEAT  2 
+      LET LINE Y 
+      LET COLUMN X 
+      PUTBLOCK  0 
+      SUBTRACT  1 TO Y 
+      ENDREPEAT 
+      ADD  2 TO X 
+      ADD  2 TO Y 
+      REPEAT  2 
+      LET LINE Y 
+      LET COLUMN X 
+      PUTBLOCK  0 
+      SUBTRACT  1 TO Y 
+      ENDREPEAT 
+      ADD  2 TO Y 
+      SUBTRACT  1 TO X 
+    ENDIF 
+    MULTIPLY X BY  8 
+    MULTIPLY Y BY  8 
+  ENDIF 
+ENDIF 
+
+EVENT SPRITETYPE6 
+IF IMAGE =  2 
+  IF D <=  3 
+    LET SETTINGB  248 
+    LET SETTINGA  250 
+  ELSE 
+    LET SETTINGB  236 
+    LET SETTINGA  252 
+  ENDIF 
+  LET DIRECTION  153 
+  DIVIDE X BY  8 
+  DIVIDE Y BY  8 
+  SUBTRACT  1 TO Y 
+  REPEAT  2 
+  LET LINE Y 
+  LET COLUMN X 
+  PUTBLOCK SETTINGB 
+  ADD  1 TO SETTINGB 
+  ADD  1 TO X 
+  ENDREPEAT 
+  SUBTRACT  2 TO X 
+  ADD  1 TO Y 
+  REPEAT  2 
+  LET LINE Y 
+  LET COLUMN X 
+  PUTBLOCK SETTINGA 
+  ADD  1 TO SETTINGA 
+  ADD  1 TO X 
+  ENDREPEAT 
+  SUBTRACT  2 TO X 
+  ADD  1 TO Y 
+  REPEAT  2 
+  LET LINE Y 
+  LET COLUMN X 
+  PUTBLOCK DIRECTION 
+  ADD  1 TO DIRECTION 
+  ADD  1 TO X 
+  ENDREPEAT 
+  SUBTRACT  2 TO X 
+  SUBTRACT  1 TO Y 
+  MULTIPLY X BY  8 
+  MULTIPLY Y BY  8 
+ENDIF 
+IF IMAGE =  0 
+  IF F =  0 
+    IF SETTINGA =  160 
+      LET SETTINGA =  0 
+    ELSE 
+      ADD  1 TO SETTINGA 
+    ENDIF 
+    IF X <=  120 
+      IF SETTINGA =  80 
+        SPAWN  2  4 
+        SPAWNED 
+        LET DIRECTION  1 
+        ENDSPRITE 
+      ENDIF 
+    ENDIF 
+    IF X >  120 
+      IF SETTINGA =  160 
+        SPAWN  2  4 
+        SPAWNED 
+        LET DIRECTION  0 
+        ENDSPRITE 
+      ENDIF 
+    ENDIF 
+  ENDIF 
+ENDIF 
+IF IMAGE =  3 
+  IF Y =  40 
+    LET DIRECTION  1 
+  ELSE 
+    IF Y =  72 
+      LET DIRECTION  1 
+    ELSE 
+      IF Y =  104 
+        LET DIRECTION  1 
+      ELSE 
+        IF Y =  136 
+          LET DIRECTION  1 
+        ELSE 
+          LET DIRECTION  0 
+        ENDIF 
+      ENDIF 
+    ENDIF 
+  ENDIF 
+  IF SETTINGA =  9 
+    LET SETTINGA  0 
+    IF Y >  32 
+      SUBTRACT  8 TO Y 
+    ELSE 
+      REMOVE 
+      SPAWN  6  2 
+      LET F  0 
+    ENDIF 
+  ELSE 
+    ADD  1 TO SETTINGA 
+  ENDIF 
+  IF SETTINGA <=  4 
+    LET SETTINGB  240 
+  ELSE 
+    LET SETTINGB  244 
+  ENDIF 
+  DIVIDE X BY  8 
+  DIVIDE Y BY  8 
+  SUBTRACT  1 TO Y 
+  REPEAT  2 
+  LET LINE Y 
+  LET COLUMN X 
+  PUTBLOCK SETTINGB 
+  ADD  1 TO X 
+  ADD  1 TO SETTINGB 
+  ENDREPEAT 
+  SUBTRACT  2 TO X 
+  ADD  1 TO Y 
+  REPEAT  2 
+  LET LINE Y 
+  LET COLUMN X 
+  PUTBLOCK SETTINGB 
+  ADD  1 TO X 
+  ADD  1 TO SETTINGB 
+  ENDREPEAT 
+  SUBTRACT  2 TO X 
+  ADD  1 TO Y 
+  REPEAT  2 
+  LET LINE Y 
+  LET COLUMN X 
+  IF DIRECTION =  0 
+    PUTBLOCK  0 
+  ELSE 
+    PUTBLOCK  64 
+  ENDIF 
+  ADD  1 TO X 
+  ENDREPEAT 
+  SUBTRACT  2 TO X 
+  SUBTRACT  1 TO Y 
+  MULTIPLY X BY  8 
+  MULTIPLY Y BY  8 
+ENDIF 
+IF IMAGE =  1 
+  IF COLLISION  0 
+    LET F  3 
+  ENDIF 
+  IF COLLISION  5 
+    REMOVE 
+  ENDIF 
+  IF DIRECTION =  2 
+    IF CANGODOWN 
+      ADD  8 TO Y 
+    ELSE 
+      LET DIRECTION  3 
+    ENDIF 
+  ENDIF 
+  IF DIRECTION =  3 
+    IF CANGOUP 
+      SUBTRACT  8 TO Y 
+    ELSE 
+      REMOVE 
+    ENDIF 
+  ENDIF 
+  DIVIDE X BY  8 
+  DIVIDE Y BY  8 
+  LET LINE Y 
+  LET COLUMN X 
+  PUTBLOCK  160 
+  IF DIRECTION =  3 
+    ADD  1 TO Y 
+    LET LINE Y 
+    LET COLUMN X 
+    PUTBLOCK  0 
+    SUBTRACT  1 TO Y 
+  ENDIF 
+  MULTIPLY X BY  8 
+  MULTIPLY Y BY  8 
+
+EVENT SPRITETYPE7 
+IF IMAGE =  3 
+  IF SETTINGA >  0 
+    SUBTRACT  1 TO SETTINGA 
+  ELSE 
+    KILL 
+  ENDIF 
+  LET SETTINGB  219 
+  DIVIDE X BY  8 
+  DIVIDE Y BY  8 
+  SUBTRACT  1 TO Y 
+  SUBTRACT  2 TO X 
+  REPEAT  2 
+  LET LINE Y 
+  LET COLUMN X 
+  PUTBLOCK  0 
+  ADD  1 TO Y 
+  ENDREPEAT 
+  SUBTRACT  2 TO Y 
+  ADD  4 TO X 
+  REPEAT  2 
+  LET LINE Y 
+  LET COLUMN X 
+  PUTBLOCK  0 
+  ADD  1 TO Y 
+  ENDREPEAT 
+  SUBTRACT  2 TO Y 
+  SUBTRACT  3 TO X 
+  REPEAT  3 
+  LET LINE Y 
+  LET COLUMN X 
+  PUTBLOCK SETTINGB 
+  ADD  1 TO X 
+  ADD  1 TO SETTINGB 
+  ENDREPEAT 
+  SUBTRACT  3 TO X 
+  ADD  1 TO Y 
+  REPEAT  3 
+  LET LINE Y 
+  LET COLUMN X 
+  PUTBLOCK SETTINGB 
+  ADD  1 TO SETTINGB 
+  ADD  1 TO X 
+  ENDREPEAT 
+  SUBTRACT  2 TO X 
+  MULTIPLY X BY  8 
+  MULTIPLY Y BY  8 
+ENDIF 
+IF IMAGE =  2 
+  IF COLLISION  0 
+    LET F  4 
+    OTHER 
+    REMOVE 
+    SPAWN  7  3 
+  ENDIF 
+  IF CANGOLEFT 
+    SUBTRACT  8 TO X 
+    LET SETTINGB  218 
+  ELSE 
+    REMOVE 
+    LET Q  0 
+    LET SETTINGB  0 
+  ENDIF 
+  DIVIDE X BY  8 
+  DIVIDE Y BY  8 
+  LET LINE Y 
+  LET COLUMN X 
+  PUTBLOCK SETTINGB 
+  ADD  1 TO X 
+  LET LINE Y 
+  LET COLUMN X 
+  PUTBLOCK  0 
+  SUBTRACT  1 TO X 
+  MULTIPLY X BY  8 
+  MULTIPLY Y BY  8 
+ENDIF 
+IF IMAGE =  1 
+  IF F >  0 
+  ELSE 
+    IF X <=  208 
+      IF Y = I 
+        IF Q =  0 
+          SUBTRACT  8 TO X 
+          SPAWN  7  2 
+          ADD  8 TO X 
+          LET Q  1 
+        ENDIF 
+      ENDIF 
+    ENDIF 
+  ENDIF 
+  IF SETTINGA <=  3 
+    LET DIRECTION  1 
+  ELSE 
+    IF SETTINGA <=  7 
+      LET DIRECTION  0 
+    ELSE 
+      IF SETTINGA =  8 
+        IF J =  0 
+          IF Y <=  88 
+            ADD  64 TO Y 
+          ELSE 
+            SUBTRACT  64 TO Y 
+          ENDIF 
+        ENDIF 
+      ENDIF 
+    ENDIF 
+  ENDIF 
+  IF X >  100 
+    IF D <=  3 
+      LET SETTINGB  198 
+    ELSE 
+      LET SETTINGB  208 
+    ENDIF 
+  ENDIF 
+  IF J =  0 
+    IF SETTINGA <=  7 
+      ADD  1 TO SETTINGA 
+      IF DIRECTION =  0 
+        IF X >  100 
+          ADD  8 TO X 
+        ELSE 
+          SUBTRACT  8 TO X 
+        ENDIF 
+      ENDIF 
+      IF DIRECTION =  1 
+        IF X >  100 
+          SUBTRACT  8 TO X 
+        ELSE 
+          ADD  8 TO X 
+        ENDIF 
+      ENDIF 
+    ELSE 
+      LET SETTINGA  0 
+    ENDIF 
+  ENDIF 
+  IF SCREEN <=  100 
+    DIVIDE X BY  8 
+    DIVIDE Y BY  8 
+    SUBTRACT  1 TO Y 
+    REPEAT  5 
+    LET LINE Y 
+    LET COLUMN X 
+    IF X <=  29 
+      PUTBLOCK SETTINGB 
+    ENDIF 
+    ADD  1 TO X 
+    ADD  1 TO SETTINGB 
+    ENDREPEAT 
+    SUBTRACT  5 TO X 
+    ADD  1 TO Y 
+    REPEAT  5 
+    LET LINE Y 
+    LET COLUMN X 
+    IF X <=  29 
+      PUTBLOCK SETTINGB 
+    ENDIF 
+    ADD  1 TO X 
+    ADD  1 TO SETTINGB 
+    ENDREPEAT 
+    SUBTRACT  5 TO X 
+    MULTIPLY X BY  8 
+    MULTIPLY Y BY  8 
+  ENDIF 
+ENDIF 
+IF IMAGE =  0 
+  IF SCREEN =  12 
+    IF SETTINGA =  0 
+      LET SETTINGA  0 
+      IF SETTINGB >  3 
+        SUBTRACT  1 TO SETTINGB 
+      ELSE 
+        NEXTLEVEL 
+      ENDIF 
+    ELSE 
+      ADD  1 TO SETTINGA 
+    ENDIF 
+    LET LINE SETTINGB 
+    LET COLUMN  2 
+    COLOUR  70 
+    MESSAGE  8 
+    IF SETTINGB <=  22 
+      ADD  1 TO SETTINGB 
+      LET LINE SETTINGB 
+      LET COLUMN  2 
+      COLOUR  1 
+      MESSAGE  9 
+      SUBTRACT  1 TO SETTINGB 
+    ENDIF 
+  ENDIF 
+  IF SCREEN =  13 
+    LET LINE  23 
+    LET COLUMN  7 
+    COLOUR  70 
+    MESSAGE  12 
+    IF KEY  4 
+      LET LINE  23 
+      LET COLUMN  2 
+      COLOUR  70 
+      MESSAGE  2 
+      CONTROLMENU 
+      NEXTLEVEL 
+    ENDIF 
+  ENDIF 
+  IF SCREEN =  11 
+    LET LINE  8 
+    LET COLUMN  12 
+    COLOUR  70 
+    MESSAGE  11 
+    DELAY  30 
+    WAITKEY 
+    LET OPT  3 
+    REPEAT  20 
+    LET LINE OPT 
+    LET COLUMN  2 
+    COLOUR  66 
+    MESSAGE  10 
+    ADD  1 TO OPT 
+    LET LINE OPT 
+    LET COLUMN  2 
+    COLOUR  70 
+    MESSAGE  8 
+    ENDREPEAT 
+    ENDGAME 
+  ENDIF 
+ENDIF 
+
+EVENT SPRITETYPE8 
+IF IMAGE =  3 
+  IF DIRECTION =  1 
+    LET DIRECTION =  0 
+    LET SETTINGB  161 
+  ELSE 
+    ADD  1 TO DIRECTION 
+    LET SETTINGB  167 
+  ENDIF 
+  IF SETTINGA >  0 
+    SUBTRACT  1 TO SETTINGA 
+    BEEP  10 
+  ELSE 
+    KILL 
+  ENDIF 
+  DIVIDE X BY  8 
+  DIVIDE Y BY  8 
+  SUBTRACT  2 TO Y 
+  SUBTRACT  1 TO X 
+  REPEAT  4 
+  LET LINE Y 
+  LET COLUMN X 
+  PUTBLOCK  0 
+  ADD  1 TO X 
+  ENDREPEAT 
+  SUBTRACT  4 TO X 
+  ADD  1 TO Y 
+  REPEAT  4 
+  LET LINE Y 
+  LET COLUMN X 
+  PUTBLOCK SETTINGB 
+  ADD  1 TO X 
+  ADD  1 TO SETTINGB 
+  ENDREPEAT 
+  SUBTRACT  4 TO X 
+  ADD  1 TO Y 
+  SUBTRACT  1 TO SETTINGB 
+  REPEAT  4 
+  LET LINE Y 
+  LET COLUMN X 
+  PUTBLOCK SETTINGB 
+  ADD  1 TO SETTINGB 
+  ADD  1 TO X 
+  ENDREPEAT 
+  SUBTRACT  5 TO X 
+  SUBTRACT  1 TO Y 
+  REPEAT  2 
+  LET LINE Y 
+  LET COLUMN X 
+  IF X <=  29 
+    IF X >  1 
+      PUTBLOCK  0 
+    ENDIF 
+  ENDIF 
+  ADD  1 TO Y 
+  ENDREPEAT 
+  SUBTRACT  2 TO Y 
+  ADD  5 TO X 
+  REPEAT  2 
+  LET LINE Y 
+  LET COLUMN X 
+  IF X <=  29 
+    IF X >  1 
+      PUTBLOCK  0 
+    ENDIF 
+  ENDIF 
+  ADD  1 TO Y 
+  ENDREPEAT 
+  SUBTRACT  1 TO Y 
+  SUBTRACT  3 TO X 
+  MULTIPLY X BY  8 
+  MULTIPLY Y BY  8 
+ENDIF 
+IF IMAGE =  2 
+  IF DIRECTION =  2 
+    LET DIRECTION  0 
+  ELSE 
+    ADD  1 TO DIRECTION 
+  ENDIF 
+  IF SETTINGA >  0 
+    SUBTRACT  1 TO SETTINGA 
+    BEEP  10 
+  ELSE 
+    KILL 
+  ENDIF 
+  IF DIRECTION <=  1 
+    LET SETTINGB  127 
+  ELSE 
+    LET SETTINGB  143 
+  ENDIF 
+  DIVIDE X BY  8 
+  DIVIDE Y BY  8 
+  SUBTRACT  1 TO X 
+  SUBTRACT  1 TO Y 
+  REPEAT  2 
+  LET LINE Y 
+  LET COLUMN X 
+  PUTBLOCK  0 
+  ADD  1 TO Y 
+  ENDREPEAT 
+  SUBTRACT  1 TO Y 
+  ADD  1 TO X 
+  SUBTRACT  1 TO Y 
+  REPEAT  4 
+  LET LINE Y 
+  LET COLUMN X 
+  PUTBLOCK SETTINGB 
+  ADD  1 TO X 
+  ADD  1 TO SETTINGB 
+  ENDREPEAT 
+  SUBTRACT  4 TO X 
+  ADD  1 TO Y 
+  REPEAT  4 
+  LET LINE Y 
+  LET COLUMN X 
+  PUTBLOCK SETTINGB 
+  ADD  1 TO SETTINGB 
+  ADD  1 TO X 
+  ENDREPEAT 
+  SUBTRACT  4 TO X 
+  MULTIPLY X BY  8 
+  MULTIPLY Y BY  8 
+ENDIF 
+IF IMAGE =  1 
+  SUBTRACT  8 TO X 
+  IF COLLISION  6 
+    LET F  3 
+  ENDIF 
+  ADD  16 TO X 
+  IF COLLISION  6 
+    LET F  3 
+  ENDIF 
+  SUBTRACT  8 TO X 
+  IF COLLISION  6 
+    LET F  3 
+  ENDIF 
+  IF SETTINGA >  0 
+    IF C =  0 
+      IF B =  0 
+        IF D <=  3 
+          LET SETTINGB  1 
+        ELSE 
+          LET SETTINGB  11 
+        ENDIF 
+      ELSE 
+        IF D <=  3 
+          LET SETTINGB  18 
+        ELSE 
+          LET SETTINGB  28 
+        ENDIF 
+      ENDIF 
+    ELSE 
+      IF D >  3 
+        LET SETTINGB  52 
+      ELSE 
+        LET SETTINGB  58 
+      ENDIF 
+    ENDIF 
+  ELSE 
+    LET SETTINGB  0 
+  ENDIF 
+  IF SETTINGA >  0 
+    SUBTRACT  1 TO SETTINGA 
+  ELSE 
+    SPAWN  0  0 
+    REMOVE 
+  ENDIF 
+ENDIF 
+IF IMAGE =  0 
+  IF SETTINGA >  0 
+    SUBTRACT  1 TO SETTINGA 
+  ELSE 
+    SUBTRACT  152 TO Y 
+    IF DIRECTION =  0 
+      SPAWN  0  0 
+      SPAWNED 
+      LET DIRECTION B 
+      ENDSPRITE 
+    ENDIF 
+    IF DIRECTION =  3 
+      ADD  16 TO Y 
+      SPAWN  3  1 
+      SPAWNED 
+      LET DIRECTION  2 
+      ENDSPRITE 
+      LET OPT  0 
+    ENDIF 
+    IF DIRECTION =  13 
+      ADD  16 TO Y 
+      SPAWN  3  1 
+      SPAWNED 
+      LET DIRECTION  12 
+      ENDSPRITE 
+      LET OPT  0 
+    ENDIF 
+    ADD  152 TO Y 
+    REMOVE 
+  ENDIF 
+ENDIF 
+IF F =  0 
+  IF IMAGE <=  1 
+    DIVIDE X BY  8 
+    DIVIDE Y BY  8 
+    SUBTRACT  1 TO Y 
+    SUBTRACT B TO X 
+    IF IMAGE =  0 
+      IF SETTINGB =  1 
+        ADD  1 TO X 
+      ENDIF 
+      IF DIRECTION >  0 
+        ADD B TO X 
+      ENDIF 
+    ENDIF 
+    IF IMAGE =  1 
+      ADD  1 TO Y 
+    ENDIF 
+    REPEAT  3 
+    LET LINE Y 
+    LET COLUMN X 
+    IF X >  1 
+      IF X <=  29 
+        PUTBLOCK  0 
+      ENDIF 
+    ENDIF 
+    ADD  1 TO X 
+    ENDREPEAT 
+    IF IMAGE =  1 
+      SUBTRACT  1 TO Y 
+    ENDIF 
+    IF IMAGE =  0 
+      IF SETTINGB =  1 
+        ADD  1 TO X 
+        IF DIRECTION >  0 
+          SUBTRACT B TO X 
+        ENDIF 
+      ENDIF 
+    ENDIF 
+    SUBTRACT  3 TO X 
+    ADD  1 TO Y 
+    ADD B TO X 
+    IF IMAGE =  1 
+      IF B =  1 
+        SUBTRACT  1 TO X 
+      ENDIF 
+      SUBTRACT  2 TO Y 
+      REPEAT A 
+      LET LINE Y 
+      LET COLUMN X 
+      IF X >  1 
+        IF X <=  29 
+          PUTBLOCK SETTINGB 
+        ENDIF 
+      ENDIF 
+      IF SETTINGA >  0 
+        ADD  1 TO SETTINGB 
+      ENDIF 
+      ADD  1 TO X 
+      ENDREPEAT 
+      SUBTRACT A TO X 
+      ADD  1 TO Y 
+      REPEAT A 
+      LET LINE Y 
+      LET COLUMN X 
+      IF X >  1 
+        IF X <=  29 
+          PUTBLOCK SETTINGB 
+        ENDIF 
+      ENDIF 
+      ADD  1 TO X 
+      IF SETTINGA >  0 
+        ADD  1 TO SETTINGB 
+      ENDIF 
+      ENDREPEAT 
+      SUBTRACT A TO X 
+      ADD  1 TO Y 
+      IF B =  1 
+        ADD  1 TO X 
+      ENDIF 
+    ENDIF 
+    MULTIPLY X BY  8 
+    MULTIPLY Y BY  8 
+
+EVENT INITSPRITE 
+IF TYPE =  7 
+  IF IMAGE =  3 
+    IF LIVES =  1 
+      SILENCE  9 
+    ELSE 
+      SILENCE  0 
+    ENDIF 
+    BEEP  50 
+    LET SETTINGA  40 
+  ENDIF 
+  LET SETTINGB  22 
+ENDIF 
+IF TYPE  6 
+  IF IMAGE =  3 
+    LET F  5 
+  ENDIF 
+  IF IMAGE =  2 
+    ADD  1 TO R 
+  ENDIF 
+ENDIF 
+IF TYPE =  5 
+  LET SETTINGA  0 
+ENDIF 
+IF TYPE =  4 
+  LET L  1 
+  LET SETTINGA  1 
+ENDIF 
+IF TYPE =  8 
+  IF IMAGE =  1 
+    LET SETTINGA  15 
+  ENDIF 
+  IF IMAGE >  1 
+    LET SETTINGA  30 
+    LET F  3 
+    IF LIVES =  1 
+      SILENCE  9 
+    ELSE 
+      SILENCE  0 
+    ENDIF 
+  ENDIF 
+ENDIF 
+IF TYPE =  2 
+  IF IMAGE =  0 
+    ADD  1 TO P 
+    LET SETTINGB  89 
+  ENDIF 
+  LET SETTINGA  0 
+  IF IMAGE =  4 
+    BEEP  20 
+  ENDIF 
+ENDIF 
+IF TYPE =  1 
+  LET SETTINGA  0 
+ENDIF 
+IF TYPE =  0 
+  LET SETTINGB  1 
+ENDIF 
+
+EVENT MAINLOOP1 
+IF SCREEN <=  10 
+  IF KEY  2 
+    IF KEY  3 
+      BORDER  0 
+      COLOUR  2 
+      CLS 
+      LET LINE  10 
+      LET COLUMN  12 
+      MESSAGE  18 
+      DELAY  30 
+      RESTART 
+    ENDIF 
+  ENDIF 
+ENDIF 
+IF SCREEN <=  3 
+  IF N =  1 
+    LET N  0 
+  ELSE 
+    ADD  1 TO N 
+  ENDIF 
+ELSE 
+  LET N  0 
+ENDIF 
+IF D =  7 
+  LET D  0 
+ELSE 
+  ADD  1 TO D 
+ENDIF 
+IF J =  20 
+  LET J  0 
+ELSE 
+  ADD  1 TO J 
+ENDIF 
+
+EVENT MAINLOOP2 
+
+EVENT INTROMENU 
+
+EVENT GAMEINIT 
+SILENCE  0 
+WAITKEY 
+BORDER  0 
+COLOUR  71 
+CLS 
+LET LIVES =  5 
+
+EVENT RESTARTSCREEN 
+ADD  1 TO SCREEN 
+LET O SCREEN 
+SUBTRACT  1 TO SCREEN 
+LET T  0 
+LET R  0 
+LET S  0 
+LET Q  0 
+LET M  0 
+COLOUR  71 
+BORDER  0 
+CLS 
+LET C  0 
+LET P  0 
+LET F  0 
+LET G  0 
+LET L  0 
+LET RND  2 
+IF SCREEN =  11 
+  SILENCE  8 
+ENDIF 
+IF SCREEN =  12 
+  SILENCE  1 
+ENDIF 
+IF SCREEN =  13 
+  SILENCE  2 
+ENDIF 
+IF SCREEN =  14 
+  SILENCE  3 
+ENDIF 
+IF SCREEN <=  9 
+  LET LINE  0 
+  LET COLUMN  13 
+  COLOUR  68 
+  MESSAGE  14 
+  LET LINE  0 
+  IF SCREEN <=  8 
+    LET COLUMN  19 
+  ELSE 
+    LET COLUMN  18 
+  ENDIF 
+  COLOUR  69 
+  DISPLAY O 
+  SILENCE  6 
+ENDIF 
+IF SCREEN =  10 
+  SILENCE  7 
+  LET LINE  0 
+  LET COLUMN  13 
+  COLOUR  70 
+  MESSAGE  17 
+ENDIF 
+IF SCREEN >  10 
+ELSE 
+  LET LINE  0 
+  LET COLUMN  24 
+  COLOUR  71 
+  SHOWSCORE 
+  LET LINE  0 
+  LET COLUMN  20 
+  PUTBLOCK  194 
+  LET LINE  0 
+  LET COLUMN  21 
+  PUTBLOCK  174 
+  LET LINE  0 
+  LET COLUMN  22 
+  PUTBLOCK  175 
+  REPEAT  5 
+  LET LINE  0 
+  LET COLUMN RND 
+  COLOUR  1 
+  MESSAGE  16 
+  ADD  2 TO RND 
+  ENDREPEAT 
+  SUBTRACT  10 TO RND 
+  IF LIVES >  0 
+    REPEAT LIVES 
+    LET LINE  0 
+    LET COLUMN RND 
+    PUTBLOCK  1 
+    ADD  1 TO RND 
+    LET LINE  0 
+    LET COLUMN RND 
+    PUTBLOCK  2 
+    ADD  1 TO RND 
+    ENDREPEAT 
+  ENDIF 
+ENDIF 
+
+EVENT FELLTOOFAR 
+
+EVENT KILLPLAYER 
+IF SCREEN <=  10 
+  SUBTRACT  1 TO LIVES 
+ENDIF 
+
+EVENT LOSTGAME 
+COLOUR  71 
+BORDER  0 
+CLS 
+LET O  3 
+REPEAT  20 
+LET LINE O 
+LET COLUMN  2 
+COLOUR  1 
+MESSAGE  15 
+ADD  1 TO O 
+ENDREPEAT 
+LET LINE  2 
+LET COLUMN  2 
+COLOUR  2 
+MESSAGE  10 
+LET LINE  3 
+LET COLUMN  2 
+COLOUR  70 
+MESSAGE  8 
+LET LINE  9 
+LET COLUMN  11 
+COLOUR  66 
+MESSAGE  3 
+LET LINE  12 
+LET COLUMN  13 
+PUTBLOCK  129 
+LET LINE  12 
+LET COLUMN  14 
+PUTBLOCK  130 
+LET LINE  12 
+LET COLUMN  16 
+PUTBLOCK  159 
+LET LINE  12 
+LET COLUMN  17 
+PUTBLOCK  109 
+LET LINE  16 
+LET COLUMN  6 
+COLOUR  71 
+MESSAGE  6 
+LET LINE  16 
+LET COLUMN  15 
+COLOUR  70 
+SHOWSCORE 
+LET LINE  16 
+LET COLUMN  22 
+PUTBLOCK  194 
+LET LINE  16 
+LET COLUMN  23 
+PUTBLOCK  174 
+LET LINE  16 
+LET COLUMN  24 
+PUTBLOCK  175 
+WAITKEY 
+LET OPT  2 
+REPEAT  21 
+LET LINE OPT 
+LET COLUMN  2 
+COLOUR  66 
+MESSAGE  10 
+ADD  1 TO OPT 
+LET LINE OPT 
+LET COLUMN  2 
+COLOUR  70 
+MESSAGE  8 
+ENDREPEAT 
+DELAY  20 
+ENDGAME 
+
+EVENT COMPLETEDGAME 
+
+EVENT NEWHIGHSCORE 
+
+EVENT COLLECTBLOCK 
+ANIMATE 
+SPRITEUP 

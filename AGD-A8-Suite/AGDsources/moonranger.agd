@@ -1,0 +1,3751 @@
+
+DEFINEWINDOW    3 1 18 30
+
+DEFINECONTROLS  'Q' 'A' 'O' 'P' ' ' '1' '2'
+
+DEFINEMESSAGES
+    "GAME OVER"
+    "a"
+    "ijkijkijkijkijkijkijkijkijkijk"
+    "jkijkijkijkijkijkijkijkijkijki"
+    "kijkijkijkijkijkijkijkijkijkij"
+    "dbccdbccdbccdbccdbccdbccdbccdb"
+    "cefcefcefcefcefcefcefcefcefcef"
+    "ghtghtghtghtghtghtghtghtghtght"
+    "uvwuvwuvwuvwuvwuvwuvwuvwuvwuvw"
+    "xyzxyzxyzxyzxyzxyzxyzxyzxyzxyz"
+    "efcefcefcefcefcefcefcefcefcefc"
+    "htghtghtghtghtghtghtghtghtghtg"
+    "vwuvwuvwuvwuvwuvwuvwuvwuvwuvwu"
+    "yzxyzxyzxyzxyzxyzxyzxyzxyzxyzx"
+    "fcefcefcefcefcefcefcefcefcefce"
+    "tghtghtghtghtghtghtghtghtghtgh"
+    "wuvwuvwuvwuvwuvwuvwuvwuvwuvwuv"
+    "zxyzxyzxyzxyzxyzxyzxyzxyzxyzxy"
+    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    "lmnoa"
+    "pqrsa"
+    "aaaaaa"
+    "thgthgthgthgthgthgthgthgthgthg"
+    "wuvwuvwuvwuvwuvwuvwuvwuvwuvwuv"
+    "zxyzxyzxyzxyzxyzxyzxyzxyzxyzxy"
+    "CHAMPION COURSE GO!"
+    "aaaaa'aa#aaa$aaa%aaa&aaa'aaaaa"
+    "(aaaabbbbbbbbbbbbbbbbbbbbaaaaa"
+    "l"
+    "m"
+    "n"
+    "o"
+    "p"
+    "r"
+    "s"
+    "b"
+    "-"
+    "."
+    "BEGINNER COURSE GO!"
+    "TIME TO REACH CHECKPOINT"
+    "TARGET TIME"
+    "SORRY NO BONUS"
+    "BONUS TIME"
+    "SCORE"
+    ")"
+    "CONGRATULATIONS!"
+    "YOU HAVE REACHED CHECKPOINT"
+    "E"
+    "I"
+    "O"
+    "S"
+    "YOU HAVE REACHED THE MOON BASE"
+    "MOON RANGER 2021"
+    "PRESS P TO PLAY"
+    "W"
+    "X"
+    "Z"
+    "Q"
+    "P"
+    "M"
+
+DEFINEFONT      0 0 0 0 0 0 0 0
+                0 60 60 60 24 0 24 0
+                255 241 100 32 36 100 255 255
+                255 248 249 248 249 248 255 255
+                255 240 249 249 249 240 255 255
+                255 241 228 228 228 241 255 255
+                255 240 227 241 248 224 255 255
+                255 224 248 241 227 224 255 255
+                255 159 159 255 255 255 255 255
+                0 60 126 126 126 126 60 0
+                0 0 0 0 0 0 0 0
+                0 0 0 0 0 0 0 0
+                0 0 0 0 0 0 0 0
+                0 0 0 12 88 120 254 146
+                108 180 216 0 0 0 0 0
+                6 12 24 48 96 192 128 0
+                0 62 110 110 110 110 126 0
+                0 60 124 60 60 60 126 0
+                0 126 110 30 60 120 126 0
+                0 126 14 60 14 110 126 0
+                0 60 124 108 108 126 28 0
+                0 126 112 126 14 110 126 0
+                0 126 112 126 110 110 126 0
+                0 126 110 28 60 60 60 0
+                0 126 110 60 110 110 126 0
+                0 126 110 110 126 14 126 0
+                0 48 48 0 0 48 48 0
+                0 48 48 0 0 48 48 96
+                0 0 0 0 0 0 0 0
+                0 0 252 0 0 252 0 0
+                96 48 24 12 24 48 96 0
+                120 204 12 24 48 0 48 0
+                124 198 222 222 222 192 120 0
+                0 124 118 118 126 118 118 0
+                0 124 110 124 110 110 126 0
+                0 126 118 112 112 118 126 0
+                0 124 110 110 110 110 124 0
+                0 126 120 124 120 120 126 0
+                0 126 120 126 120 120 120 0
+                0 126 110 96 110 102 126 0
+                0 110 110 126 110 110 110 0
+                0 126 60 60 60 60 126 0
+                0 62 14 14 110 110 62 0
+                0 110 126 120 126 110 110 0
+                0 56 56 56 56 56 62 0
+                0 118 126 126 106 118 118 0
+                0 110 118 126 94 110 110 0
+                0 124 126 110 110 126 126 0
+                0 126 78 78 126 120 120 0
+                0 126 110 110 102 108 122 0
+                0 126 118 118 126 108 110 0
+                0 126 112 126 14 110 126 0
+                0 126 126 60 60 60 60 0
+                0 110 110 110 110 110 60 0
+                0 110 110 110 126 60 24 0
+                0 4 62 127 126 116 0 112
+                0 4 174 175 175 174 4 0
+                0 110 110 126 60 60 60 0
+                0 0 0 46 46 46 0 0
+                255 0 0 0 0 0 0 0
+                192 96 48 24 12 6 2 0
+                120 24 24 24 24 24 120 0
+                16 56 108 198 0 0 0 0
+                0 0 0 0 0 0 0 255
+                48 48 24 0 0 0 0 0
+                255 255 255 255 255 255 255 255
+                255 255 255 0 0 0 0 255
+                0 0 1 2 13 27 125 255
+                255 255 31 207 167 215 167 87
+                0 194 101 171 245 251 253 255
+                0 0 16 184 92 190 223 247
+                0 3 5 10 55 111 247 255
+                0 8 148 174 213 238 247 255
+                124 131 121 244 250 244 170 84
+                124 171 87 167 3 41 116 106
+                57 198 174 213 233 213 171 81
+                0 0 0 255 127 127 255 0
+                0 0 0 255 63 63 255 0
+                0 0 0 255 31 31 255 0
+                0 0 0 255 15 15 255 0
+                0 0 0 255 7 7 255 0
+                0 0 0 255 3 3 255 0
+                0 0 0 255 1 1 255 0
+                0 0 0 255 0 0 255 0
+                0 0 64 224 112 248 125 223
+                0 12 22 42 223 191 223 255
+                0 32 81 187 85 187 221 255
+                0 0 0 128 192 225 247 127
+                0 48 89 170 125 254 127 255
+                0 128 68 238 87 239 247 253
+                0 0 0 1 3 134 223 255
+                28 48 48 224 48 48 28 0
+                24 24 24 0 24 24 24 0
+                224 48 48 28 48 48 224 0
+                118 220 0 0 0 0 0 0
+                60 102 219 161 161 219 102 60
+
+DEFINEJUMP      248 250 252 254 254 255 255 255 0 0 0 1 1 1 2 2 4 6 8 8 8 99
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                76
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 255
+                92
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 255
+                92
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 255
+                92
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 255
+                92
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 255
+                92
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 15 255
+                92
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 7 255 255
+                92
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 31 255 255
+                92
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 7 255 255 255
+                92
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 31 255 255 255
+                92
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 1 7 63 255 255 255
+                92
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 3 15 63 255 255 255 255
+                92
+
+DEFINEBLOCK     EMPTYBLOCK
+                7 15 63 255 255 255 255 255
+                92
+
+DEFINEBLOCK     EMPTYBLOCK
+                127 255 254 253 250 253 250 253
+                68
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 5 11 23 43 23 43 21
+                96
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 23 47 95 175 95 175 85
+                96
+
+DEFINEBLOCK     EMPTYBLOCK
+                1 95 191 127 191 127 191 87
+                96
+
+DEFINEBLOCK     EMPTYBLOCK
+                128 240 248 254 255 255 255 255
+                88
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 192 224 248 254 255 255 255
+                88
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 192 240 255 255 255
+                88
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 128 252 255 255
+                88
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 240 255 255
+                88
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 128 248 255
+                88
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 192 255
+                88
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 255
+                88
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 255
+                88
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 254
+                88
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 255
+                88
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 248
+                88
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 31
+                92
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                92
+
+DEFINEBLOCK     EMPTYBLOCK
+                1 3 3 3 3 0 3 3
+                94
+
+DEFINEBLOCK     EMPTYBLOCK
+                15 28 31 24 31 7 31 29
+                94
+
+DEFINEBLOCK     EMPTYBLOCK
+                126 195 255 129 255 60 255 215
+                70
+
+DEFINEBLOCK     EMPTYBLOCK
+                252 134 254 2 254 124 254 214
+                68
+
+DEFINEBLOCK     EMPTYBLOCK
+                224 48 240 16 240 192 240 112
+                68
+
+DEFINEBLOCK     EMPTYBLOCK
+                224 248 248 248 248 224 248 248
+                88
+
+DEFINEBLOCK     EMPTYBLOCK
+                128 224 224 224 224 128 224 224
+                88
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 1 3 7 15 14 15 7
+                94
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 3 7 15 31 29 31 15
+                94
+
+DEFINEBLOCK     EMPTYBLOCK
+                7 31 63 127 255 219 255 127
+                94
+
+DEFINEBLOCK     EMPTYBLOCK
+                240 255 255 255 255 182 255 251
+                102
+
+DEFINEBLOCK     EMPTYBLOCK
+                192 255 255 255 255 211 255 254
+                102
+
+DEFINEBLOCK     EMPTYBLOCK
+                255 15 7 3 1 181 1 3
+                116
+
+DEFINEBLOCK     EMPTYBLOCK
+                255 63 31 15 15 175 15 31
+                116
+
+DEFINEBLOCK     EMPTYBLOCK
+                255 127 31 15 15 175 15 31
+                116
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 240 248 252 254 74 254 252
+                68
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 128 192 224 240 81 240 224
+                68
+
+DEFINEBLOCK     EMPTYBLOCK
+                1 0 128 192 224 100 224 192
+                68
+
+DEFINEBLOCK     EMPTYBLOCK
+                224 248 252 254 255 219 255 254
+                88
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 192 224 240 248 216 248 240
+                88
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 128 192 224 96 224 192
+                88
+
+DEFINEBLOCK     EMPTYBLOCK
+                7 15 10 15 7 3 7 31
+                94
+
+DEFINEBLOCK     EMPTYBLOCK
+                31 63 42 63 31 15 31 127
+                94
+
+DEFINEBLOCK     EMPTYBLOCK
+                126 255 169 255 126 60 126 255
+                70
+
+DEFINEBLOCK     EMPTYBLOCK
+                240 248 152 248 240 224 240 252
+                68
+
+DEFINEBLOCK     EMPTYBLOCK
+                192 224 96 224 192 128 224 248
+                68
+
+DEFINEBLOCK     EMPTYBLOCK
+                15 7 7 7 15 31 15 3
+                67
+
+DEFINEBLOCK     EMPTYBLOCK
+                128 192 192 192 128 0 128 224
+                88
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                94
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                94
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                94
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 0 0 6 0 6 0 15
+                66
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 0 0 0 0 15 56 0
+                3
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 0 0 0 0 0 192 96
+                69
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                64
+
+DEFINEBLOCK     CUSTOMBLOCK
+                127 202 255 0 173 191 64 61
+                67
+
+DEFINEBLOCK     CUSTOMBLOCK
+                187 221 221 3 112 6 224 192
+                67
+
+DEFINEBLOCK     CUSTOMBLOCK
+                132 122 126 128 56 0 112 224
+                3
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                3
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 0 0 6 0 6 0 15
+                66
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 0 0 0 15 56 96 0
+                3
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 0 0 0 0 192 96 0
+                69
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                64
+
+DEFINEBLOCK     CUSTOMBLOCK
+                127 202 255 0 173 191 64 47
+                67
+
+DEFINEBLOCK     CUSTOMBLOCK
+                187 221 221 3 184 118 0 128
+                67
+
+DEFINEBLOCK     CUSTOMBLOCK
+                194 189 191 192 0 112 224 0
+                3
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                3
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 0 3 0 3 0 7 15
+                66
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 0 0 0 15 56 112 0
+                3
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 0 0 0 0 192 96 0
+                69
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                64
+
+DEFINEBLOCK     CUSTOMBLOCK
+                63 101 127 0 31 64 63 0
+                67
+
+DEFINEBLOCK     CUSTOMBLOCK
+                220 110 238 0 221 56 96 0
+                67
+
+DEFINEBLOCK     CUSTOMBLOCK
+                123 133 129 255 71 199 15 255
+                24
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                67
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 0 0 0 1 0 1 3
+                66
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 0 0 0 131 14 158 192
+                3
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 0 0 0 112 28 28 0
+                69
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                67
+
+DEFINEBLOCK     CUSTOMBLOCK
+                7 9 15 0 10 11 4 3
+                67
+
+DEFINEBLOCK     CUSTOMBLOCK
+                251 93 253 0 208 247 14 248
+                67
+
+DEFINEBLOCK     CUSTOMBLOCK
+                156 219 219 28 0 110 28 248
+                3
+
+DEFINEBLOCK     EMPTYBLOCK
+                16 232 248 0 0 0 0 0
+                3
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                3
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 0 12 0 12 0 12 30
+                66
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 0 0 0 0 31 112 0
+                3
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 192 96
+                69
+
+DEFINEBLOCK     EMPTYBLOCK
+                1 3 3 0 2 2 1 0
+                67
+
+DEFINEBLOCK     CUSTOMBLOCK
+                254 43 255 0 187 255 0 255
+                67
+
+DEFINEBLOCK     CUSTOMBLOCK
+                231 110 14 231 0 112 13 192
+                67
+
+DEFINEBLOCK     CUSTOMBLOCK
+                4 250 254 0 224 224 192 0
+                3
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                71
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                67
+
+DEFINEBLOCK     EMPTYBLOCK
+                1 15 31 63 127 127 255 255
+                66
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 60 126 223 251
+                86
+
+DEFINEBLOCK     EMPTYBLOCK
+                128 224 248 252 254 254 255 255
+                66
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                66
+
+DEFINEBLOCK     EMPTYBLOCK
+                255 255 127 127 63 31 15 1
+                66
+
+DEFINEBLOCK     EMPTYBLOCK
+                255 239 126 60 0 0 0 0
+                86
+
+DEFINEBLOCK     EMPTYBLOCK
+                255 255 254 254 252 248 240 128
+                66
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 255 255 255 0 0 255 0
+                38
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 28 28 0 0 0
+                66
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 60 126 60 0 0 0
+                69
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 255 0 0 255 0 0 0
+                40
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                89
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 46 46 0 0 0 0 0
+                66
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 3 3 0 3 0 0
+                68
+
+DEFINEBLOCK     PLATFORMBLOCK
+                0 0 0 0 0 0 0 0
+                16
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                2
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                2
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 0 0 2 3 7 15
+                3
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 1 1 5 7 15 31
+                3
+
+DEFINEBLOCK     DEADLYBLOCK
+                6 7 15 15 43 63 127 255
+                3
+
+DEFINEBLOCK     DEADLYBLOCK
+                51 123 127 255 218 248 252 248
+                19
+
+DEFINEBLOCK     DEADLYBLOCK
+                50 16 3 1 139 15 7 15
+                26
+
+DEFINEBLOCK     DEADLYBLOCK
+                151 135 31 15 95 127 63 127
+                26
+
+DEFINEBLOCK     DEADLYBLOCK
+                128 192 224 224 240 244 254 255
+                2
+
+DEFINEBLOCK     DEADLYBLOCK
+                128 192 192 192 240 244 254 255
+                2
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 0 128 128 160 240 248
+                2
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                64
+
+DEFINEBLOCK     PLATFORMBLOCK
+                0 0 0 0 0 0 0 0
+                16
+
+DEFINEBLOCK     PLATFORMBLOCK
+                248 248 248 248 252 254 255 255
+                2
+
+DEFINEBLOCK     PLATFORMBLOCK
+                128 192 192 192 224 247 255 255
+                2
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 128 220 255 255
+                2
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 113 255 255
+                2
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 6 143 255 255
+                2
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 24 61 255 255
+                2
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 192 238 255 255
+                2
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 1 1 113 255 255
+                2
+
+DEFINEBLOCK     EMPTYBLOCK
+                3 7 7 15 15 143 255 255
+                2
+
+DEFINEBLOCK     EMPTYBLOCK
+                15 31 31 63 63 63 255 255
+                2
+
+DEFINEBLOCK     PLATFORMBLOCK
+                0 0 0 0 0 0 0 0
+                16
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 0 0 0 0 0 0
+                3
+
+DEFINEBLOCK     DEADLYBLOCK
+                252 240 236 234 208 168 80 40
+                16
+
+DEFINEBLOCK     DEADLYBLOCK
+                15 3 1 1 0 0 0 0
+                16
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 0 0 0 0 0 0
+                3
+
+DEFINEBLOCK     DEADLYBLOCK
+                72 32 148 168 128 194 224 248
+                16
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 0 0 1 1 3 15
+                16
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 1 7 7 15 15 15 15
+                2
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 120 252 168 0 0 128 0
+                19
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 128 192 224 224 240 240 240
+                2
+
+DEFINEBLOCK     DEADLYBLOCK
+                13 14 5 2 1 0 0 0
+                2
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 5 81 170 112 143 255
+                16
+
+DEFINEBLOCK     DEADLYBLOCK
+                96 224 160 192 128 0 0 0
+                2
+
+DEFINEBLOCK     DEADLYBLOCK
+                1 7 31 63 63 63 127 127
+                2
+
+DEFINEBLOCK     DEADLYBLOCK
+                15 1 32 10 4 10 5 2
+                16
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 128 128 192 192 64 128
+                2
+
+DEFINEBLOCK     DEADLYBLOCK
+                127 63 63 31 15 3 0 0
+                2
+
+DEFINEBLOCK     FODDERBLOCK
+                2 5 2 9 4 3 111 255
+                16
+
+DEFINEBLOCK     DEADLYBLOCK
+                64 192 64 128 128 0 0 0
+                2
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                0
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 0 16 47 63 0 0
+                70
+
+DEFINEBLOCK     DEADLYBLOCK
+                255 255 129 0 178 134 0 255
+                32
+
+DEFINEBLOCK     DEADLYBLOCK
+                254 252 252 255 255 255 255 255
+                96
+
+DEFINEBLOCK     DEADLYBLOCK
+                253 107 251 0 245 3 240 123
+                68
+
+DEFINEBLOCK     DEADLYBLOCK
+                254 195 189 60 128 25 1 190
+                4
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 0 0 0 0 0 0
+                71
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 0 33 94 126 1 0
+                70
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 252 254 154 242 254 0
+                4
+
+DEFINEBLOCK     DEADLYBLOCK
+                7 11 15 0 7 7 0 1
+                68
+
+DEFINEBLOCK     DEADLYBLOCK
+                239 92 221 0 172 152 0 251
+                4
+
+DEFINEBLOCK     DEADLYBLOCK
+                248 28 236 240 4 100 4 240
+                4
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 4 11 15 0 0 0
+                70
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 31 63 211 222 63 0 0
+                4
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 128 192 64 64 192 0 0
+                4
+
+DEFINEBLOCK     DEADLYBLOCK
+                63 90 126 0 1 60 60 30
+                68
+
+DEFINEBLOCK     DEADLYBLOCK
+                127 240 247 7 224 195 0 238
+                4
+
+DEFINEBLOCK     DEADLYBLOCK
+                192 224 96 0 32 32 0 192
+                4
+
+DEFINEBLOCK     EMPTYBLOCK
+                1 7 15 31 63 63 127 127
+                66
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 60 126 255 255 255 255 126
+                83
+
+DEFINEBLOCK     EMPTYBLOCK
+                128 224 240 248 252 252 254 254
+                66
+
+DEFINEBLOCK     EMPTYBLOCK
+                24 0 24 24 24 0 0 0
+                66
+
+DEFINEBLOCK     DEADLYBLOCK
+                30 63 85 127 95 95 47 30
+                78
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 129 173 173 129 0 0
+                78
+
+DEFINEBLOCK     DEADLYBLOCK
+                120 252 86 254 126 126 188 120
+                76
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 0 0 0 0 0 0
+                75
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 6 7 2 0 0 0 0
+                78
+
+DEFINEBLOCK     DEADLYBLOCK
+                60 126 171 255 191 191 94 60
+                76
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 96 224 64 0 0 0 0
+                78
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 0 0 0 0 0 0
+                75
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 0 0 0 3 7 10
+                76
+
+DEFINEBLOCK     DEADLYBLOCK
+                3 7 10 15 11 203 229 179
+                76
+
+DEFINEBLOCK     DEADLYBLOCK
+                192 224 176 240 240 240 192 188
+                76
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 0 0 0 0 0 0
+                77
+
+DEFINEBLOCK     DEADLYBLOCK
+                15 11 11 5 3 0 0 0
+                76
+
+DEFINEBLOCK     DEADLYBLOCK
+                224 216 219 227 192 0 0 0
+                78
+
+DEFINEBLOCK     DEADLYBLOCK
+                254 171 255 191 191 94 60 0
+                78
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 0 0 0 0 0 0
+                78
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 0 0 0 0 0 0
+                73
+
+DEFINEBLOCK     DEADLYBLOCK
+                15 31 42 63 47 47 23 15
+                76
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 128 192 216 220 205 129 1
+                78
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 0 120 252 86 254 126
+                78
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 0 0 0 0 0 0
+                79
+
+DEFINEBLOCK     DEADLYBLOCK
+                1 3 5 7 5 5 2 1
+                76
+
+DEFINEBLOCK     DEADLYBLOCK
+                224 241 91 251 250 248 240 224
+                76
+
+DEFINEBLOCK     DEADLYBLOCK
+                126 188 184 0 0 0 0 0
+                78
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                74
+
+DEFINEBLOCK     EMPTYBLOCK
+                1 15 31 63 127 127 255 255
+                74
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 60 126 223 251
+                86
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 240 248 252 254 254 255 255
+                74
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                77
+
+DEFINEBLOCK     EMPTYBLOCK
+                255 255 127 127 63 31 15 1
+                74
+
+DEFINEBLOCK     EMPTYBLOCK
+                251 223 126 60 0 0 0 0
+                86
+
+DEFINEBLOCK     EMPTYBLOCK
+                255 255 254 254 252 248 240 128
+                74
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 3 4 7 0 0 0 0
+                65
+
+DEFINEBLOCK     EMPTYBLOCK
+                67 240 0 255 0 0 0 0
+                65
+
+DEFINEBLOCK     EMPTYBLOCK
+                240 15 16 224 0 0 0 0
+                65
+
+DEFINEBLOCK     EMPTYBLOCK
+                192 240 0 0 0 0 0 0
+                65
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 28 30 15 3 15
+                66
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 3 29 162 66 25
+                65
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 64 120 198 243 127
+                70
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 192 48
+                65
+
+DEFINEBLOCK     EMPTYBLOCK
+                3 4 7 0 0 0 0 0
+                65
+
+DEFINEBLOCK     EMPTYBLOCK
+                240 0 255 0 0 0 0 0
+                65
+
+DEFINEBLOCK     EMPTYBLOCK
+                15 16 224 0 0 0 0 0
+                65
+
+DEFINEBLOCK     EMPTYBLOCK
+                240 0 0 0 0 0 0 0
+                65
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 28 30 15 3 15 0
+                66
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 3 29 162 66 25 64
+                65
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 64 120 198 243 127 0
+                70
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 192 48 96
+                65
+
+DEFINEBLOCK     EMPTYBLOCK
+                1 0 1 1 1 1 1 0
+                66
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 3 15 31 63
+                71
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 192 240 248 252
+                69
+
+DEFINEBLOCK     CUSTOMBLOCK
+                3 30 121 127 30 33 28 0
+                76
+
+DEFINEBLOCK     CUSTOMBLOCK
+                192 120 254 254 120 132 56 0
+                77
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 0 0 0 0 0 0 0
+                78
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 0 3 15 15 3 4 3
+                76
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 120 255 255 255 79 48 135
+                77
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 0 0 192 192 0 128 0
+                77
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 0 1 1 0 0 0 0
+                76
+
+DEFINEBLOCK     CUSTOMBLOCK
+                15 124 255 255 121 134 112 0
+                76
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 224 56 248 224 16 224 0
+                77
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 40 16 56 56 0 56 16
+                70
+
+DEFINEBLOCK     EMPTYBLOCK
+                128 143 31 31 0 0 21 0
+                120
+
+DEFINEBLOCK     EMPTYBLOCK
+                1 120 124 124 0 0 84 0
+                104
+
+DEFINEBLOCK     EMPTYBLOCK
+                1 1 1 3 3 7 15 31
+                125
+
+DEFINEBLOCK     EMPTYBLOCK
+                255 255 195 0 90 90 0 0
+                120
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 97 13 97 109 109 109
+                69
+
+DEFINEBLOCK     PLATFORMBLOCK
+                0 255 240 192 192 192 224 248
+                125
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 255 0 0 56 0 0 0
+                125
+
+DEFINEBLOCK     WALLBLOCK
+                63 207 51 12 3 0 0 0
+                120
+
+DEFINEBLOCK     EMPTYBLOCK
+                255 255 255 255 63 207 51 12
+                120
+
+
+DEFINESPRITE    1
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+DEFINESPRITE    1
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+DEFINESPRITE    1
+                0 0 60 0 255 0 207 0 255 0 60 0 195 0 195 0
+                0 0 15 0 63 192 51 192 63 192 15 0 48 192 48 192
+
+DEFINESPRITE    3
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+                34 0 137 0 0 0 136 0 34 0 0 0 0 0 0 0
+                8 128 34 64 0 0 34 0 8 128 0 0 0 0 0 0
+
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+DEFINESPRITE    2
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+                195 0 189 0 129 0 137 0 149 0 195 0 126 0 0 0
+                48 192 47 64 32 64 34 64 37 64 48 192 31 128 0 0
+
+DEFINESPRITE    3
+                0 0 60 0 126 0 126 0 126 0 126 0 60 0 0 0
+                0 0 15 0 31 128 31 128 31 128 31 128 15 0 0 0
+
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+                3 0 107 0 96 0 18 0 12 0 12 0 0 0 0 0
+                0 192 26 192 24 0 4 128 3 0 3 0 0 0 0 0
+
+DEFINESPRITE    3
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+                0 0 0 0 24 0 60 0 24 0 0 0 0 0 0 0
+                0 0 0 0 6 0 15 0 6 0 0 0 0 0 0 0
+
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+DEFINESPRITE    2
+                0 0 26 0 63 0 19 0 50 0 63 0 22 0 0 0
+                0 0 6 128 15 192 4 192 12 128 15 192 5 128 0 0
+
+                0 0 88 0 252 0 200 0 76 0 252 0 104 0 0 0
+                0 0 22 0 63 0 50 0 19 0 63 0 26 0 0 0
+
+DEFINESPRITE    2
+                0 0 124 0 242 0 190 0 178 0 190 0 242 0 124 0
+                0 0 31 0 60 128 47 128 44 128 47 128 60 128 31 0
+
+                62 0 79 0 125 0 77 0 125 0 79 0 62 0 0 0
+                15 128 19 192 31 64 19 64 31 64 19 192 15 128 0 0
+
+DEFINESPRITE    1
+                0 0 0 0 0 0 24 0 24 0 24 0 24 0 24 0
+                0 0 0 0 0 0 6 0 6 0 6 0 6 0 6 0
+
+DEFINESPRITE    4
+                102 0 255 0 255 0 255 0 126 0 24 0 0 0 0 0
+                25 128 63 192 63 192 63 192 31 128 6 0 0 0 0 0
+
+                34 0 137 0 0 0 136 0 34 0 0 0 0 0 0 0
+                8 128 34 64 0 0 34 0 8 128 0 0 0 0 0 0
+
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+DEFINESPRITE    4
+                0 0 0 0 0 31 255 255 0 0 0 0 7 255 255 255
+                0 0 0 0 31 255 255 255 0 0 1 7 63 255 255 255
+
+                0 0 0 0 0 0 192 255 0 0 0 0 0 0 0 255
+                0 0 0 0 0 0 0 255 0 0 0 0 0 0 0 254
+
+                0 3 7 15 31 29 31 15 7 31 63 127 255 219 255 127
+                240 255 255 255 255 182 255 251 192 255 255 255 255 211 255 254
+
+                240 248 152 248 240 224 240 252 192 224 96 224 192 128 224 248
+                15 7 7 7 15 31 15 3 128 192 192 192 128 0 128 224
+
+DEFINESPRITE    4
+                0 0 0 0 15 56 96 0 0 0 0 0 0 192 96 0
+                0 0 0 0 0 0 0 0 127 202 255 0 173 191 64 47
+
+                0 0 0 0 131 14 158 192 0 0 0 0 112 28 28 0
+                0 0 0 0 0 0 0 0 7 9 15 0 10 11 4 3
+
+                0 0 0 0 0 0 0 0 1 15 31 63 127 127 255 255
+                0 0 0 0 60 126 223 251 128 224 248 252 254 254 255 255
+
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+                0 0 0 0 2 3 7 15 0 0 1 1 5 7 15 31
+
+DEFINESPRITE    4
+                0 0 0 0 0 113 255 255 0 0 0 0 6 143 255 255
+                0 0 0 0 24 61 255 255 0 0 0 0 192 238 255 255
+
+                0 128 192 224 224 240 240 240 13 14 5 2 1 0 0 0
+                0 0 5 81 170 112 143 255 96 224 160 192 128 0 0 0
+
+                0 0 0 0 0 0 0 0 0 0 0 33 94 126 1 0
+                0 0 252 254 154 242 254 0 7 11 15 0 7 7 0 1
+
+                30 63 85 127 95 95 47 30 0 0 129 173 173 129 0 0
+                120 252 86 254 126 126 188 120 0 0 0 0 0 0 0 0
+
+DEFINESPRITE    6
+                0 0 0 0 0 0 0 0 15 31 42 63 47 47 23 15
+                0 128 192 216 220 205 129 1 0 0 0 120 252 86 254 126
+
+                0 3 4 7 0 0 0 0 67 240 0 255 0 0 0 0
+                240 15 16 224 0 0 0 0 192 240 0 0 0 0 0 0
+
+                1 0 1 1 1 1 1 0 0 0 0 0 3 15 31 63
+                0 0 0 0 192 240 248 252 3 30 121 127 30 33 28 0
+
+                255 255 195 0 90 90 0 0 0 0 97 13 97 109 109 109
+                0 255 240 192 192 192 224 248 0 255 0 0 56 0 0 0
+
+                3 69 64 67 67 24 67 66 3 69 67 67 67 3 3 3
+                66 3 69 67 67 67 3 71 67 66 86 66 66 66 86 66
+
+                74 74 86 74 77 74 86 74 65 65 65 65 66 65 70 65
+                65 65 65 65 66 65 70 65 66 71 69 76 77 78 76 77
+
+DEFINESPRITE    2
+                0 6 6 6 0 6 6 6 0 6 6 6 0 0 6 6
+                0 0 6 6 6 0 0 0 0 0 0 0 0 0 0 0
+
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+                0 0 0 0 0 0 0 0 0 6 6 6 6 6 6 6
+
+DEFINESPRITE    2
+                116 90 255 115 30 255 104 210 255 119 30 255 0 180 255 116
+                60 1 4 7 10 13 16 19 22 25 28 1 4 7 10 13
+
+                1 4 7 10 13 16 19 22 25 28 1 4 7 10 13 16
+                19 22 25 28 255 115 30 255 104 126 63 64 65 255 104 22
+
+
+DEFINESCREEN      0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119
+SPRITEPOSITION  5 2 152 232
+SPRITEPOSITION  0 0 152 56
+SPRITEPOSITION  1 2 24 8
+SPRITEPOSITION  8 8 8 16
+SPRITEPOSITION  1 0 88 8
+SPRITEPOSITION  7 15 160 40
+SPRITEPOSITION  7 16 160 128
+
+DEFINESCREEN      0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119
+SPRITEPOSITION  1 0 88 8
+SPRITEPOSITION  1 2 24 8
+SPRITEPOSITION  0 0 152 72
+SPRITEPOSITION  7 7 160 240
+SPRITEPOSITION  8 8 8 16
+
+DEFINESCREEN      0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119
+SPRITEPOSITION  1 0 88 8
+SPRITEPOSITION  5 1 152 216
+SPRITEPOSITION  1 2 24 8
+SPRITEPOSITION  0 0 152 72
+SPRITEPOSITION  8 8 8 16
+SPRITEPOSITION  7 15 160 24
+SPRITEPOSITION  7 16 160 104
+
+DEFINESCREEN      0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112 112
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119
+SPRITEPOSITION  0 0 152 72
+SPRITEPOSITION  1 0 88 8
+SPRITEPOSITION  1 2 24 8
+SPRITEPOSITION  8 8 8 16
+SPRITEPOSITION  5 2 152 232
+SPRITEPOSITION  7 15 160 48
+SPRITEPOSITION  7 16 160 144
+
+DEFINESCREEN      0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119
+SPRITEPOSITION  0 0 152 80
+SPRITEPOSITION  8 8 8 16
+SPRITEPOSITION  1 2 24 8
+SPRITEPOSITION  1 0 88 8
+SPRITEPOSITION  7 0 152 8
+SPRITEPOSITION  7 7 160 240
+SPRITEPOSITION  7 15 160 48
+SPRITEPOSITION  7 16 160 144
+
+DEFINESCREEN      0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                  1   4   7  10  13  16  19  22  25  28   1   4   7  10  13  16  19  22  25  28   1   4   7  10  13  16  19  22  25  28
+                115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104  63  64  65 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 232 233 248 234 104  67  68  69 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 245 247 246 249 250 251 251 252 253 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                141 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 132 132 132 132 132 132 119 119 119 119 134 141
+SPRITEPOSITION  0 0 144 56
+
+DEFINESCREEN      0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+DEFINESCREEN      0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+DEFINESCREEN      0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                  1   4   7  10  13  16  19  22  25  28   1   4   7  10  13  16  19  22  25  28   1   4   7  10  13  16  19  22  25  28
+                115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104  63  64  65 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 232 233 248 234 104  67  68  69 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 245 247 246 249 250 251 251 252 253 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119
+SPRITEPOSITION  0 0 144 56
+
+DEFINESCREEN      0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116 116
+                115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115 115
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104 104
+                119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119 119
+SPRITEPOSITION  8 9 144 64
+SPRITEPOSITION  1 0 88 8
+SPRITEPOSITION  1 2 24 8
+SPRITEPOSITION  7 16 160 48
+SPRITEPOSITION  7 15 160 88
+SPRITEPOSITION  7 15 160 176
+
+DEFINEOBJECT    76 254 56 120
+                102 97 101 102 104 116 103 104 119 117 118 119 117 118 120 121
+                122 120 121 122 120 0 0 0 0 0 0 0 0 0 0 0
+
+
+MAP             WIDTH -8
+                STARTSCREEN 255
+ENDMAP
+
+
+EVENT PLAYER
+IF N = 34
+    IF O = 9
+        LET E 2
+    ENDIF
+    IF O = 13
+        LET E 2
+    ENDIF
+    IF O = 17
+        LET E 2
+    ENDIF
+    IF O = 21
+        LET E 2
+    ENDIF
+    IF O = 25
+        LET E 2
+    ENDIF
+ENDIF
+IF E = 1
+    IF B > 0
+        SUBTRACT 24 FROM Y
+    ELSE
+        SUBTRACT 16 FROM Y
+    ENDIF
+    SUBTRACT 16 FROM X
+    SPAWN 8 13
+    ADD 16 TO X
+    SPAWN 8 12
+    IF B > 0
+        ADD 24 TO Y
+    ELSE
+        ADD 16 TO Y
+    ENDIF
+ENDIF
+IF E = 2
+    LET M 0
+    LET K 0
+    LET G 0
+    LET R 0
+    IF O <= 24
+        ; SILENCE 4
+        DELAY 160
+    ELSE
+        ; SILENCE 8
+        DELAY 200
+        DELAY 200
+    ENDIF
+    ; BORDER 0
+    ; COLOUR 71
+    CLS
+    ; SILENCE 7
+    LET LINE 2
+    LET COLUMN 8
+    ; COLOUR 66
+    MESSAGE 45
+    DELAY 40
+    ; SILENCE 7
+    IF 25 > O
+        LET LINE 6
+        LET COLUMN 1
+        ; COLOUR 68
+        MESSAGE 46
+        SUBTRACT 5 FROM O
+        DIVIDE O BY 4
+        ADD 46 TO O
+        LET LINE 6
+        LET COLUMN 29
+        ; COLOUR 70
+        MESSAGE O
+        DELAY 40
+        ; SILENCE 7
+        SUBTRACT 46 FROM O
+        MULTIPLY O BY 4
+        ADD 5 TO O
+    ELSE
+        LET LINE 6
+        LET COLUMN 1
+        ; COLOUR 69
+        MESSAGE 51
+        DELAY 40
+    ENDIF
+    LET LINE 10
+    LET COLUMN 1
+    ; COLOUR 68
+    MESSAGE 39
+    ; SILENCE 7
+    LET LINE 10
+    LET COLUMN 28
+    ; COLOUR 70
+    DISPLAY Q
+    DELAY 40
+    ; SILENCE 7
+    LET LINE 14
+    LET COLUMN 8
+    ; COLOUR 68
+    MESSAGE 40
+    LET LINE 14
+    LET COLUMN 20
+    ; COLOUR 70
+    DISPLAY I
+    DELAY 40
+    ; SILENCE 7
+    IF I > Q
+        LET LINE 18
+        LET COLUMN 8
+        ; COLOUR 69
+        MESSAGE 42
+        LET J 0
+        SUBTRACT Q FROM I
+        REPEAT I
+            SCORE 10
+            ADD 10 TO J
+            LET LINE 18
+            LET COLUMN 20
+            ; COLOUR 70
+            DISPLAY J
+            ; SILENCE 7
+            DELAY 20
+        ENDREPEAT
+        ADD Q TO I
+    ELSE
+        LET LINE 18
+        LET COLUMN 8
+        ; COLOUR 66
+        MESSAGE 41
+    ENDIF
+    DELAY 120
+    IF O <= 24
+        ADD 1 TO O
+    ELSE
+        LET S 1
+        LET O 6
+    ENDIF
+    NEXTLEVEL
+    LET Q 0
+    LET E 0
+    LET N 28
+ENDIF
+IF E = 1
+    LET N 28
+    REMOVE
+    IF LIVES > 0
+        ; SILENCE 6
+    ENDIF
+ENDIF
+IF SCREEN = 5
+    LET LINE 9
+    LET COLUMN 1
+    ; COLOUR 75
+    MESSAGE 7
+    LET LINE 5
+    LET COLUMN 8
+    ; COLOUR 78
+    IF S = 0
+        MESSAGE 38
+    ELSE
+        MESSAGE 25
+    ENDIF
+    IF SETTINGA > 0
+        SUBTRACT 1 FROM SETTINGA
+    ELSE
+        LET SCREEN 0
+        LET B 5
+        LET E 0
+        LET Q 0
+    ENDIF
+ENDIF
+IF SCREEN <= 4
+    IF DEADLY
+        LET E 1
+    ENDIF
+    IF Y > 152
+        LET Y 152
+        LET E 1
+    ENDIF
+    IF DIRECTION = 3
+        LET DIRECTION 0
+    ELSE
+        ADD 1 TO DIRECTION
+    ENDIF
+    IF E = 1
+        SPAWN 8 0
+    ENDIF
+    LET D X
+    LET F Y
+    IF KEY FIRE
+        IF C > 0
+            SUBTRACT 1 FROM C
+        ELSE
+            LET C 3
+        ENDIF
+        IF C = 2
+            SUBTRACT 20 FROM X
+            SUBTRACT 16 FROM Y
+            SPAWN 3 4
+            SPAWNED
+            LET DIRECTION 3
+            ENDSPRITE
+            ADD 20 TO X
+            ADD 16 TO Y
+            IF KEY RIGHT
+                ADD 8 TO X
+            ENDIF
+            SPAWN 3 2
+            IF KEY RIGHT
+                SUBTRACT 8 FROM X
+            ENDIF
+        ENDIF
+    ENDIF
+    IF SETTINGA = 6
+        LET SETTINGA 0
+    ELSE
+        ADD 1 TO SETTINGA
+    ENDIF
+    IF KEY UP
+        TABLEJUMP
+        LET B 20
+    ELSE
+        IF B > 0
+            SUBTRACT 1 FROM B
+        ENDIF
+    ENDIF
+    TABLEFALL
+    IF A = 1
+        IF X > 72
+            IF SETTINGA = 6
+                SUBTRACT 8 FROM X
+            ENDIF
+            IF SETTINGA = 3
+                SUBTRACT 8 FROM X
+            ENDIF
+            DIVIDE X BY 8
+            DIVIDE Y BY 8
+            REPEAT 3
+                LET LINE Y
+                LET COLUMN X
+                PUTBLOCK 104
+                ADD 1 TO X
+                LET LINE Y
+                LET COLUMN X
+                PUTBLOCK 104
+                SUBTRACT 1 FROM X
+                SUBTRACT 1 FROM Y
+            ENDREPEAT
+            ADD 3 TO Y
+            MULTIPLY X BY 8
+            MULTIPLY Y BY 8
+        ELSE
+            LET A 0
+        ENDIF
+    ENDIF
+    IF KEY RIGHT
+        LET A 0
+        IF DIRECTION = 0
+            IF X <= 160
+                ADD 8 TO X
+            ENDIF
+        ENDIF
+        DIVIDE X BY 8
+        DIVIDE Y BY 8
+        SUBTRACT 4 FROM X
+        REPEAT 3
+            LET LINE Y
+            LET COLUMN X
+            PUTBLOCK 104
+            SUBTRACT 1 FROM Y
+        ENDREPEAT
+        ADD 3 TO Y
+        ADD 4 TO X
+        MULTIPLY X BY 8
+        MULTIPLY Y BY 8
+    ELSE
+        IF X > 72
+            LET A 1
+        ELSE
+            LET A 0
+        ENDIF
+    ENDIF
+    IF A <= 1
+        IF KEY RIGHT
+            IF 160 > X
+                IF DIRECTION = 0
+                    LET SETTINGB 86
+                ENDIF
+                IF DIRECTION = 1
+                    LET SETTINGB = 94
+                ENDIF
+                IF DIRECTION = 2
+                    LET SETTINGB 102
+                ENDIF
+            ELSE
+                IF SETTINGA <= 2
+                    LET SETTINGB 86
+                ENDIF
+                IF SETTINGA > 2
+                    IF SETTINGA <= 4
+                        LET SETTINGB 78
+                    ENDIF
+                ENDIF
+                IF SETTINGA > 4
+                    LET SETTINGB 70
+                ENDIF
+            ENDIF
+        ELSE
+            IF SETTINGA <= 2
+                LET SETTINGB 70
+            ENDIF
+            IF SETTINGA > 2
+                IF SETTINGA <= 4
+                    LET SETTINGB 78
+                ENDIF
+            ENDIF
+            IF SETTINGA > 4
+                LET SETTINGB 86
+            ENDIF
+        ENDIF
+    ENDIF
+    DIVIDE X BY 8
+    DIVIDE Y BY 8
+    IF B > 0
+        SUBTRACT 2 FROM Y
+        SUBTRACT 5 FROM X
+        REPEAT 6
+            LET LINE Y
+            LET COLUMN X
+            PUTBLOCK 104
+            ADD 1 TO X
+        ENDREPEAT
+        SUBTRACT 1 FROM X
+        ADD 2 TO Y
+    ENDIF
+    IF 19 > Y
+        ADD 1 TO Y
+        SUBTRACT 5 FROM X
+        REPEAT 6
+            LET LINE Y
+            LET COLUMN X
+            PUTBLOCK 104
+            ADD 1 TO X
+        ENDREPEAT
+        SUBTRACT 1 FROM X
+        SUBTRACT 1 FROM Y
+    ENDIF
+    REPEAT 4
+        LET LINE Y
+        LET COLUMN X
+        PUTBLOCK SETTINGB
+        SUBTRACT 1 FROM SETTINGB
+        SUBTRACT 1 FROM X
+    ENDREPEAT
+    ADD 4 TO X
+    SUBTRACT 1 FROM Y
+    REPEAT 4
+        LET LINE Y
+        LET COLUMN X
+        PUTBLOCK SETTINGB
+        SUBTRACT 1 FROM SETTINGB
+        SUBTRACT 1 FROM X
+    ENDREPEAT
+    ADD 8 TO SETTINGB
+    ADD 4 TO X
+    ADD 1 TO Y
+    MULTIPLY X BY 8
+    MULTIPLY Y BY 8
+ENDIF
+
+
+EVENT SPRITETYPE1
+IF E = 0
+    IF IMAGE = 2
+        IF SETTINGA = 8
+            LET SETTINGA 0
+            IF SETTINGB <= 16
+                ADD 1 TO SETTINGB
+            ELSE
+                LET SETTINGB 6
+            ENDIF
+        ELSE
+            ADD 1 TO SETTINGA
+        ENDIF
+        LET LINE 9
+        LET COLUMN 1
+        ; COLOUR 75
+        MESSAGE SETTINGB
+    ENDIF
+    IF IMAGE = 0
+        IF KEY RIGHT
+            IF SETTINGB = 0
+                IF DIRECTION > 0
+                    SUBTRACT 1 FROM DIRECTION
+                ENDIF
+            ENDIF
+        ELSE
+            LET DIRECTION 1
+        ENDIF
+        IF SETTINGB = DIRECTION
+            LET SETTINGB = 0
+        ELSE
+            ADD 1 TO SETTINGB
+        ENDIF
+        DIVIDE X BY 8
+        DIVIDE Y BY 8
+        REPEAT 10
+            LET LINE Y
+            LET COLUMN X
+            PUTBLOCK SETTINGA
+            ADD 1 TO X
+            ADD 3 TO SETTINGA
+            IF SETTINGA > OPT
+                SUBTRACT 30 FROM SETTINGA
+            ENDIF
+        ENDREPEAT
+        REPEAT 10
+            LET LINE Y
+            LET COLUMN X
+            PUTBLOCK SETTINGA
+            ADD 1 TO X
+            ADD 3 TO SETTINGA
+            IF SETTINGA > OPT
+                SUBTRACT 30 FROM SETTINGA
+            ENDIF
+        ENDREPEAT
+        REPEAT 10
+            LET LINE Y
+            LET COLUMN X
+            PUTBLOCK SETTINGA
+            ADD 1 TO X
+            ADD 3 TO SETTINGA
+            IF SETTINGA > OPT
+                SUBTRACT 30 FROM SETTINGA
+            ENDIF
+        ENDREPEAT
+        SUBTRACT 30 FROM X
+        MULTIPLY X BY 8
+        MULTIPLY Y BY 8
+        IF SETTINGB = 0
+            IF SETTINGA <= OPT
+                ADD 1 TO SETTINGA
+            ELSE
+                SUBTRACT 30 FROM SETTINGA
+            ENDIF
+        ENDIF
+    ENDIF
+ENDIF
+
+
+EVENT SPRITETYPE2
+IF E = 0
+    IF KEY RIGHT
+        IF X > 8
+            SUBTRACT 1 FROM X
+        ENDIF
+    ENDIF
+    IF DIRECTION = 1
+        IF D <= X
+            SUBTRACT D FROM X
+            IF X <= 40
+                GETRANDOM 100
+                IF RND <= 10
+                    IF T = 0
+                        ADD 8 TO Y
+                        ADD D TO X
+                        SPAWN 3 6
+                        SPAWNED
+                        LET SETTINGA 0
+                        ENDSPRITE
+                        SUBTRACT 8 FROM Y
+                        SUBTRACT D FROM X
+                        LET T 1
+                    ENDIF
+                ELSE
+                    LET T 0
+                ENDIF
+            ENDIF
+            ADD D TO X
+        ENDIF
+    ENDIF
+    IF DIRECTION = 0
+        IF X <= D
+            SUBTRACT X FROM D
+            IF D <= 40
+                GETRANDOM 100
+                IF RND <= 10
+                    IF T = 0
+                        ADD 8 TO Y
+                        SPAWN 3 6
+                        SPAWNED
+                        LET SETTINGA 0
+                        ENDSPRITE
+                        SUBTRACT 8 FROM Y
+                        LET T 1
+                    ENDIF
+                ELSE
+                    LET T 0
+                ENDIF
+            ENDIF
+            ADD X TO D
+        ENDIF
+    ENDIF
+    IF COLLISION 3
+        OTHER
+        IF IMAGE = 4
+            ENDSPRITE
+            REMOVE
+            SUBTRACT 1 FROM G
+            SUBTRACT 1 FROM K
+            SCORE 100
+            SPAWN 8 5
+            BEEP 20
+            LET C 0
+        ENDIF
+    ENDIF
+    IF SETTINGA = 2
+        LET SETTINGA 0
+        ANIMATE
+    ELSE
+        ADD 1 TO SETTINGA
+    ENDIF
+    IF DIRECTION = 0
+        IF CANGORIGHT
+            SPRITERIGHT
+        ELSE
+            LET DIRECTION 1
+        ENDIF
+    ELSE
+        IF DIRECTION = 1
+            IF CANGOLEFT
+                SPRITELEFT
+            ELSE
+                LET DIRECTION 0
+            ENDIF
+        ENDIF
+    ENDIF
+    IF SETTINGB = 0
+        IF Y > 41
+            SUBTRACT 1 FROM Y
+        ELSE
+            LET SETTINGB 1
+        ENDIF
+    ELSE
+        IF Y <= 63
+            ADD 1 TO Y
+        ELSE
+            LET SETTINGB 0
+        ENDIF
+    ENDIF
+ENDIF        ; warning - missing ENDIF?
+
+
+EVENT SPRITETYPE3
+IF IMAGE = 9
+    IF COLLISION 3
+        OTHER
+        IF IMAGE = 2
+            ENDSPRITE
+            LET SETTINGB 120
+            REMOVE
+        ENDIF
+    ELSE
+        LET SETTINGB 113
+    ENDIF
+    IF X > 16
+        SUBTRACT 8 FROM X
+    ELSE
+        REMOVE
+    ENDIF
+    DIVIDE X BY 8
+    DIVIDE Y BY 8
+    SUBTRACT 1 FROM Y
+    ADD 1 TO X
+    LET LINE Y
+    LET COLUMN X
+    IF X > 3
+        PUTBLOCK SETTINGB
+    ELSE
+        PUTBLOCK 120
+    ENDIF
+    ADD 1 TO X
+    LET LINE Y
+    LET COLUMN X
+    PUTBLOCK 120
+    SUBTRACT 2 FROM X
+    ADD 1 TO Y
+    MULTIPLY X BY 8
+    MULTIPLY Y BY 8
+    IF CUSTOM
+        LET E 1
+        REMOVE
+    ENDIF
+ENDIF
+IF IMAGE = 6
+    IF Y <= 88
+        IF COLLISION 3
+            OTHER
+            IF IMAGE = 4
+                ENDSPRITE
+                REMOVE
+                SPAWN 8 5
+            ENDIF
+        ENDIF
+    ENDIF
+    IF SETTINGA = 1
+        IF Y <= 100
+            IF X <= 216
+                ADD 8 TO X
+            ENDIF
+        ENDIF
+    ENDIF
+    IF CUSTOM
+        REMOVE
+        LET E 1
+    ENDIF
+    IF Y <= 88
+        IF Y <= 56
+            IF SETTINGA = 0
+                LET FRAME 0
+            ELSE
+                LET FRAME 2
+            ENDIF
+        ENDIF
+    ELSE
+        LET FRAME 1
+        IF Y > 104
+            DIVIDE Y BY 8
+            DIVIDE X BY 8
+            LET LINE Y
+            LET COLUMN X
+            IF SETTINGA = 0
+                PUTBLOCK 244
+            ELSE
+                PUTBLOCK 114
+            ENDIF
+            IF Y > 13
+                SUBTRACT 1 FROM Y
+                LET LINE Y
+                LET COLUMN X
+                PUTBLOCK 120
+                ADD 1 TO Y
+            ENDIF
+            MULTIPLY X BY 8
+            MULTIPLY Y BY 8
+        ENDIF
+    ENDIF
+    IF Y <= 144
+        ADD 8 TO Y
+    ELSE
+        IF SETTINGA = 1
+            ADD 1 TO R
+        ENDIF
+        REMOVE
+        SPAWN 8 4
+        IF SETTINGA = 1
+            SUBTRACT 8 FROM X
+            SUBTRACT 1 FROM R
+            SPAWN 4 1
+            ADD 8 TO X
+            LET L 0
+        ENDIF
+    ENDIF
+ENDIF
+IF IMAGE = 2
+    IF Y = 152
+        LET H X
+    ELSE
+        LET H 0
+    ENDIF
+    IF I = 1
+        REMOVE
+    ENDIF
+    IF DEADLY
+        REMOVE
+    ENDIF
+    IF SETTINGA > 0
+        SUBTRACT 1 FROM SETTINGA
+        ADD 8 TO X
+        LET SETTINGB 117
+    ELSE
+        LET SETTINGB 104
+        REMOVE
+    ENDIF
+    DIVIDE X BY 8
+    DIVIDE Y BY 8
+    LET LINE Y
+    LET COLUMN X
+    PUTBLOCK SETTINGB
+    SUBTRACT 1 FROM X
+    LET LINE Y
+    LET COLUMN X
+    PUTBLOCK 104
+    ADD 1 TO X
+    MULTIPLY X BY 8
+    MULTIPLY Y BY 8
+ENDIF
+IF IMAGE = 4
+    IF COLLISION 2
+        REMOVE
+    ENDIF
+    IF 104 <= Y
+        LET FRAME 0
+        DIVIDE X BY 8
+        DIVIDE Y BY 8
+        LET LINE Y
+        LET COLUMN X
+        PUTBLOCK 104
+        SUBTRACT 1 FROM Y
+        LET LINE Y
+        LET COLUMN X
+        IF Y > 12
+            PUTBLOCK 118
+        ENDIF
+        ADD 1 TO Y
+        MULTIPLY X BY 8
+        MULTIPLY Y BY 8
+    ELSE
+        IF Y > 40
+            LET FRAME 1
+        ELSE
+            LET FRAME 0
+        ENDIF
+    ENDIF
+    IF DIRECTION = 3
+        IF Y > 8
+            SUBTRACT 8 FROM Y
+        ELSE
+            REMOVE
+        ENDIF
+    ENDIF
+ENDIF
+
+
+EVENT SPRITETYPE4
+IF IMAGE = 1
+ELSE
+    IF IMAGE = 2
+        IF COLLISION 3
+            OTHER
+            IF IMAGE = 2
+                REMOVE
+                ENDSPRITE
+                LET DIRECTION 1
+            ENDIF
+        ELSE
+            LET DIRECTION 0
+        ENDIF
+        IF DIRECTION = 1
+            REMOVE
+            SUBTRACT 1 FROM G
+            SCORE 50
+            ADD 8 TO X
+            SPAWN 8 2
+            SUBTRACT 8 FROM X
+        ENDIF
+        IF H > X
+            SUBTRACT X FROM H
+            IF H <= 24
+                LET DIRECTION 1
+            ELSE
+                LET DIRECTION 0
+            ENDIF
+        ENDIF
+    ENDIF
+ENDIF
+IF F = Y
+    IF IMAGE = 2
+        IF COLLISION 0
+            LET E 1
+        ENDIF
+        IF D > X
+            SUBTRACT X FROM D
+            IF D <= 32
+                LET E 1
+            ENDIF
+            ADD X TO D
+        ENDIF
+    ENDIF
+ENDIF
+IF KEY RIGHT
+    LET SETTINGA 0
+ELSE
+    IF SETTINGA = 2
+        LET SETTINGA 0
+    ELSE
+        ADD 1 TO SETTINGA
+    ENDIF
+ENDIF
+IF E = 0
+    IF SETTINGA = 0
+        SUBTRACT 8 FROM X
+    ENDIF
+ENDIF
+IF X > 8
+    IF KEY RIGHT
+        IF IMAGE = 1
+            LET SETTINGB 134
+        ELSE
+            LET SETTINGB 121
+        ENDIF
+    ELSE
+        IF SETTINGA = 0
+            IF IMAGE = 1
+                LET SETTINGB 132
+            ENDIF
+            IF IMAGE = 2
+                LET SETTINGB 120
+            ENDIF
+        ENDIF
+        IF SETTINGA = 1
+            IF IMAGE = 1
+                LET SETTINGB 133
+            ENDIF
+            IF IMAGE = 2
+                LET SETTINGB 121
+            ENDIF
+        ENDIF
+        IF SETTINGA > 1
+            IF IMAGE = 1
+                LET SETTINGB 134
+            ENDIF
+            IF IMAGE = 2
+                LET SETTINGB 122
+            ENDIF
+        ENDIF
+    ENDIF
+ENDIF
+IF E = 0
+    DIVIDE X BY 8
+    DIVIDE Y BY 8
+    IF IMAGE = 1
+        ADD 1 TO Y
+    ENDIF
+    IF X > 1
+        REPEAT 4
+            LET LINE Y
+            LET COLUMN X
+            PUTBLOCK SETTINGB
+            ADD 1 TO X
+            ADD 3 TO SETTINGB
+        ENDREPEAT
+        SUBTRACT 4 FROM X
+        SUBTRACT 12 FROM SETTINGB
+    ELSE
+        REPEAT 4
+            LET LINE Y
+            LET COLUMN X
+            IF IMAGE = 1
+                PUTBLOCK 119
+            ENDIF
+            IF IMAGE = 2
+                PUTBLOCK 120
+            ENDIF
+            ADD 1 TO X
+        ENDREPEAT
+        SUBTRACT 4 FROM X
+        REMOVE
+        IF G > 0
+            SUBTRACT 1 FROM G
+        ENDIF
+        IF R > 0
+            SUBTRACT 1 FROM R
+        ENDIF
+    ENDIF
+    IF IMAGE = 1
+        ADD 5 TO X
+    ELSE
+        ADD 4 TO X
+    ENDIF
+    IF X <= 30
+        LET LINE Y
+        LET COLUMN X
+        IF IMAGE = 1
+            PUTBLOCK 143
+        ELSE
+            PUTBLOCK 120
+        ENDIF
+    ENDIF
+    ADD 1 TO X
+    IF X <= 30
+        LET LINE Y
+        LET COLUMN X
+        IF IMAGE = 1
+            PUTBLOCK 143
+        ELSE
+            PUTBLOCK 120
+        ENDIF
+    ENDIF
+    SUBTRACT 1 FROM X
+    IF IMAGE = 1
+        SUBTRACT 5 FROM X
+    ELSE
+        SUBTRACT 4 FROM X
+    ENDIF
+    IF IMAGE = 1
+        SUBTRACT 1 FROM Y
+    ENDIF
+    MULTIPLY X BY 8
+    MULTIPLY Y BY 8
+ENDIF
+
+
+EVENT SPRITETYPE5
+IF IMAGE = 2
+    IF S = 0
+        IF SCREEN = 3
+        ELSE
+            REMOVE
+        ENDIF
+    ENDIF
+ENDIF
+IF DIRECTION > 0
+    SUBTRACT 1 FROM DIRECTION
+ELSE
+    IF E = 0
+        IF IMAGE = 2
+            IF Y = F
+                IF SETTINGA = 0
+                    GETRANDOM 100
+                    IF RND <= 30
+                        SUBTRACT 8 FROM X
+                        SPAWN 3 9
+                        ADD 8 TO X
+                    ENDIF
+                ENDIF
+            ENDIF
+        ENDIF
+        IF COLLISION 3
+            OTHER
+            IF IMAGE = 2
+                ENDSPRITE
+                REMOVE
+                IF IMAGE = 1
+                    SPAWN 5 1
+                ELSE
+                    SPAWN 5 2
+                ENDIF
+                SUBTRACT 1 FROM G
+                SCORE 100
+                SPAWN 8 2
+            ENDIF
+        ENDIF
+        IF SETTINGA = 6
+            LET SETTINGA 0
+            IF X > 0
+                SUBTRACT 8 FROM X
+            ELSE
+                IF IMAGE = 1
+                    REMOVE
+                    SPAWN 5 1
+                ELSE
+                    SUBTRACT 1 FROM M
+                    SPAWN 5 2
+                    REMOVE
+                ENDIF
+            ENDIF
+        ELSE
+            ADD 1 TO SETTINGA
+        ENDIF
+        IF SETTINGA = 3
+            IF IMAGE = 1
+                GETRANDOM 100
+                IF RND <= 10
+                    TABLEJUMP
+                ENDIF
+            ENDIF
+        ENDIF
+        IF SETTINGA <= 2
+            IF IMAGE = 1
+                LET SETTINGB 144
+            ELSE
+                IF IMAGE = 2
+                    LET SETTINGB 162
+                ENDIF
+            ENDIF
+        ENDIF
+        IF SETTINGA > 2
+            IF SETTINGA <= 4
+                IF IMAGE = 1
+                    LET SETTINGB 150
+                ELSE
+                    IF IMAGE = 2
+                        LET SETTINGB 168
+                    ENDIF
+                ENDIF
+            ENDIF
+        ENDIF
+        IF SETTINGA > 4
+            IF IMAGE = 1
+                LET SETTINGB 156
+            ELSE
+                IF IMAGE = 2
+                    LET SETTINGB 174
+                ENDIF
+            ENDIF
+        ENDIF
+        DIVIDE X BY 8
+        DIVIDE Y BY 8
+        SUBTRACT 1 FROM Y
+        ADD 3 TO X
+        REPEAT 2
+            LET LINE Y
+            LET COLUMN X
+            PUTBLOCK 120
+            ADD 1 TO X
+            LET LINE Y
+            LET COLUMN X
+            PUTBLOCK 120
+            SUBTRACT 1 FROM X
+            ADD 1 TO Y
+        ENDREPEAT
+        SUBTRACT 2 FROM Y
+        SUBTRACT 3 FROM X
+        SUBTRACT 1 FROM Y
+        REPEAT 4
+            LET LINE Y
+            LET COLUMN X
+            PUTBLOCK 120
+            ADD 1 TO X
+        ENDREPEAT
+        SUBTRACT 4 FROM X
+        ADD 1 TO Y
+        IF X > 1
+            REPEAT 3
+                LET LINE Y
+                LET COLUMN X
+                PUTBLOCK SETTINGB
+                ADD 1 TO SETTINGB
+                ADD 1 TO X
+            ENDREPEAT
+            SUBTRACT 3 FROM X
+            ADD 1 TO Y
+            REPEAT 3
+                LET LINE Y
+                LET COLUMN X
+                PUTBLOCK SETTINGB
+                ADD 1 TO SETTINGB
+                ADD 1 TO X
+            ENDREPEAT
+            SUBTRACT 3 FROM X
+            SUBTRACT 6 FROM SETTINGB
+        ELSE
+            REPEAT 3
+                LET LINE Y
+                LET COLUMN X
+                PUTBLOCK 120
+                ADD 1 TO X
+            ENDREPEAT
+            SUBTRACT 3 FROM X
+            ADD 1 TO Y
+            REPEAT 3
+                LET LINE Y
+                LET COLUMN X
+                PUTBLOCK 120
+                ADD 1 TO X
+            ENDREPEAT
+            SUBTRACT 3 FROM X
+        ENDIF
+        IF Y <= 18
+            ADD 1 TO Y
+            REPEAT 4
+                LET LINE Y
+                LET COLUMN X
+                PUTBLOCK 120
+                ADD 1 TO X
+            ENDREPEAT
+            SUBTRACT 4 FROM X
+            SUBTRACT 1 FROM Y
+        ENDIF
+        MULTIPLY X BY 8
+        MULTIPLY Y BY 8
+    ENDIF
+ENDIF
+
+
+EVENT SPRITETYPE6
+IF E = 0
+    IF IMAGE = 0
+        IF D > X
+            IF CLOCK = 100
+                ADD 8 TO Y
+                SPAWN 3 6
+                SPAWNED
+                IF SCREEN = 1
+                ELSE
+                    IF R = 0
+                        LET SETTINGA 1
+                    ELSE
+                        LET SETTINGA 0
+                    ENDIF
+                ENDIF
+                ENDSPRITE
+                SUBTRACT 8 FROM Y
+            ENDIF
+        ENDIF
+    ENDIF
+    IF X = D
+        GETRANDOM 100
+        IF RND <= 30
+            IF T = 0
+                ADD 8 TO Y
+                IF IMAGE = 0
+                    SPAWN 3 6
+                    SPAWNED
+                    IF L = 0
+                        LET SETTINGA 1
+                        LET L 1
+                    ELSE
+                        LET SETTINGA 0
+                    ENDIF
+                    ENDSPRITE
+                ELSE
+                    IF D > 160
+                        SUBTRACT 8 FROM X
+                    ENDIF
+                    SPAWN 3 6
+                    SPAWNED
+                    LET SETTINGA 0
+                    ENDSPRITE
+                    IF D > 160
+                        ADD 8 TO X
+                    ENDIF
+                ENDIF
+                SUBTRACT 8 FROM Y
+                LET T 1
+            ENDIF
+        ELSE
+            LET T 0
+        ENDIF
+    ENDIF
+    IF COLLISION 3
+        REMOVE
+        SUBTRACT 1 FROM G
+        SUBTRACT 1 FROM K
+        SCORE 100
+        ADD 8 TO X
+        ADD 8 TO Y
+        SPAWN 8 2
+        SUBTRACT 8 FROM X
+        SUBTRACT 8 FROM Y
+    ENDIF
+    ADD 8 TO X
+    IF COLLISION 3
+        REMOVE
+        SUBTRACT 1 FROM G
+        SUBTRACT 1 FROM K
+        SCORE 100
+        ADD 8 TO Y
+        SPAWN 8 2
+        SUBTRACT 8 FROM Y
+        LET L 0
+    ENDIF
+    SUBTRACT 8 FROM X
+    IF IMAGE = 1
+        IF DIRECTION = 0
+            IF X <= 208
+                IF SETTINGA = 3
+                    ADD 8 TO X
+                ENDIF
+            ELSE
+                LET DIRECTION 1
+            ENDIF
+        ELSE
+            IF X > 24
+                IF SETTINGA = 3
+                    SUBTRACT 8 FROM X
+                ENDIF
+            ELSE
+                LET DIRECTION 0
+            ENDIF
+        ENDIF
+        IF SETTINGA = 3
+            LET SETTINGA = 0
+        ELSE
+            ADD 1 TO SETTINGA
+        ENDIF
+        IF SETTINGA <= 1
+            IF DIRECTION = 0
+                LET SETTINGB 235
+            ELSE
+                LET SETTINGB 241
+            ENDIF
+        ENDIF
+        IF SETTINGA > 1
+            IF SETTINGA <= 2
+                LET SETTINGB 238
+            ENDIF
+        ENDIF
+        IF SETTINGA > 2
+            IF DIRECTION = 0
+                LET SETTINGB 241
+            ELSE
+                LET SETTINGB 235
+            ENDIF
+        ENDIF
+        DIVIDE X BY 8
+        DIVIDE Y BY 8
+        IF DIRECTION = 0
+            SUBTRACT 1 FROM X
+            IF X > 1
+                LET LINE Y
+                LET COLUMN X
+                PUTBLOCK 0
+            ENDIF
+            ADD 1 TO X
+        ENDIF
+        IF DIRECTION = 1
+            ADD 2 TO X
+            IF X <= 26
+                LET LINE Y
+                LET COLUMN X
+                PUTBLOCK 0
+            ENDIF
+            SUBTRACT 2 FROM X
+        ENDIF
+        REPEAT 3
+            LET LINE Y
+            LET COLUMN X
+            PUTBLOCK SETTINGB
+            ADD 1 TO X
+            ADD 1 TO SETTINGB
+        ENDREPEAT
+        SUBTRACT 3 FROM X
+        SUBTRACT 3 FROM SETTINGB
+        MULTIPLY X BY 8
+        MULTIPLY Y BY 8
+    ENDIF
+    IF IMAGE = 0
+        IF SETTINGA = 3
+            LET SETTINGA 0
+        ELSE
+            ADD 1 TO SETTINGA
+        ENDIF
+        IF DIRECTION = 0
+            IF X <= 208
+                IF SETTINGA = 3
+                    ADD 8 TO X
+                ENDIF
+            ELSE
+                LET DIRECTION 1
+            ENDIF
+        ELSE
+            IF X > 24
+                IF SETTINGA = 3
+                    SUBTRACT 8 FROM X
+                ENDIF
+            ELSE
+                LET DIRECTION 0
+            ENDIF
+        ENDIF
+        IF SETTINGA = 0
+            IF SETTINGB <= 192
+                ADD 8 TO SETTINGB
+            ELSE
+                LET SETTINGB 184
+            ENDIF
+        ENDIF
+        DIVIDE X BY 8
+        DIVIDE Y BY 8
+        SUBTRACT 1 FROM X
+        IF DIRECTION = 0
+            SUBTRACT 1 FROM X
+        ELSE
+            ADD 4 TO X
+        ENDIF
+        REPEAT 2
+            LET LINE Y
+            LET COLUMN X
+            PUTBLOCK 0
+            ADD 1 TO Y
+        ENDREPEAT
+        SUBTRACT 2 FROM Y
+        IF DIRECTION = 0
+            ADD 1 TO X
+        ELSE
+            SUBTRACT 4 FROM X
+        ENDIF
+        REPEAT 4
+            LET LINE Y
+            LET COLUMN X
+            PUTBLOCK SETTINGB
+            ADD 1 TO SETTINGB
+            ADD 1 TO X
+        ENDREPEAT
+        SUBTRACT 4 FROM X
+        ADD 1 TO Y
+        REPEAT 4
+            LET LINE Y
+            LET COLUMN X
+            PUTBLOCK SETTINGB
+            ADD 1 TO SETTINGB
+            ADD 1 TO X
+        ENDREPEAT
+        SUBTRACT 4 FROM X
+        SUBTRACT 1 FROM Y
+        SUBTRACT 8 FROM SETTINGB
+        ADD 1 TO X
+        MULTIPLY X BY 8
+        MULTIPLY Y BY 8
+    ENDIF
+ENDIF        ; warning - missing ENDIF?
+
+
+EVENT SPRITETYPE7
+IF IMAGE > 14
+    IF R > 0
+        LET FRAME 1
+        LET Y 168
+    ELSE
+        LET FRAME 0
+        LET Y 160
+    ENDIF
+    IF E = 0
+        IF X > 8
+            SUBTRACT 3 FROM X
+        ELSE
+            LET X 240
+        ENDIF
+        IF KEY RIGHT
+            SUBTRACT 3 FROM X
+        ENDIF
+    ENDIF
+ENDIF
+IF IMAGE = 7
+    IF COLLISION 7
+        GETRANDOM 20
+        IF RND <= 10
+            SUBTRACT 8 FROM X
+        ENDIF
+    ENDIF
+    IF F = 152
+        IF R = 0
+            IF X <= D
+                SUBTRACT X FROM D
+                IF D <= 24
+                    LET E 1
+                ENDIF
+                ADD X TO D
+            ENDIF
+        ENDIF
+    ENDIF
+    IF E = 0
+        IF R > 0 FRAME 1
+            LET Y 168
+        ELSE
+            LET FRAME 0
+            LET Y 160
+            IF KEY RIGHT
+                SUBTRACT 3 FROM X
+            ENDIF
+            IF X = 108
+                GETRANDOM 10
+                IF RND <= 5
+                    IF M <= 2
+                        SPAWN 7 7
+                    ENDIF
+                ENDIF
+            ENDIF
+            IF X > 8
+                SUBTRACT 3 FROM X
+            ELSE
+                LET X 240
+            ENDIF
+        ENDIF
+    ENDIF
+ENDIF
+IF IMAGE = 0
+    IF CUSTOM
+        LET E 1
+    ENDIF
+    IF X <= 200
+        IF DIRECTION > 2
+            SUBTRACT 1 FROM DIRECTION
+        ENDIF
+    ELSE
+        IF DIRECTION > 0
+            SUBTRACT 1 FROM DIRECTION
+        ELSE
+            REMOVE
+            SPAWN 7 0
+        ENDIF
+    ENDIF
+    IF COLLISION 3
+        OTHER
+        IF IMAGE = 2
+            ENDSPRITE
+            SCORE 200
+            REMOVE
+            SPAWN 7 0
+            ADD 16 TO X
+            SPAWN 8 2
+            SUBTRACT 16 FROM X
+        ENDIF
+    ENDIF
+    IF SETTINGA = 2
+        LET SETTINGA 0
+        IF DIRECTION = 2
+            IF X <= 208
+                ADD 8 TO X
+            ELSE
+                IF DIRECTION = 0
+                    REMOVE
+                ENDIF
+            ENDIF
+            IF X = 208
+                LET DIRECTION 50
+            ENDIF
+        ENDIF
+    ELSE
+        ADD 1 TO SETTINGA
+    ENDIF
+    IF DIRECTION = 2
+        IF SETTINGA = 1
+            IF X <= 192
+                ADD 8 TO X
+            ENDIF
+        ENDIF
+    ENDIF
+    IF SETTINGA <= 1
+        LET SETTINGB 216
+    ELSE
+        LET SETTINGB 224
+    ENDIF
+    IF DIRECTION <= 50
+        DIVIDE X BY 8
+        DIVIDE Y BY 8
+        SUBTRACT 1 FROM X
+        REPEAT 2
+            LET LINE Y
+            LET COLUMN X
+            PUTBLOCK 66
+            ADD 1 TO X
+            LET LINE Y
+            LET COLUMN X
+            PUTBLOCK 66
+            SUBTRACT 1 FROM X
+            SUBTRACT 1 FROM Y
+        ENDREPEAT
+        ADD 1 TO X
+        ADD 2 TO Y
+        IF X <= 26
+            IF DIRECTION > 1
+                REPEAT 4
+                    LET LINE Y
+                    LET COLUMN X
+                    PUTBLOCK SETTINGB
+                    ADD 1 TO X
+                    ADD 1 TO SETTINGB
+                ENDREPEAT
+                SUBTRACT 1 FROM Y
+                SUBTRACT 4 FROM X
+                REPEAT 4
+                    LET LINE Y
+                    LET COLUMN X
+                    PUTBLOCK SETTINGB
+                    ADD 1 TO SETTINGB
+                    ADD 1 TO X
+                ENDREPEAT
+                SUBTRACT 4 FROM X
+                ADD 1 TO Y
+            ELSE
+                REPEAT 4
+                    LET LINE Y
+                    LET COLUMN X
+                    PUTBLOCK 120
+                    ADD 1 TO X
+                ENDREPEAT
+                SUBTRACT 4 FROM X
+                SUBTRACT 1 FROM Y
+                REPEAT 4
+                    LET LINE Y
+                    LET COLUMN X
+                    PUTBLOCK 120
+                    ADD 1 TO X
+                ENDREPEAT
+                SUBTRACT 4 FROM X
+                ADD 1 TO Y
+            ENDIF
+        ENDIF
+        MULTIPLY X BY 8
+        MULTIPLY Y BY 8
+    ENDIF
+ENDIF
+
+
+EVENT SPRITETYPE8
+IF IMAGE > 11
+    IF IMAGE <= 13
+        IF SETTINGB = 2
+            LET SETTINGB 0
+            ANIMATE
+        ELSE
+            ADD 1 TO SETTINGB
+        ENDIF
+        IF SETTINGA > 5
+            SUBTRACT 1 FROM SETTINGA
+            SUBTRACT 1 FROM Y
+            IF IMAGE = 12
+                ADD 2 TO X
+            ELSE
+                SUBTRACT 2 FROM X
+            ENDIF
+        ELSE
+            TABLEFALL
+        ENDIF
+    ENDIF
+ENDIF
+IF IMAGE > 9
+    IF IMAGE <= 11
+        ; SPRITEINK 69
+        IF DEADLY
+            SPRITERIGHT
+        ENDIF
+        IF CUSTOM
+            SPRITELEFT
+        ENDIF
+        IF DIRECTION = 3
+            LET DIRECTION 0
+            ANIMATE
+        ELSE
+            ADD 1 TO DIRECTION
+        ENDIF
+        IF FRAME = 3
+            REMOVE
+            IF IMAGE = 10
+                SPAWN 6 0
+            ELSE
+                SPAWN 6 1
+            ENDIF
+        ENDIF
+    ENDIF
+ENDIF
+IF IMAGE = 9
+    IF SCREEN = 9
+        LET LINE 7
+        LET COLUMN 8
+        ; COLOUR 78
+        MESSAGE 52
+        LET LINE 23
+        LET COLUMN 8
+        ; COLOUR 1
+        MESSAGE 53
+        IF KEY RIGHT
+            LET SCREEN 5
+            LET DIRECTION 0
+            SPAWN 0 0
+        ENDIF
+        IF DIRECTION = 7
+            LET DIRECTION 0
+        ELSE
+            ADD 1 TO DIRECTION
+        ENDIF
+        IF DIRECTION <= 2
+            LET SETTINGB 63
+        ELSE
+            IF DIRECTION <= 4
+                LET SETTINGB 71
+            ELSE
+                LET SETTINGB 79
+            ENDIF
+        ENDIF
+        DIVIDE X BY 8
+        DIVIDE Y BY 8
+        REPEAT 4
+            LET LINE Y
+            LET COLUMN X
+            PUTBLOCK SETTINGB
+            ADD 1 TO SETTINGB
+            ADD 1 TO X
+        ENDREPEAT
+        SUBTRACT 4 FROM X
+        ADD 1 TO Y
+        REPEAT 4
+            LET LINE Y
+            LET COLUMN X
+            PUTBLOCK SETTINGB
+            ADD 1 TO SETTINGB
+            ADD 1 TO X
+        ENDREPEAT
+        SUBTRACT 4 FROM X
+        SUBTRACT 1 FROM Y
+        MULTIPLY X BY 8
+        MULTIPLY Y BY 8
+    ENDIF
+ENDIF
+IF IMAGE = 8
+    IF N <= 30
+        LET SETTINGB 0
+        IF N <= 32
+            LET SETTINGB 1
+        ELSE
+            LET SETTINGB 2
+        ENDIF
+        ADD S TO SETTINGB
+    ENDIF
+    IF SETTINGA = 0
+        GETRANDOM 200
+        IF SCREEN = 2
+        ELSE
+            IF M = 0
+                IF G <= 2
+                    ADD 192 TO X
+                ELSE
+                    IF G <= 4
+                        ADD 184 TO X
+                    ELSE
+                        ADD 176 TO X
+                    ENDIF
+                ENDIF
+                IF RND <= 50
+                    SPAWN 4 2
+                    SPAWNED
+                    LET DIRECTION 0
+                    ENDSPRITE
+                ELSE
+                    IF RND <= 80
+                        SPAWN 4 1
+                    ENDIF
+                ENDIF
+                IF G <= 2
+                    SUBTRACT 192 FROM X
+                ELSE
+                    IF G <= 4
+                        SUBTRACT 184 FROM X
+                    ELSE
+                        SUBTRACT 176 FROM X
+                    ENDIF
+                ENDIF
+            ENDIF
+        ENDIF
+        IF K <= SETTINGB
+            IF RND <= 66
+                ADD 32 TO Y
+                ADD 16 TO X
+                SPAWN 2 3
+                SUBTRACT 32 FROM Y
+                SUBTRACT 16 FROM X
+            ENDIF
+            IF RND > 66
+                ADD 16 TO Y
+                IF RND <= 132
+                    ADD RND TO X
+                    SPAWN 8 10
+                    SUBTRACT RND FROM X
+                ELSE
+                    ADD RND TO X
+                    SPAWN 8 11
+                    SUBTRACT RND FROM X
+                ENDIF
+                SUBTRACT 16 FROM Y
+            ENDIF
+        ENDIF
+    ENDIF
+    IF G <= 2
+        LET X 16
+    ENDIF
+    IF G > 2
+        IF G <= 4
+            LET X 24
+        ENDIF
+    ENDIF
+    IF G > 4
+        LET X 32
+    ENDIF
+    LET LINE 22
+    LET COLUMN 6
+    ; COLOUR 70
+    SHOWSCORE
+    LET LINE 0
+    LET COLUMN O
+    ; COLOUR 12
+    MESSAGE N
+    IF P = 0
+        ADD 1 TO N
+    ENDIF
+    IF N > 34
+        ADD 1 TO O
+    ENDIF
+    LET LINE 0
+    IF Q <= 9
+        LET COLUMN 4
+    ELSE
+        IF Q <= 99
+            LET COLUMN 3
+        ELSE
+            IF Q <= 199
+                LET COLUMN 2
+            ENDIF
+        ENDIF
+    ENDIF
+    ; COLOUR 14
+    DISPLAY Q
+    IF SETTINGA = 10
+        ANIMATE
+    ENDIF
+    IF SETTINGA = 20
+        ANIMATE
+    ENDIF
+    IF SETTINGA = 30
+        LET SETTINGA 0
+        ANIMATE
+    ELSE
+        ADD 1 TO SETTINGA
+    ENDIF
+ELSE
+    IF SETTINGA = 5
+        BEEP 20
+    ENDIF
+ENDIF
+IF IMAGE = 4
+    IF SETTINGA > 0
+        SUBTRACT 1 FROM SETTINGA
+    ELSE
+        REMOVE
+    ENDIF
+    IF SETTINGA > 2
+        LET SETTINGB 180
+    ELSE
+        LET SETTINGB 120
+    ENDIF
+    DIVIDE X BY 8
+    DIVIDE Y BY 8
+    SUBTRACT 1 FROM X
+    REPEAT 3
+        LET LINE Y
+        LET COLUMN X
+        PUTBLOCK SETTINGB
+        ADD 1 TO X
+        IF SETTINGA > 2
+            ADD 1 TO SETTINGB
+        ENDIF
+    ENDREPEAT
+    SUBTRACT 3 FROM X
+    ADD 1 TO X
+    IF SETTINGA > 2
+        SUBTRACT 3 FROM SETTINGB
+    ENDIF
+    MULTIPLY X BY 8
+    MULTIPLY Y BY 8
+ENDIF
+IF IMAGE <= 2
+    IF SETTINGA > 0
+        SUBTRACT 1 FROM SETTINGA
+    ELSE
+        IF IMAGE = 0
+            KILL
+        ELSE
+            REMOVE
+        ENDIF
+    ENDIF
+    IF Y > 100
+        LET SETTINGB 111
+    ELSE
+        LET SETTINGB 215
+    ENDIF
+    DIVIDE X BY 8
+    DIVIDE Y BY 8
+    IF SETTINGA > 4
+        IF DIRECTION = 0
+            SUBTRACT 3 FROM X
+            IF Y > 10
+                LET LINE Y
+                LET COLUMN X
+                ; COLOUR 0
+                MESSAGE 21
+                SUBTRACT 1 FROM Y
+                LET LINE Y
+                LET COLUMN X
+                MESSAGE 21
+                ADD 3 TO X
+                ADD 1 TO Y
+            ELSE
+                REPEAT 6
+                    LET LINE Y
+                    LET COLUMN X
+                    PUTBLOCK 0
+                    ADD 1 TO X
+                ENDREPEAT
+                SUBTRACT 6 FROM X
+                SUBTRACT 1 FROM Y
+                REPEAT 6
+                    LET LINE Y
+                    LET COLUMN X
+                    PUTBLOCK 0
+                    ADD 1 TO X
+                ENDREPEAT
+                SUBTRACT 3 FROM X
+                ADD 1 TO Y
+            ENDIF
+            LET DIRECTION 1
+        ENDIF
+    ENDIF
+    REPEAT 4
+        LET LINE Y
+        LET COLUMN X
+        IF IMAGE = 2
+            IF SETTINGA > 0
+                PUTBLOCK SETTINGB
+                SUBTRACT 1 FROM SETTINGB
+            ELSE
+                IF Y > 10
+                    PUTBLOCK 104
+                ELSE
+                    PUTBLOCK 208
+                ENDIF
+            ENDIF
+        ELSE
+            PUTBLOCK SETTINGB
+            SUBTRACT 1 FROM SETTINGB
+        ENDIF
+        SUBTRACT 1 FROM X
+    ENDREPEAT
+    ADD 4 TO X
+    SUBTRACT 1 FROM Y
+    REPEAT 4
+        LET LINE Y
+        LET COLUMN X
+        IF IMAGE = 2
+            IF SETTINGA > 0
+                PUTBLOCK SETTINGB
+                SUBTRACT 1 FROM SETTINGB
+            ELSE
+                IF Y > 10
+                    PUTBLOCK 104
+                ELSE
+                    PUTBLOCK 208
+                ENDIF
+            ENDIF
+        ELSE
+            PUTBLOCK SETTINGB
+            SUBTRACT 1 FROM SETTINGB
+        ENDIF
+        SUBTRACT 1 FROM X
+    ENDREPEAT
+    ADD 4 TO X
+    ADD 1 TO Y
+    MULTIPLY X BY 8
+    MULTIPLY Y BY 8
+ENDIF
+IF IMAGE = 5
+    IF Y <= 56
+        ; SPRITEINK 70
+    ENDIF
+    IF SETTINGA = 1
+        LET SETTINGA 0
+        ANIMATE
+    ELSE
+        ADD 1 TO SETTINGA
+    ENDIF
+    IF FRAME = 2
+        REMOVE
+    ENDIF
+ENDIF
+
+
+EVENT INITSPRITE
+IF TYPE = 7
+    IF IMAGE = 7
+        LET X 240
+        LET Y 160
+    ENDIF
+    IF IMAGE = 0
+        LET X 8
+        LET Y 152
+    ENDIF
+    GETRANDOM 50
+    ADD 100 TO RND
+    LET DIRECTION RND
+    IF IMAGE <= 13
+        ADD 1 TO G
+        ADD 1 TO M
+    ENDIF
+ENDIF
+IF TYPE = 6
+    IF IMAGE = 1
+        LET SETTINGB 235
+    ELSE
+        LET SETTINGB 184
+    ENDIF
+    ADD 1 TO G
+    ADD 1 TO K
+ENDIF
+IF TYPE = 8
+    IF IMAGE > 11
+        IF IMAGE <= 13
+            LET SETTINGA 16
+        ENDIF
+    ENDIF
+    IF IMAGE = 8
+        LET SETTINGB 0
+        IF SCREEN = 1
+            LET M 1
+        ELSE
+            IF SCREEN = 3
+                LET M 1
+            ELSE
+                LET M 0
+            ENDIF
+        ENDIF
+    ENDIF
+    IF IMAGE = 4
+        LET SETTINGA 6
+    ENDIF
+    IF IMAGE = 2
+        LET SETTINGA 6
+        LET DIRECTION 0
+    ENDIF
+    IF IMAGE = 0
+        LET SETTINGA 15
+        LET DIRECTION 0
+    ENDIF
+ENDIF
+IF TYPE = 3
+    IF IMAGE = 2
+        LET SETTINGA 8
+    ENDIF
+ENDIF
+IF TYPE = 5
+    GETRANDOM 50
+    ADD 50 TO RND
+    LET DIRECTION RND
+    LET X 216
+    LET Y 152
+    ADD 1 TO G
+ENDIF
+IF TYPE = 4
+    ADD 1 TO G
+    IF IMAGE = 1
+        LET SETTINGB 132
+        ADD 1 TO R
+    ENDIF
+    IF IMAGE = 2
+        LET SETTINGB 120
+        LET DIRECTION 0
+    ENDIF
+    LET Y 152
+ENDIF
+IF TYPE = 2
+    ADD 1 TO G
+    ADD 1 TO K
+ENDIF
+IF TYPE = 1
+    LET SETTINGA 1
+    LET SETTINGB 0
+    IF IMAGE = 2
+        LET SETTINGB 6
+    ENDIF
+ENDIF
+IF TYPE = 0
+    IF SCREEN = 9
+        LET SETTINGA 100
+    ENDIF
+    IF SCREEN = 5
+        LET SETTINGA 100
+    ENDIF
+    LET SETTINGB 68
+    LET B 1
+ENDIF
+
+
+EVENT MAINLOOP1
+IF N > 34
+    LET N 28
+ENDIF
+IF P = 40
+    LET P 0
+ELSE
+    ADD 1 TO P
+ENDIF
+IF SCREEN = 8
+ELSE
+    IF P = 0
+        ADD 1 TO Q
+    ENDIF
+    IF P = 13
+        ADD 1 TO Q
+    ENDIF
+    IF P = 26
+        ADD 1 TO Q
+    ENDIF
+ENDIF
+
+
+EVENT MAINLOOP2
+
+
+EVENT INTROMENU
+
+
+EVENT GAMEINIT
+WAITKEY
+; SILENCE 0
+LET S 0
+LET K 0
+LET G 0
+LET A 0
+LET B 0
+LET C 0
+LET LIVES = 5
+LET N 28
+LET O 6
+LET E 0
+LET Q 0
+LET H 0
+LET I 90
+
+
+EVENT RESTARTSCREEN
+IF S = 0
+    LET I 90
+ELSE
+    LET I 85
+ENDIF
+; BORDER 0
+; COLOUR 71
+CLS
+LET T 0
+LET LINE 21
+LET COLUMN 1
+; COLOUR 2
+MESSAGE 18
+IF SCREEN <= 5
+    LET LINE 22
+    LET COLUMN 24
+    ; COLOUR 68
+    MESSAGE 54
+    LET LINE 22
+    LET COLUMN 27
+    MESSAGE 55
+    LET LINE 22
+    LET COLUMN 30
+    ; COLOUR 66
+    MESSAGE 56
+    LET LINE 22
+    LET COLUMN 23
+    ; COLOUR 70
+    MESSAGE 57
+    LET LINE 22
+    LET COLUMN 26
+    MESSAGE 58
+    LET LINE 22
+    LET COLUMN 29
+    MESSAGE 59
+ENDIF
+IF SCREEN = 4
+    LET OPT 30
+ENDIF
+IF SCREEN = 3
+    LET OPT 60
+ENDIF
+IF SCREEN = 0
+    LET OPT 30
+ENDIF
+IF SCREEN = 9
+    LET OPT 30
+ENDIF
+IF SCREEN = 1
+    LET OPT 60
+ENDIF
+IF SCREEN = 2
+    LET OPT 30
+ENDIF
+IF TYPE = 8
+    IF IMAGE = 8
+        LET SETTINGB 0
+    ENDIF
+ENDIF
+LET M 0
+LET K 0
+LET I 90
+LET H 0
+LET G 0
+LET E 0
+LET R 0
+LET LINE 2
+LET COLUMN 1
+; COLOUR 65
+MESSAGE 18
+IF SCREEN = 5
+    ; SILENCE 1
+    LET LINE 22
+    LET COLUMN 6
+    ; COLOUR 70
+    SHOWSCORE
+ELSE
+    IF SCREEN <= 4
+        ; SILENCE 3
+    ENDIF
+ENDIF
+LET K 0
+LET L 0
+LET LINE 0
+LET COLUMN 1
+; COLOUR 33
+MESSAGE 27
+LET LINE 1
+LET COLUMN 1
+; COLOUR 41
+MESSAGE 26
+LET P 26
+REPEAT LIVES
+    LET LINE 0
+    LET COLUMN P
+    ; COLOUR 11
+    MESSAGE 36
+    LET LINE 1
+    LET COLUMN P
+    ; COLOUR 8
+    MESSAGE 37
+    ADD 1 TO P
+ENDREPEAT
+SUBTRACT 3 FROM P
+IF SCREEN = 9
+ELSE
+    LET LINE 22
+    LET COLUMN 1
+    ; COLOUR 67
+    MESSAGE 43
+ENDIF
+LET LINE 1
+LET COLUMN 2
+; COLOUR 12
+MESSAGE 44
+LET LINE 1
+LET COLUMN 3
+; COLOUR 14
+MESSAGE 44
+LET LINE 1
+LET COLUMN 4
+; COLOUR 10
+MESSAGE 44
+; warning - ENDIF without IF?
+ENDIF
+IF SCREEN <= 4
+    IF O > 6
+        LET M 6
+        SUBTRACT 6 FROM O
+        REPEAT O
+            LET LINE 0
+            LET COLUMN M
+            ; COLOUR 12
+            MESSAGE 34
+            ADD 1 TO M
+        ENDREPEAT
+        ADD 6 TO O
+    ENDIF
+ENDIF
+
+
+EVENT FELLTOOFAR
+
+
+EVENT KILLPLAYER
+IF LIVES > 0
+    SUBTRACT 1 FROM LIVES
+    ; SILENCE 0
+    LET M 0
+ENDIF
+
+
+EVENT LOSTGAME
+; SILENCE 5
+LET LINE 5
+LET COLUMN 12
+; COLOUR 78
+MESSAGE 0
+DELAY 200
+
+
+EVENT COMPLETEDGAME
+
+
+EVENT NEWHIGHSCORE
+
+
+EVENT COLLECTBLOCK

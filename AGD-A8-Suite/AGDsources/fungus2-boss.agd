@@ -1,0 +1,715 @@
+
+DEFINEWINDOW    1 0 23 23
+
+DEFINECONTROLS  'Q' 'A' 'O' 'P' 'M' 'H' 'X'
+
+DEFINEMESSAGES
+    "#"
+
+DEFINEFONT      0 0 0 0 0 0 0 0
+                56 56 56 56 0 56 56 0
+                119 119 238 0 0 0 0 0
+                0 0 0 0 0 0 0 0
+                0 0 0 0 0 96 48 0
+                0 0 0 0 0 24 48 0
+                0 0 0 0 0 52 88 0
+                28 28 56 0 0 0 0 0
+                28 56 56 60 60 60 28 0
+                56 28 28 60 60 60 56 0
+                0 0 0 0 16 56 108 0
+                0 56 56 254 56 56 56 0
+                0 0 0 0 0 56 56 112
+                0 0 0 126 126 0 0 0
+                0 0 0 0 0 56 56 0
+                0 6 14 28 56 112 112 0
+                56 108 238 254 254 124 56 0
+                120 56 56 56 254 254 254 0
+                252 14 124 240 254 254 254 0
+                252 14 60 14 254 254 252 0
+                224 224 238 254 254 126 14 0
+                254 224 252 14 254 254 252 0
+                124 224 252 238 254 254 124 0
+                254 238 30 28 60 124 124 0
+                124 238 124 238 254 254 124 0
+                124 238 126 14 254 254 252 0
+                0 56 0 0 56 56 56 0
+                0 56 0 0 56 120 120 112
+                14 28 56 120 124 62 31 0
+                0 126 0 126 126 126 0 0
+                112 56 28 30 62 124 248 0
+                252 14 60 0 56 56 56 0
+                56 56 0 56 56 56 56 0
+                56 124 108 124 238 238 238 0
+                252 238 254 236 254 254 252 0
+                124 238 224 238 254 254 124 0
+                248 252 118 118 254 252 248 0
+                254 240 124 112 254 254 254 0
+                254 112 124 112 248 248 248 0
+                126 224 238 230 254 254 126 0
+                238 238 124 124 254 238 238 0
+                124 56 56 56 124 124 124 0
+                14 14 14 238 254 254 124 0
+                238 252 248 252 254 254 238 0
+                248 112 112 112 254 254 254 0
+                198 238 254 254 254 254 238 0
+                206 238 254 254 254 238 230 0
+                124 238 238 238 254 254 124 0
+                252 238 124 112 248 248 248 0
+                124 254 238 238 238 252 110 0
+                252 238 126 124 238 238 238 0
+                126 224 124 14 254 254 252 0
+                254 254 56 56 124 124 124 0
+                238 238 238 238 254 254 124 0
+                238 238 238 238 254 124 56 0
+                238 238 254 254 254 254 108 0
+                198 238 124 124 254 238 238 0
+                238 238 254 124 56 56 56 0
+                126 14 30 60 126 126 126 0
+                124 112 112 112 124 124 124 0
+                0 96 112 56 28 14 14 0
+                124 28 28 28 124 124 124 0
+                16 56 124 56 124 124 124 0
+                0 0 0 0 0 0 108 0
+                0 0 20 8 62 8 20 0
+                0 124 30 110 254 254 126 0
+                224 224 252 238 254 254 252 0
+                0 126 224 224 254 254 126 0
+                14 14 126 238 254 254 126 0
+                0 124 238 252 254 254 126 0
+                30 56 126 56 124 124 124 0
+                0 0 124 238 62 254 254 252
+                224 224 252 254 254 238 238 0
+                56 0 120 56 124 124 124 0
+                14 0 14 14 238 254 254 124
+                224 238 254 252 252 238 230 0
+                60 28 28 28 62 62 62 0
+                0 108 254 254 254 254 238 0
+                0 252 254 238 238 238 238 0
+                0 124 238 238 254 254 124 0
+                0 252 238 126 126 252 240 240
+                0 126 238 252 252 124 30 30
+                0 252 254 110 240 240 240 0
+                0 126 240 124 62 254 252 0
+                112 252 112 112 126 126 62 0
+                0 238 238 238 254 254 124 0
+                0 238 238 238 254 124 56 0
+                0 238 254 254 254 254 108 0
+                0 238 254 124 254 254 238 0
+                0 238 238 126 14 126 126 124
+                0 254 60 120 254 254 254 0
+                14 28 28 124 30 30 14 0
+                56 56 56 56 56 56 56 0
+                112 56 56 62 120 120 112 0
+                0 0 54 126 108 0 0 0
+                60 102 219 243 251 219 102 60
+
+DEFINEJUMP      248 250 252 254 254 255 255 255 0 0 0 1 1 1 2 2 4 6 8 8 8 99
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 0 0
+                71
+
+DEFINEBLOCK     PLATFORMBLOCK
+                255 0 255 0 170 85 170 255
+                105
+
+DEFINEBLOCK     WALLBLOCK
+                176 176 176 176 79 79 79 79
+                122
+
+DEFINEBLOCK     WALLBLOCK
+                240 240 240 240 15 15 15 15
+                122
+
+DEFINEBLOCK     WALLBLOCK
+                242 242 242 242 13 13 13 13
+                58
+
+DEFINEBLOCK     WALLBLOCK
+                255 85 170 20 34 8 64 18
+                96
+
+DEFINEBLOCK     WALLBLOCK
+                28 56 202 133 163 91 38 30
+                48
+
+DEFINEBLOCK     WALLBLOCK
+                22 41 208 34 237 18 76 172
+                48
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 1 1 1 1 1 3
+                71
+
+DEFINEBLOCK     EMPTYBLOCK
+                2 2 3 0 0 0 0 0
+                71
+
+DEFINEBLOCK     CUSTOMBLOCK
+                0 0 0 1 3 6 4 13
+                71
+
+DEFINEBLOCK     CUSTOMBLOCK
+                8 27 16 23 51 42 46 39
+                71
+
+DEFINEBLOCK     CUSTOMBLOCK
+                32 40 44 47 47 55 119 195
+                71
+
+DEFINEBLOCK     DEADLYBLOCK
+                3 6 4 4 4 4 62 224
+                71
+
+DEFINEBLOCK     EMPTYBLOCK
+                1 0 124 254 199 128 56 8
+                71
+
+DEFINEBLOCK     DEADLYBLOCK
+                28 175 199 112 29 5 6 3
+                71
+
+DEFINEBLOCK     WALLBLOCK
+                0 0 124 124 252 252 252 12
+                71
+
+DEFINEBLOCK     WALLBLOCK
+                3 250 14 64 98 34 16 137
+                71
+
+DEFINEBLOCK     WALLBLOCK
+                0 1 26 164 36 147 91 36
+                71
+
+DEFINEBLOCK     EMPTYBLOCK
+                31 0 0 0 0 0 0 0
+                71
+
+DEFINEBLOCK     WALLBLOCK
+                194 97 48 28 6 3 0 0
+                71
+
+DEFINEBLOCK     WALLBLOCK
+                131 112 8 66 16 153 255 0
+                71
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 0 63 96
+                71
+
+DEFINEBLOCK     EMPTYBLOCK
+                0 0 0 0 0 1 3 2
+                71
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 1 1 1 7 252 3 191
+                71
+
+DEFINEBLOCK     DEADLYBLOCK
+                207 152 50 33 96 96 224 240
+                71
+
+DEFINEBLOCK     EMPTYBLOCK
+                2 2 3 1 0 0 0 0
+                71
+
+DEFINEBLOCK     DEADLYBLOCK
+                191 60 3 254 0 0 0 0
+                7
+
+DEFINEBLOCK     DEADLYBLOCK
+                189 31 207 96 56 15 2 2
+                7
+
+DEFINEBLOCK     DEADLYBLOCK
+                6 4 4 12 8 24 49 36
+                71
+
+DEFINEBLOCK     DEADLYBLOCK
+                103 195 144 136 134 129 192 64
+                71
+
+DEFINEBLOCK     DEADLYBLOCK
+                208 156 147 146 7 132 13 40
+                71
+
+DEFINEBLOCK     EMPTYBLOCK
+                2 2 2 2 3 1 0 0
+                71
+
+DEFINEBLOCK     DEADLYBLOCK
+                2 9 35 99 7 192 120 15
+                71
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 0 0 0 0 7 28
+                71
+
+DEFINEBLOCK     DEADLYBLOCK
+                0 0 0 0 0 127 192 63
+                71
+
+DEFINEBLOCK     DEADLYBLOCK
+                51 111 80 64 108 47 51 28
+                71
+
+DEFINEBLOCK     DEADLYBLOCK
+                254 224 8 36 62 252 193 63
+                71
+
+
+DEFINESPRITE    3
+                3 192 12 112 51 252 111 254 88 30 4 128 3 192 5 64
+                5 192 5 192 2 192 1 192 1 128 0 0 3 96 3 176
+
+                3 192 12 112 51 252 111 254 88 30 4 128 3 192 3 64
+                27 216 51 220 35 192 3 192 1 132 24 28 24 24 12 0
+
+                0 0 3 192 12 112 51 252 111 254 88 30 4 128 3 192
+                5 80 13 216 11 192 3 192 25 128 24 0 16 112 0 56
+
+DEFINESPRITE    3
+                3 192 14 48 63 204 127 246 120 26 1 32 3 192 2 160
+                3 160 3 160 3 64 3 128 1 128 0 0 6 192 13 192
+
+                3 192 14 48 63 204 127 246 120 26 1 32 3 192 2 192
+                27 216 59 204 3 196 3 192 33 128 56 24 24 24 0 48
+
+                0 0 3 192 14 48 63 204 127 246 120 26 1 32 3 192
+                10 160 27 176 3 208 3 192 1 152 0 24 14 8 28 0
+
+DEFINESPRITE    3
+                1 0 2 128 2 128 5 192 5 192 255 254 143 254 103 252
+                23 240 11 224 27 240 39 248 44 120 88 60 80 28 96 12
+
+                1 0 2 128 2 128 2 128 2 128 31 240 19 240 27 240
+                11 224 5 192 5 192 11 224 10 160 10 160 10 160 12 96
+
+                1 0 2 128 2 128 2 128 2 128 7 96 7 96 7 96
+                2 192 2 128 2 128 3 64 3 64 3 64 3 64 3 64
+
+DEFINESPRITE    3
+                0 0 0 32 32 96 56 160 52 160 11 32 12 88 7 230
+                7 254 15 248 15 224 60 224 56 224 32 96 0 32 0 0
+
+                0 0 0 0 56 28 24 24 30 104 15 208 7 160 7 160
+                31 152 63 196 127 190 3 64 3 64 1 128 1 128 0 0
+
+                0 0 4 0 6 4 7 28 7 60 7 240 31 240 127 224
+                103 224 26 48 4 208 5 44 5 28 6 4 4 0 0 0
+
+DEFINESPRITE    3
+                3 192 12 48 51 204 127 254 120 30 9 144 3 192 2 64
+                58 92 27 216 3 192 3 192 33 132 56 28 24 24 0 0
+
+                3 192 12 112 51 252 111 254 88 30 4 128 3 192 29 24
+                13 16 3 192 3 192 1 192 8 144 12 48 6 96 0 0
+
+                3 192 14 48 63 204 127 246 120 26 1 32 3 192 24 184
+                8 176 3 192 3 192 3 128 9 16 12 48 6 96 0 0
+
+DEFINESPRITE    2
+                0 1 0 1 120 0 200 0 142 240 147 152 152 12 148 22
+                203 139 101 197 34 114 49 168 24 88 14 4 3 136 0 119
+
+                0 1 0 1 0 0 0 0 0 0 241 240 159 28 140 6
+                131 219 144 101 159 2 202 220 101 33 48 94 31 0 1 255
+
+DEFINESPRITE    3
+                7 224 24 24 33 228 71 250 76 58 153 93 146 173 181 237
+                179 237 181 237 187 221 92 58 95 250 39 228 24 24 7 224
+
+                3 192 5 96 10 176 21 120 18 56 36 156 41 92 36 220
+                41 92 36 220 41 92 20 56 18 184 9 80 4 32 3 192
+
+                1 128 3 64 2 192 3 64 2 192 3 64 2 192 3 64
+                2 192 3 64 2 192 3 64 2 192 3 64 2 192 1 128
+
+DEFINESPRITE    2
+                0 0 0 0 0 0 0 0 0 0 127 254 0 0 127 254
+                127 226 127 230 63 196 63 140 30 24 15 240 0 0 7 224
+
+                0 0 0 0 0 0 127 254 0 0 127 254 127 226 127 230
+                63 196 63 140 30 24 15 240 0 0 7 224 0 0 0 0
+
+
+DEFINESCREEN      0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   8
+                  0   0   0   0   0   0   0   0   0   0   2   3   4   0   0   0   0   0   0   0   0   0   9
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  10
+                  0   0   0   1   1   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  11
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  12
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  13  14
+                  0   0   0   0   0   0   0   0   1   1   1   0   0   0   0   0   0   0   0   0   0  15  16
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  17  18
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   1   1   1   0   0   0   0   0  20  21
+                  0   0   0   1   1   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  22
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  23  24  25
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  26  27  28
+                  0   1   1   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  29
+                  0   0   0   0   0   0   0   0   0   1   1   1   0   0   0   0   0   0   0   0   0   0  30
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   8  31
+                  0   0   0   0   1   1   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0  32  33
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   1   1   0   0   0   0   0   0
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  34  35
+                  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0  36  37
+                  5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5   5
+                  6   7   6   7   6   7   6   7   6   7   6   7   6   7   6   7   6   7   6   7   6   7   6
+SPRITEPOSITION  0 0 160 0
+SPRITEPOSITION  2 2 16 88
+SPRITEPOSITION  3 6 16 0
+SPRITEPOSITION  2 5 72 152
+SPRITEPOSITION  3 7 96 72
+
+DEFINEOBJECT    71 254 56 120
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+                0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+MAP             WIDTH 3
+                STARTSCREEN 255
+                255   0 255
+ENDMAP
+
+
+EVENT PLAYER
+IF DEADLY
+    LET H 1
+ENDIF
+IF C = 0
+    LET P 1
+ENDIF
+IF KEY RIGHT
+    IF CANGORIGHT
+        LET IMAGE 0
+        LET DIRECTION 0
+        IF A = 0
+            ANIMATE
+        ENDIF
+        SPRITERIGHT
+    ENDIF
+ENDIF
+IF KEY LEFT
+    IF CANGOLEFT
+        LET IMAGE 1
+        LET DIRECTION 1
+        IF A = 0
+            ANIMATE
+        ENDIF
+        SPRITELEFT
+    ENDIF
+ENDIF
+IF KEY UP
+    IF E = 0
+        ; ASM 205
+        ; ASM 68
+        ; ASM 165
+        TABLEJUMP
+        LET E 1
+    ENDIF
+ELSE
+    LET E 0
+ENDIF
+IF CANGODOWN
+    TABLEFALL
+    LET E 1
+    IF Y > 162
+        LET Y 8
+    ENDIF
+ENDIF
+IF KEY FIRE
+    IF D > 0
+        IF B = 0
+            IF DIRECTION = 0
+                ADD 6 TO X
+                SPAWN 1 3
+                SUBTRACT 6 FROM X
+            ELSE
+                SUBTRACT 6 FROM X
+                SPAWN 1 3
+                ADD 6 TO X
+            ENDIF
+            ; ASM 205
+            ; ASM 0
+            ; ASM 165
+        ENDIF
+    ENDIF
+ELSE
+    LET B 0
+ENDIF
+IF H = 1
+    IF D = 1
+        LET Y 16
+        LET X 88
+        SPAWN 2 2
+        LET D = 0
+    ENDIF
+    ; BORDER 2
+    BEEP 50
+    DELAY 5
+    LET Y 160
+    LET X 0
+    LET H 0
+    ; BORDER 0
+ENDIF
+IF P = 1
+    SPAWN 2 4
+    BEEP 80
+    ENDSPRITE
+    REMOVE
+ENDIF
+IF KEY FIRE2
+    WAITKEY
+ENDIF
+
+
+EVENT SPRITETYPE1
+LET B 1
+IF DIRECTION = 0
+    IF CANGORIGHT
+        ANIMATE
+        SPRITERIGHT
+        SPRITERIGHT
+    ELSE
+        REMOVE
+    ENDIF
+ENDIF
+IF DIRECTION = 1
+    IF CANGOLEFT
+        ANIMATE
+        SPRITELEFT
+        SPRITELEFT
+        LET B 1
+    ELSE
+        REMOVE
+    ENDIF
+ENDIF
+ADD 1 TO SETTINGA
+IF SETTINGA = 16
+    REMOVE
+ENDIF
+IF CUSTOM
+    BEEP 30
+    ADD 1 TO G
+    SCORE 15
+    REMOVE
+    EXIT
+ENDIF
+
+
+EVENT SPRITETYPE2
+IF A = 0
+    ANIMATE
+ENDIF
+IF IMAGE = 2
+    IF COLLISION 0
+        ; SPRITEINK 7
+        ; ASM 205
+        ; ASM 13
+        ; ASM 165
+        REMOVE
+        SCORE 25
+        LET D 1
+        EXIT
+    ENDIF
+ENDIF
+IF IMAGE = 4
+    ADD 1 TO P
+    IF P > 50
+        REMOVE
+        LET P 0
+        KILL
+    ENDIF
+ENDIF
+IF IMAGE = 5
+    IF COLLISION 0
+        LET H 1
+    ENDIF
+ENDIF
+IF IMAGE <> 5
+    ; SPRITEINK F
+ENDIF
+
+
+EVENT SPRITETYPE3
+IF A = 0
+    ANIMATE
+ENDIF
+IF COLLISION 0
+    LET H 1
+ENDIF
+IF X = > 140
+    REMOVE
+    GETRANDOM 7
+    LET X RND
+    MULTIPLY X BY 17
+    LET Y 8
+    GETRANDOM 2
+    IF RND 0
+        SPAWN 3 6
+    ELSE
+        SPAWN 3 7
+    ENDIF
+ENDIF
+IF CANGODOWN
+    TABLEFALL
+    TABLEFALL
+ELSE
+    IF CANGORIGHT
+        SPRITERIGHT
+        SPRITERIGHT
+    ELSE
+        SPRITELEFT
+        SPRITELEFT
+    ENDIF
+ENDIF
+
+
+EVENT SPRITETYPE4
+
+
+EVENT SPRITETYPE5
+
+
+EVENT SPRITETYPE6
+
+
+EVENT SPRITETYPE7
+
+
+EVENT SPRITETYPE8
+
+
+EVENT INITSPRITE
+
+
+EVENT MAINLOOP1
+IF A = 4
+    LET A 0
+    GETRANDOM 7
+ELSE
+    ADD 1 TO A
+ENDIF
+IF F = 16
+    IF C > 0
+        SUBTRACT 1 FROM C
+    ENDIF
+    LET F 1
+ELSE
+    ADD 1 TO F
+ENDIF
+; COLOUR 69
+LET LINE 0
+LET COLUMN 10
+IF C <= 9
+    MESSAGE 0
+    LET LINE 0
+    LET COLUMN 11
+    DISPLAY C
+ELSE
+    DISPLAY C
+ENDIF
+; COLOUR 71
+LET LINE 0
+LET COLUMN 15
+SHOWSCORE
+IF G > 8
+    ADD 1 TO C
+    REPEAT 10
+        SCORE 20
+    ENDREPEAT
+    DELAY 20
+    ENDGAME
+ENDIF
+
+
+EVENT MAINLOOP2
+
+
+EVENT INTROMENU
+CLW
+LET LIVES  5 
+LET N  1 
+;BORDER  0 
+AT 5,1
+PRINT "Funky Fungus Reloaded"
+AT 7,7
+PRINT "Boss level"
+AT 10,2
+PRINT"1 - KEYBOARD"
+AT 12,2
+PRINT"2 - JOYKEY"
+AT 14,2
+PRINT"2 - JOYMMC"
+CONTROLMENU
+
+
+EVENT GAMEINIT
+; ASM 205
+; ASM 192
+; ASM 93
+; ASM 205
+; ASM 89
+; ASM 165
+
+
+EVENT RESTARTSCREEN
+LET A 0
+LET B 0
+LET C 99
+LET D 0
+LET E 1
+LET F 1
+LET G 0
+LET H 0
+LET P 0
+; COLOUR 68
+LET LINE 0
+LET COLUMN 5
+DISPLAY LIVES
+; COLOUR 71
+
+
+EVENT FELLTOOFAR
+
+
+EVENT KILLPLAYER
+DELAY 20
+SUBTRACT 1 FROM LIVES
+
+
+EVENT LOSTGAME
+; ASM 205
+; ASM 121
+; ASM 165
+
+
+EVENT COMPLETEDGAME
+IF Z = 0
+	CLW
+	SCORE 250
+	SCORE 250
+	SCORE 250
+	SCORE 250
+	LET LINE 18
+	LET COLUMN 25
+	SHOWSCORE
+	AT 8,1
+	PRINT"CONGRATULATIONS!!!!!"
+	AT 10,1
+	PRINT"YOU DEFEATED THE"
+	AT 12,1
+	PRINT"BOSS ........"
+	AT 14,1
+	PRINT"FINAL SCORE: "
+	SHOWSCORE
+	WAITKEY
+	ENDGAME
+ENDIF
+
+
+EVENT NEWHIGHSCORE
+
+
+EVENT COLLECTBLOCK

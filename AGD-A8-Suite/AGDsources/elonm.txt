@@ -1,0 +1,359 @@
+After a conversion of ELONM, this part is malformed .....
+
+EVENT PLAYER
+IF H > 0
+    SUBTRACT 1 FROM H
+ENDIF
+IF P <= 99
+    GET
+    GET
+    GET
+    ...
+    GET
+    GET
+    GET R BY 2
+    IF R > 0
+        REPEAT R
+
+I started a Spectrum emulator with ELONM and found the assembler of the game.
+Then I reversed engineered the AGD code with this result.
+It is not yet 100% ok ....
+
+
+EVENT PLAYER
+
++-IF H > 0
+|	ld a, $00		 ; e1d7 3e 00 $07ts
+|	ld hl, $7d24		 ; e1d9 21 24 7d $0ats
+|	cp (hl)			 ; e1dc be $07ts
+|	jp nc, l_e1ea		 ; e1dd d2 ea e1 $0a/$0ats
+|
+|  SUBTRACT 1 FROM H
+|	ld a, $01		 ; e1e0 3e 01 $07ts
+|	ld c, a			 ; e1e2 4f $04ts
+|	ld a, ($7d24)		 ; e1e3 3a 24 7d $0dts
+|	sub c			 ; e1e6 91 $04ts
+|	ld ($7d24), a		 ; e1e7 32 24 7d $0dts
++-ENDIF
+l_e1ea:
+
+;=== code was destroyed from here ===
+
+;---------------------------------------------------------
+
++-IF P<= 99
+|        ld a, $63		 ; e1ea 3e 63 $07ts
+|	ld hl, $7d2c		 ; e1ec 21 2c 7d $0ats
+|	cp (hl)			 ; e1ef be $07ts
+|	jp c, l_e24d		 ; e1f0 da 4d e2 $0a/$0ats
+|
+|+-IF P>9
+||	ld a, $09		 ; e1f3 3e 09 $07ts
+||	ld hl, $7d2c		 ; e1f5 21 2c 7d $0ats
+||	cp (hl)			 ; e1f8 be $07ts
+||	jp nc, l_e24d		 ; e1f9 d2 4d e2 $0a/$0ats
+||
+||  SUBTRACT 1 FROM P
+||	ld a, $01		 ; e1fc 3e 01 $07ts
+||	ld c, a			 ; e1fe 4f $04ts
+||	ld a, ($7d2c)		 ; e1ff 3a 2c 7d $0dts
+||	sub c			 ; e202 91 $04ts
+||	ld ($7d2c), a		 ; e203 32 2c 7d $0dts
+||
+||+-IF P=50
+|||	ld a, $32		 ; e206 3e 32 $07ts
+|||	ld hl, $7d2c		 ; e208 21 2c 7d $0ats
+|||	cp (hl)			 ; e20b be $07ts
+|||	jp nz, l_e24c		 ; e20c c2 4c e2 $0a/$0ats
+|||
+|||+-IF LIVES=0
+||||	ld a, $00		 ; e20f 3e 00 $07ts
+||||	ld hl, $7d1c		 ; e211 21 1c 7d $0ats
+||||	cp (hl)			 ; e214 be $07ts
+||||	jp nz, l_e21f		 ; e215 c2 1f e2 $0a/$0ats
+||||
+||||  ENDGAME
+||||	ld hl, $7d39		 ; e218 21 39 7d $0ats
+||||	ld (hl), h		 ; e21b 74 $07ts
+||||	jp l_e24c		 ; e21c c3 4c e2 $0ats
+|||+-ELSE
+||||l_e21f:
+||||  BEEP 170
+||||    ld a, $aa		 ; e21f 3e aa $07ts
+||||	ld ($7f8c), a		 ; e221 32 8c 7f $0dts
+||||
+||||  LET IMAGE=0
+||||	ld a, $00		 ; e224 3e 00 $07ts
+||||	ld (ix+$06), a		 ; e226 dd 77 06 $13ts
+||||
+||||  LET P=0
+||||	ld a, $00		 ; e229 3e 00 $07ts
+||||	ld ($7d2c), a		 ; e22b 32 2c 7d $0dts
+||||
+||||  LET Y=168
+||||	ld a, $a8		 ; e22e 3e a8 $07ts
+||||	ld (ix+$08), a		 ; e230 dd 77 08 $13ts
+||||
+||||  LET X=O
+||||	ld a, ($7d2b)		 ; e233 3a 2b 7d $0dts
+||||	ld (ix+$09), a		 ; e236 dd 77 09 $13ts
+||||
+||||  MULTIPLY X BY 8
+||||	ld a, (ix+$09)		 ; e239 dd 7e 09 $13ts
+||||	ld d, a			 ; e23c 57 $04ts
+||||	ld a, $08		 ; e23d 3e 08 $07ts
+||||	ld h, a			 ; e23f 67 $04ts
+||||	call $8443		 ; e240 cd 43 84 $11ts
+||||	ld a, l			 ; e243 7d $04ts
+||||	ld (ix+$09), a		 ; e244 dd 77 09 $13ts
+||||
+||||  LET H=50
+||||	ld a, $32		 ; e247 3e 32 $07ts
+||||	ld ($7d24), a		 ; e249 32 24 7d $0dts
+|||+-ENDIF
+||+-ENDIF
+||| l_e24c:
+||| EXIT
+|||     ret			 ; e24c c9 $0ats
+|+-ENDIF
++-|ENDIF
+l_e24d:
+
+;---------------------------------------------------------
+
++-IF P=100
+|	ld a, $64		 ; e24d 3e 64 $07ts
+|	ld hl, $7d2c		 ; e24f 21 2c 7d $0ats
+|	cp (hl)			 ; e252 be $07ts
+|	jp nz, l_e2be		 ; e253 c2 be e2 $0a/$0ats
+|
+|+-IF IMAGE<>18
+||	ld a, $12		 ; e256 3e 12 $07ts
+||	cp (ix+$06)		 ; e258 dd be 06 $13ts
+||	jp z, l_e26b		 ; e25b ca 6b e2 $0a/$0ats
+||
+||    LET IMAGE=18
+||	ld a, $12		 ; e25e 3e 12 $07ts
+||  	ld (ix+$06), a		 ; e260 dd 77 06 $13ts
+||    LET FRAME=0
+||	ld a, $00		 ; e263 3e 00 $07ts
+||	ld (ix+$07), a		 ; e265 dd 77 07 $13ts
+|| 	jp l_e2a9		 ; e268 c3 a9 e2 $0ats
+|+-ELSE
+||l_e26b:
+||  ANIMATE
+||	call $8ca8		 ; e26b cd a8 8c $11ts
+||+-IF FRAME=0
+|||	ld a, $00		 ; e26e 3e 00 $07ts
+|||	cp (ix+$07)		 ; e270 dd be 07 $13ts
+|||	jp nz, l_e2a9		 ; e273 c2 a9 e2 $0a/$0ats
+|||    SUBTRACT 1 FROM LIVES
+|||	ld a, $01		 ; e276 3e 01 $07ts
+|||	ld c, a			 ; e278 4f $04ts
+|||	ld a, ($7d1c)		 ; e279 3a 1c 7d $0dts
+|||	sub c			 ; e27c 91 $04ts
+|||	ld ($7d1c), a		 ; e27d 32 1c 7d $0dts
+|||    LET IMAGE=13
+|||	ld a, $0d		 ; e280 3e 0d $07ts
+|||	ld (ix+$06), a		 ; e282 dd 77 06 $13ts
+|||    LET FRAME=0
+|||	ld a, $00		 ; e285 3e 00 $07ts
+|||	ld (ix+$07), a		 ; e287 dd 77 07 $13ts
+|||    LET P=99
+|||	ld a, $63		 ; e28a 3e 63 $07ts
+|||	ld ($7d2c), a		 ; e28c 32 2c 7d $0dts
+|||    LET LINE=0
+|||	ld a, $00		 ; e28f 3e 00 $07ts
+|||	ld ($7d31), a		 ; e291 32 31 7d $0dts
+|||    LET COLUMN=1
+|||	ld a, $01		 ; e294 3e 01 $07ts
+|||	ld ($7d32), a		 ; e296 32 32 7d $0dts
+|||    ADD LIVES TO COLUMN
+|||	ld a, ($7d1c)		 ; e299 3a 1c 7d $0dts
+|||	ld c, a			 ; e29c 4f $04ts
+|||	ld a, ($7d32)		 ; e29d 3a 32 7d $0dts
+|||	add a, c		 ; e2a0 81 $04ts
+|||	ld ($7d32), a		 ; e2a1 32 32 7d $0dts
+|||    PUTBLOCK 2
+|||	ld a, $02		 ; e2a4 3e 02 $07ts
+|||	call $879e		 ; e2a6 cd 9e 87 $11ts
+||+-ENDIF
+|+-ENDIF
+|l_e2a9:
+|  LET S=40
+|	ld a, $28		 ; e2a9 3e 28 $07ts
+|	ld ($7d2f), a		 ; e2ab 32 2f 7d $0dts
+|  LET T=128
+|	ld a, $80		 ; e2ae 3e 80 $07ts
+|	ld ($7d30), a		 ; e2b0 32 30 7d $0dts
+|  LET SETTINGA=0
+|	ld a, $00		 ; e2b3 3e 00 $07ts
+|	ld (ix+$0b), a		 ; e2b5 dd 77 0b $13ts
+|  LET SETTINGB=0
+|	ld a, $00		 ; e2b8 3e 00 $07ts
+|	ld (ix+$0c), a		 ; e2ba dd 77 0c $13ts
+|  EXIT
+|	ret			 ; e2bd c9 $0ats
++-ENDIF
+l_e2be:
+
+;--------------------------------------------------
+
++-IF C>199
+|	ld a, $c7		 ; e2be 3e c7 $07ts
+|	ld hl, $7d1f		 ; e2c0 21 1f 7d $0ats
+|	cp (hl)			 ; e2c3 be $07ts
+|	jp nc, l_e2db		 ; e2c4 d2 db e2 $0a/$0ats
+|+-IF C<=210
+||	ld a, $d2		 ; e2c7 3e d2 $07ts
+||	ld hl, $7d1f		 ; e2c9 21 1f 7d $0ats
+||	cp (hl)			 ; e2cc be $07ts
+||	jp c, l_e2db		 ; e2cd da db e2 $0a/$0ats
+||    LET IMAGE=13
+||	ld a, $0d		 ; e2d0 3e 0d $07ts
+||	ld (ix+$06), a		 ; e2d2 dd 77 06 $13ts
+||    LET FRAME=0
+||	ld a, $00		 ; e2d5 3e 00 $07ts
+||	ld (ix+$07), a		 ; e2d7 dd 77 07 $13ts
+||    EXIT
+||	ret			 ; e2da c9 $0ats
+|+-ENDIF
++-ENDIF
+l_e2db:
+
+;--------------------------------------------------------
+
++-IF KEY=1
+|       ld a, ($7d06)		 ; e2db 3a 06 7d $0dts
+|	and $01			 ; e2de e6 01 $07ts
+|	jp z, l_e315		 ; e2e0 ca 15 e3 $0a/$0ats
+|  LET DIRECTION=1
+|	ld a, $01		 ; e2e3 3e 01 $07ts
+|	ld (ix+$0a), a		 ; e2e5 dd 77 0a $13ts
+|+-IF SETTINGA<=3
+||	ld a, $03		 ; e2e8 3e 03 $07ts
+||	cp (ix+$0b)		 ; e2ea dd be 0b $13ts
+||	jp c, l_e2fd		 ; e2ed da fd e2 $0a/$0ats
+||  ADD 1 TO SETTINGA
+||	ld a, $01		 ; e2f0 3e 01 $07ts
+||	ld c, a			 ; e2f2 4f $04ts
+||	ld a, (ix+$0b)		 ; e2f3 dd 7e 0b $13ts
+||	add a, c		 ; e2f6 81 $04ts
+||	ld (ix+$0b), a		 ; e2f7 dd 77 0b $13ts
+||	jp l_e30f		 ; e2fa c3 0f e3 $0ats
+|+-ELSE
+||l_e2fd:
+||+-IF SETTINGA>251
+|||     ld a, $fb		 ; e2fd 3e fb $07ts
+|||	cp (ix+$0b)		 ; e2ff dd be 0b $13ts
+|||	jp nc, l_e30f		 ; e302 d2 0f e3 $0a/$0ats
+|||  ADD 1 TO SETTINGA
+|||	ld a, $01		 ; e305 3e 01 $07ts
+|||	ld c, a			 ; e307 4f $04ts
+|||	ld a, (ix+$0b)		 ; e308 dd 7e 0b $13ts
+|||	add a, c		 ; e30b 81 $04ts
+|||	ld (ix+$0b), a		 ; e30c dd 77 0b $13ts
+||+-ENDIF
+|+-ENDIF
+|l_e30f:
+|  ANIMATE
+|	call $8ca8		 ; e30f cd a8 8c $11ts
+|	jp l_e376		 ; e312 c3 76 e3 $0ats
++-ELSE
+|l_e315:
+|+-IF KEY=2
+||	ld a, ($7d06)		 ; e315 3a 06 7d $0dts
+||	and $02			 ; e318 e6 02 $07ts
+||	jp z, l_e34f		 ; e31a ca 4f e3 $0a/$0ats
+||  LET DIRECTION=0
+||	ld a, $00		 ; e31d 3e 00 $07ts
+||	ld (ix+$0a), a		 ; e31f dd 77 0a $13ts
+||+-IF SETTINGA<=4
+|||	ld a, $04		 ; e322 3e 04 $07ts
+|||	cp (ix+$0b)		 ; e324 dd be 0b $13ts
+|||	jp c, l_e337		 ; e327 da 37 e3 $0a/$0ats
+|||  SUBTRACT 1 FROM SETTINGA
+|||	ld a, $01		 ; e32a 3e 01 $07ts
+|||	ld c, a			 ; e32c 4f $04ts
+|||	ld a, (ix+$0b)		 ; e32d dd 7e 0b $13ts
+|||	sub c			 ; e330 91 $04ts
+|||	ld (ix+$0b), a		 ; e331 dd 77 0b $13ts
+|||	jp l_e349		 ; e334 c3 49 e3 $0ats
+||+-ELSE
+|||l_e337:
+|||+-IF SETTINGA>252
+||||	ld a, $fc		 ; e337 3e fc $07ts
+||||	cp (ix+$0b)		 ; e339 dd be 0b $13ts
+||||	jp nc, l_e349		 ; e33c d2 49 e3 $0a/$0ats
+||||  SUBTRACT 1 FROM SETTINGA
+||||	ld a, $01		 ; e33f 3e 01 $07ts
+||||	ld c, a			 ; e341 4f $04ts
+||||	ld a, (ix+$0b)		 ; e342 dd 7e 0b $13ts
+||||	sub c			 ; e345 91 $04ts
+||||	ld (ix+$0b), a		 ; e346 dd 77 0b $13ts
+|||+-ENDIF
+||+-ENDIF
+||l_e349:
+||   ANIMATE
+||	call $8ca8		 ; e349 cd a8 8c $11ts
+||	jp l_e376		 ; e34c c3 76 e3 $0ats
+|+-ELSE
+||l_e34f:
+||+-IF SETTINGA>251 
+|||	Ld a, $fb		 ; e34f 3e fb $07ts
+|||	cp (ix+$0b)		 ; e351 dd be 0b $13ts
+|||	jp nc, l_e364		 ; e354 d2 64 e3 $0a/$0ats
+|||  ADD 1 TO SETTINGA
+|||	ld a, $01		 ; e357 3e 01 $07ts
+|||	ld c, a			 ; e359 4f $04ts
+|||	ld a, (ix+$0b)		 ; e35a dd 7e 0b $13ts
+|||	add a, c		 ; e35d 81 $04ts
+|||	ld (ix+$0b), a		 ; e35e dd 77 0b $13ts
+|||	jp l_e376		 ; e361 c3 76 e3 $0ats
+||+-ELSE
+|||l_e364:
+|||+-IF SETTINGA>0
+||||	ld a, $00		 ; e364 3e 00 $07ts
+||||	cp (ix+$0b)		 ; e366 dd be 0b $13ts
+||||	jp nc, l_e376		 ; e369 d2 76 e3 $0a/$0ats
+||||  SUBTRACT 1 FROM SETTINGA
+||||	ld a, $01		 ; e36c 3e 01 $07ts
+||||	ld c, a			 ; e36e 4f $04ts
+||||	ld a, (ix+$0b)		 ; e36f dd 7e 0b $13ts
+||||	sub c			 ; e372 91 $04ts
+||||	ld (ix+$0b), a		 ; e373 dd 77 0b $13ts
+|||+-ENDIF
+||+-ENDIF
+|+-ENDIF
++-ENDIF
+l_e376:
+
+;--------------------------------------------------------
+
+IF SETTINGA<>0
+	ld a, $00		 ; e376 3e 00 $07ts
+	cp (ix+$0b)		 ; e378 dd be 0b $13ts
+	jp z, $e423		 ; e37b ca 23 e4 $0a/$0ats
+ IF SETTINGA<=4
+	ld a, $04		 ; e37e 3e 04 $07ts
+	cp (ix+$0b)		 ; e380 dd be 0b $13ts
+	jp c, $e3cc		 ; e383 da cc e3 $0a/$0ats
+  LET R=SETTINGA
+	ld a, (ix+$0b)		 ; e386 dd 7e 0b $13ts
+	ld ($7d2e), a		 ; e389 32 2e 7d $0dts
+  DIVIDE R BY 2
+	ld a, ($7d2e)		 ; e38c 3a 2e 7d $0dts
+	ld d, a			 ; e38f 57 $04ts
+	ld a, $02		 ; e390 3e 02 $07ts
+	ld e, a			 ; e392 5f $04ts
+	call $8458		 ; e393 cd 58 84 $11ts
+	ld a, d			 ; e396 7a $04ts
+	ld ($7d2e), a		 ; e397 32 2e 7d $0dts
+
+;=== code was destroyed until here ===
+
+  IF R>0 
+	ld a, $00		 ; e39a 3e 00 $07ts
+	ld hl, $7d2e		 ; e39c 21 2e 7d $0at
+        cp (hl)
+        jp nc,$e3c9
