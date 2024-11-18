@@ -2,20 +2,20 @@
 ; Common AGD engine
 ; Z80 conversion by Kees van Oss 2017
 ;----------------------------------------------
-	.DEFINE asm_code $0600
+	.DEFINE asm_code $2000
 	.include "game.cfg" 
 
 .segment "ZEROPAGE"
 	.include "z80-zp.inc"
 	.include "engine-zp.inc"
 
-
-.org asm_code -6
+.segment "CODE"
+.org asm_code-6
 	.word $ffff
 	.word start_asm
 	.word eind_asm - 1
 
-.segment "CODE"
+
 
 exec:
 start_asm:

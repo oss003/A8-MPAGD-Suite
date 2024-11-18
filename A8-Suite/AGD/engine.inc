@@ -134,7 +134,7 @@
 ; Game starts here
 ;===============================================================
 
-.segment "CODE"
+;.segment "CODE"
 
 	sei
 	ldx #0
