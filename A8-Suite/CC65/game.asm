@@ -13,13 +13,14 @@
 .org asm_code-6
 	.word $ffff
 	.word start_asm
-	.word eind_asm - 1
+	.word eind_asm
 
 
 
 exec:
 start_asm:
 	.include "game.inc"
+	.include "lib.inc"
 	.include "z80.asm"
 eind_asm:
 eop:					; End Of Program

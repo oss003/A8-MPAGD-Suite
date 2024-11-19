@@ -101,7 +101,7 @@
 
 ; System constants
 
-	ScreenAddr  = $8000	; Startaddress video RAM
+	ScreenAddr  = $e400	; Startaddress video RAM
 	ScrSelAddr  = $b000	; Screen selection address
 	KeyRowAddr  = $b000	; PIA key matrix row
 	KeyColAddr  = $b001	; PIA key matrix column
@@ -136,21 +136,7 @@
 
 ;.segment "CODE"
 
-	sei
-	ldx #0
-testloop:
-	lda teststring,x
-	beq endtest
-	sec
-	sbc #32
-	sta $9c40,x
-	inx
-	jmp testloop
-endtest:
-	jmp endtest
-
-teststring:	.byte "HELLO WORLD",0
-
+	jsr systeminit
 
 ; Clear variables
 
