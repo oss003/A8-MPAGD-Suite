@@ -6344,7 +6344,9 @@ evnt08:
 evnt09:
         rts
 evnt10:
-        lda #0		; AT
+        lda #0		; PRINTMODE
+        sta prtmod
+        lda #1		; AT
         sta chary
         lda #1
         sta charx
@@ -6354,40 +6356,21 @@ evnt10:
         jsr dmsg
         lda #0		; PRINTMODE
         sta prtmod
-        lda #3		; AT
+        lda #4		; AT
         sta chary
         lda #1
         sta charx
         lda #1		; PRINT
         jsr dmsg
-        lda clock	; DISPLAY
-        jsr disply
-        lda #2		; PRINT
-        jsr dmsg
-        lda #6		; AT
+        lda #1		; PRINTMODE
+        sta prtmod
+        lda #8		; AT
         sta chary
         lda #1
         sta charx
-        lda #3		; PRINT
+        lda #2		; PRINT
         jsr dmsg
-        lda clock		; DISPLAYCLOCK
-        sta z80_d
-        lda #60
-        sta z80_e
-        jsr idiv
-        pha
-        lda z80_d
-        jsr disply
-        inc charx
-        lda #<displ0
-        sta z80_c
-        lda #>displ0
-        sta z80_b
-        pla
-        jsr num2dd
-        jsr displ1
-        lda #4		; PRINT
-        jsr dmsg
+        jsr prskey	; WAITKEY
         rts
 evnt11:
         rts
@@ -6412,13 +6395,11 @@ evnt20:
         rts
 ptcusr: rts
 msgdat:
-        .byte "CLOCK TEST:",160
-        .byte "CURRENT CLOCK:",160
-        .byte " ",160
-        .byte "CURRENT TIME:",160
-        .byte " ",160
+        .byte "BIGTEXT TEST",186
+        .byte "NORMAL TEXT TEST TO SEE IF TEXT GOES ON ON NEXT LIN",197
+        .byte "BIGTEXT TEST TO SEE IF TEXT GOES ON ON NEXT LIN",197
 nummsg:
-        .byte 5
+        .byte 3
 chgfx:
         .byte 0,0,0,0,0,0,0,0
 bprop:
@@ -6437,7 +6418,7 @@ scdat:
 numsc:
         .byte 1
 nmedat:
-        .byte 0,0,88,128,255
+        .byte 66,0,88,128,255
 NUMOBJ = 1
 objdta:
         .byte 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,160,32,0,160,32

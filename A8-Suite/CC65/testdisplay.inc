@@ -2964,7 +2964,7 @@ gprad:
 	lda tmp
 	clc
 	adc dispy		; get y
-	adc #>ScreenAddr		; add $80
+	ora #>ScreenAddr		; add $80
 	sta scraddr+1		; store hb address
 	rts
 
@@ -6360,16 +6360,105 @@ evnt10:
         sta charx
         lda #1		; PRINT
         jsr dmsg
-        lda clock	; DISPLAY
+        lda #1
+        sta vara
+        lda vara	; DISPLAY
         jsr disply
+        lda #3		; AT
+        sta chary
+        lda #15
+        sta charx
+        lda #12
+        sta vara
+        lda vara	; DISPLAY
+        jsr disply
+        lda #3		; AT
+        sta chary
+        lda #20
+        sta charx
+        lda #123
+        sta vara
+        lda vara	; DISPLAY
+        jsr disply
+        lda #5		; AT
+        sta chary
+        lda #1
+        sta charx
         lda #2		; PRINT
         jsr dmsg
-        lda #6		; AT
+        lda #1
+        sta vara
+        lda #<displ0	; DISPLAYDOUBLE
+        sta z80_c
+        lda #>displ0
+        sta z80_b
+        lda vara
+        jsr num2dd
+        jsr displ1
+        lda #5		; AT
+        sta chary
+        lda #15
+        sta charx
+        lda #12
+        sta vara
+        lda #<displ0	; DISPLAYDOUBLE
+        sta z80_c
+        lda #>displ0
+        sta z80_b
+        lda vara
+        jsr num2dd
+        jsr displ1
+        lda #7		; AT
         sta chary
         lda #1
         sta charx
         lda #3		; PRINT
         jsr dmsg
+        lda #1
+        sta vara
+        lda #<displ0	; DISPLAYTRIPLE
+        sta z80_c
+        lda #>displ0
+        sta z80_b
+        lda vara
+        jsr num2td
+        jsr displ1
+        lda #7		; AT
+        sta chary
+        lda #15
+        sta charx
+        lda #12
+        sta vara
+        lda #<displ0	; DISPLAYTRIPLE
+        sta z80_c
+        lda #>displ0
+        sta z80_b
+        lda vara
+        jsr num2td
+        jsr displ1
+        lda #7		; AT
+        sta chary
+        lda #20
+        sta charx
+        lda #123
+        sta vara
+        lda #<displ0	; DISPLAYTRIPLE
+        sta z80_c
+        lda #>displ0
+        sta z80_b
+        lda vara
+        jsr num2td
+        jsr displ1
+        lda #9		; AT
+        sta chary
+        lda #1
+        sta charx
+        lda #4		; PRINT
+        jsr dmsg
+        lda #9		; AT
+        sta chary
+        lda #11
+        sta charx
         lda clock		; DISPLAYCLOCK
         sta z80_d
         lda #60
@@ -6386,8 +6475,32 @@ evnt10:
         pla
         jsr num2dd
         jsr displ1
-        lda #4		; PRINT
+        lda #5		; PRINT
         jsr dmsg
+        lda #5
+        sta vara
+        lda #11		; AT
+        sta chary
+        lda #1
+        sta charx
+        lda vara	; DISPLAY
+        jsr disply
+        lda #52
+        sta vara
+        lda #12		; AT
+        sta chary
+        lda #1
+        sta charx
+        lda vara	; DISPLAY
+        jsr disply
+        lda #253
+        sta vara
+        lda #13		; AT
+        sta chary
+        lda #1
+        sta charx
+        lda vara	; DISPLAY
+        jsr disply
         rts
 evnt11:
         rts
@@ -6412,13 +6525,14 @@ evnt20:
         rts
 ptcusr: rts
 msgdat:
-        .byte "CLOCK TEST:",160
-        .byte "CURRENT CLOCK:",160
-        .byte " ",160
-        .byte "CURRENT TIME:",160
+        .byte "TEST DISPLAY:",160
+        .byte "NORMAL:",160
+        .byte "DOUBLE:",160
+        .byte "TRIPLE:",160
+        .byte "SECONDS:   ",186
         .byte " ",160
 nummsg:
-        .byte 5
+        .byte 6
 chgfx:
         .byte 0,0,0,0,0,0,0,0
 bprop:

@@ -6315,7 +6315,7 @@ codcol:	.byte $00,$55,$aa,$ff
 WINDOWTOP = 1
 WINDOWLFT = 1
 WINDOWHGT = 22
-WINDOWWID = 30 ;a
+WINDOWWID = 30 ;
 MAPWID = 3
         .byte 255,255,255
 mapdat:
@@ -6324,7 +6324,162 @@ mapdat:
 stmap:  .byte 1
 
 evnt00:
-        rts
+        lda #0
+        sta varm
+        lda joyval	; KEY
+        and #8
+        beq :+
+        jmp a00078
+:
+        lda #1
+        sta varm
+        jsr cangu	; CANGOUP
+        beq :+
+        jmp a00078
+:
+        ldy #8 		; SPRITEUP
+        lda (z80_ix),y
+        sec
+        sbc #2
+        sta (z80_ix),y
+a00078: lda joyval	; KEY
+        and #4
+        beq :+
+        jmp a00147
+:
+        lda #1
+        sta varm
+        jsr cangd	; CANGODOWN
+        beq :+
+        jmp a00147
+:
+        ldy #8 		; SPRITEDOWN
+        lda (z80_ix),y
+        clc
+        adc #2
+        sta (z80_ix),y
+a00147: lda joyval	; KEY
+        and #2
+        beq :+
+        jmp a00216
+:
+        lda #1
+        sta varm
+        jsr cangl	; CANGOLEFT
+        beq :+
+        jmp a00216
+:
+        ldy #9 		; SPRITELEFT
+        lda (z80_ix),y
+        sec
+        sbc #2
+        sta (z80_ix),y
+a00216: lda joyval	; KEY
+        and #1
+        beq :+
+        jmp a00286
+:
+        lda #1
+        sta varm
+        jsr cangr	; CANGORIGHT
+        beq :+
+        jmp a00286
+:
+        ldy #9 		; SPRITERIGHT
+        lda (z80_ix),y
+        clc
+        adc #2
+        sta (z80_ix),y
+a00286: lda #0
+        cmp varm
+        bcc *+5
+        jmp a00314
+        lda #0		; ANIMATE
+        jsr animsp
+a00314: ; SPRITEINK command
+        jsr skobj	; DETECTOBJECT
+        sta varobj
+        lda #0
+        cmp varobj
+        beq *+5
+        jmp a00412
+        lda varobj	; GET
+        jsr getob
+        lda #25	; EXPLODE
+        jsr explod
+        lda #16		; AT
+        sta chary
+        lda #7
+        sta charx
+        lda #0 		; PUTBLOCK
+        jsr pbpattr
+        lda #1
+        sta vara
+a00412: lda #1
+        cmp varobj
+        beq *+5
+        jmp a00489
+        lda varobj	; GET
+        jsr getob
+        lda #25	; EXPLODE
+        jsr explod
+        lda #16		; AT
+        sta chary
+        lda #13
+        sta charx
+        lda #0 		; PUTBLOCK
+        jsr pbpattr
+        lda #1
+        sta varb
+a00489: lda #2
+        cmp varobj
+        beq *+5
+        jmp a00567
+        lda varobj	; GET
+        jsr getob
+        lda #25	; EXPLODE
+        jsr explod
+        lda #16		; AT
+        sta chary
+        lda #19
+        sta charx
+        lda #0 		; PUTBLOCK
+        jsr pbpattr
+        lda #1
+        sta varc
+a00567: lda #3
+        cmp varobj
+        beq *+5
+        jmp a00645
+        lda varobj	; GET
+        jsr getob
+        lda #25	; EXPLODE
+        jsr explod
+        lda #16		; AT
+        sta chary
+        lda #25
+        sta charx
+        lda #0 		; PUTBLOCK
+        jsr pbpattr
+        lda #1
+        sta vard
+a00645: lda #1
+        cmp vare
+        beq *+5
+        jmp a00718
+        lda #DEADLY	; DEADLY
+        sta z80_b
+        jsr tded
+        cmp z80_b
+        beq :+
+        jmp a00718
+:
+        lda #255	; REMOVE
+        ldy #5
+        sta (z80_ix),y
+        lda #25	; EXPLODE
+        jsr explod
+a00718: rts
 evnt01:
         rts
 evnt02:
@@ -6344,59 +6499,182 @@ evnt08:
 evnt09:
         rts
 evnt10:
-        lda #0		; AT
+        lda vart
+        clc
+        adc #1
+        sta vart
+        lda #5
+        cmp vart
+        beq *+5
+        jmp k00626
+        lda #2
+        cmp varf
+        beq *+5
+        jmp k00299
+        lda #0
+        cmp vara
+        beq *+5
+        jmp k00097
+        lda #16		; AT
         sta chary
-        lda #1
+        lda #7
         sta charx
-        lda #1		; PRINTMODE
-        sta prtmod
-        lda #0		; PRINT
-        jsr dmsg
-        lda #0		; PRINTMODE
-        sta prtmod
-        lda #3		; AT
+        lda #3 		; PUTBLOCK
+        jsr pbpattr
+k00097: lda #0
+        cmp varb
+        beq *+5
+        jmp k00145
+        lda #16		; AT
         sta chary
-        lda #1
+        lda #13
         sta charx
-        lda #1		; PRINT
-        jsr dmsg
-        lda clock	; DISPLAY
-        jsr disply
-        lda #2		; PRINT
-        jsr dmsg
-        lda #6		; AT
+        lda #3 		; PUTBLOCK
+        jsr pbpattr
+k00145: lda #0
+        cmp varc
+        beq *+5
+        jmp k00192
+        lda #16		; AT
         sta chary
-        lda #1
+        lda #19
         sta charx
-        lda #3		; PRINT
-        jsr dmsg
-        lda clock		; DISPLAYCLOCK
-        sta z80_d
-        lda #60
-        sta z80_e
-        jsr idiv
-        pha
-        lda z80_d
-        jsr disply
-        inc charx
-        lda #<displ0
-        sta z80_c
-        lda #>displ0
-        sta z80_b
-        pla
-        jsr num2dd
-        jsr displ1
-        lda #4		; PRINT
-        jsr dmsg
-        rts
+        lda #3 		; PUTBLOCK
+        jsr pbpattr
+k00192: lda #0
+        cmp vard
+        beq *+5
+        jmp k00239
+        lda #16		; AT
+        sta chary
+        lda #25
+        sta charx
+        lda #3 		; PUTBLOCK
+        jsr pbpattr
+k00239: lda #1
+        cmp vare
+        beq *+5
+        jmp k00286
+        lda #16		; AT
+        sta chary
+        lda #16
+        sta charx
+        lda #0 		; PUTBLOCK
+        jsr pbpattr
+k00286: lda #3
+        sta varf
+        jmp k00543
+k00299: lda #0
+        cmp vara
+        beq *+5
+        jmp k00346
+        lda #16		; AT
+        sta chary
+        lda #7
+        sta charx
+        lda #2 		; PUTBLOCK
+        jsr pbpattr
+k00346: lda #0
+        cmp varb
+        beq *+5
+        jmp k00393
+        lda #16		; AT
+        sta chary
+        lda #13
+        sta charx
+        lda #2 		; PUTBLOCK
+        jsr pbpattr
+k00393: lda #0
+        cmp varc
+        beq *+5
+        jmp k00441
+        lda #16		; AT
+        sta chary
+        lda #19
+        sta charx
+        lda #2 		; PUTBLOCK
+        jsr pbpattr
+k00441: lda #0
+        cmp vard
+        beq *+5
+        jmp k00488
+        lda #16		; AT
+        sta chary
+        lda #25
+        sta charx
+        lda #2 		; PUTBLOCK
+        jsr pbpattr
+k00488: lda #1
+        cmp vare
+        beq *+5
+        jmp k00535
+        lda #16		; AT
+        sta chary
+        lda #16
+        sta charx
+        lda #5 		; PUTBLOCK
+        jsr pbpattr
+k00535: lda #2
+        sta varf
+k00543: lda #1
+        cmp vara
+        beq *+5
+        jmp k00618
+        lda #1
+        cmp varb
+        beq *+5
+        jmp k00618
+        lda #1
+        cmp varc
+        beq *+5
+        jmp k00618
+        lda #1
+        cmp vard
+        beq *+5
+        jmp k00618
+        lda #1
+        sta vare
+k00618: lda #0
+        sta vart
+k00626: rts
 evnt11:
         rts
 evnt12:
-        jsr cls		; CLS
         rts
 evnt13:
         rts
 evnt14:
+        jsr cls		; CLS
+        lda #0		; PRINTMODE
+        sta prtmod
+        lda #0
+        sta chary
+        lda #9
+        sta charx
+        lda #1		; PRINT
+        jsr dmsg
+        lda #23
+        sta chary
+        lda #5
+        sta charx
+        lda #2		; PRINT
+        jsr dmsg
+        lda #2
+        sta varf
+        lda #0
+        sta vart
+        lda #0
+        sta vara
+        lda #0
+        sta varb
+        lda #0
+        sta varc
+        lda #0
+        sta vard
+        lda #0
+        sta vare
+        lda #1
+        sta numlif
         rts
 evnt15:
         rts
@@ -6412,35 +6690,64 @@ evnt20:
         rts
 ptcusr: rts
 msgdat:
-        .byte "CLOCK TEST:",160
-        .byte "CURRENT CLOCK:",160
-        .byte " ",160
-        .byte "CURRENT TIME:",160
-        .byte " ",160
+        .byte "EXPLOSION DEM",207
+        .byte "EXPLOSION DEM",207
+        .byte "HIT OBJECT TO EXPLOD",197
 nummsg:
-        .byte 5
+        .byte 3
 chgfx:
-        .byte 0,0,0,0,0,0,0,0
+        .byte 255,255,255,255,255,255,255,255
+        .byte 1,1,1,255,16,16,16,255
+        .byte 247,239,215,239,211,215,231,247
+        .byte 239,247,235,247,203,235,231,239
+        .byte 255,247,247,247,227,193,193,128
+        .byte 247,227,193,128,227,227,227,227
 bprop:
         .byte 0
+        .byte 2
+        .byte 0
+        .byte 0
+        .byte 5
+        .byte 0
 sprgfx:
-        .byte 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-        .byte 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-        .byte 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-        .byte 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+        .byte 17,136,115,206,55,236,21,168,42,80,125,180,107,222,236,54,206,119,143,243,135,241,13,185,28,28,24,56,12,126,126,0
+        .byte 4,98,156,243,13,251,5,106,10,148,31,109,154,247,187,13,243,157,227,252,97,252,67,110,7,7,6,14,131,31,31,128
+        .byte 129,24,231,60,195,126,129,90,2,165,71,219,230,189,110,195,124,231,56,255,24,127,144,219,193,193,129,131,224,199,7,224
+        .byte 32,70,57,207,176,223,160,86,64,169,209,246,121,175,219,176,223,57,206,63,198,31,228,54,112,112,224,96,248,49,1,248
+
+        .byte 17,136,115,206,55,236,21,168,10,84,45,190,123,214,108,55,238,115,223,241,187,225,185,176,12,56,126,24,0,48,0,126
+        .byte 4,98,156,243,13,251,5,106,2,149,139,111,158,245,219,13,251,156,119,252,110,248,46,108,3,14,31,134,0,12,128,31
+        .byte 129,24,231,60,195,126,129,90,64,165,226,219,103,189,118,195,62,231,29,255,27,190,11,155,128,195,135,225,0,3,224,7
+        .byte 32,70,57,207,176,223,160,86,80,41,248,182,89,239,221,176,207,185,199,127,134,239,194,230,224,48,97,248,192,0,248,1
+
+        .byte 17,136,115,206,55,236,21,168,10,84,45,190,123,214,108,55,238,115,207,241,143,225,157,176,56,56,28,24,126,48,0,126
+        .byte 4,98,156,243,13,251,5,106,2,149,139,111,158,245,219,13,251,156,115,252,99,248,39,108,14,14,7,6,31,140,128,31
+        .byte 129,24,231,60,195,126,129,90,64,165,226,219,103,189,118,195,62,231,28,255,24,254,9,219,131,131,129,193,7,227,224,7
+        .byte 32,70,57,207,176,223,160,86,80,41,248,182,89,239,221,176,207,185,199,63,134,63,194,118,224,224,96,112,193,248,248,1
+
+        .byte 17,136,115,206,55,236,21,168,42,80,125,180,107,222,236,54,206,119,143,251,135,221,13,157,28,48,24,126,12,0,126,0
+        .byte 4,98,156,243,13,251,5,106,10,148,31,109,154,247,187,13,243,157,227,254,97,247,67,103,7,12,134,31,3,0,31,128
+        .byte 129,24,231,60,195,126,129,90,2,165,71,219,230,189,110,195,124,231,184,255,216,125,208,217,1,195,225,135,0,192,7,224
+        .byte 32,70,57,207,176,223,160,86,64,169,209,246,121,175,219,176,223,57,238,63,118,31,116,54,192,112,248,97,0,48,1,248
 
 frmlst:
-        .byte 0,1,1,0
+        .byte 0,4,4,0
 scdat:
-        .word 9
-        .byte 255,0,0,255,0,0,255,0,148
+        .word 114
+        .byte 255,1,31,255,0,28,1,1,255,0,28,1,1,255,0,28,1,1,255,0,28,1,1,255,0,28,1,1,255,0,28,1,1
+        .byte 255,0,28,1,1,255,0,28,1,1,255,0,28,1,1,255,0,28,1,1,255,0,28,1,1,255,0,28,1,1,255,0,14
+        .byte 4,255,0,13,1,1,0,0,0,255,1,22,0,0,0,1,1,255,0,28,1,1,255,0,28,1,1,255,0,28,1,1,255,0,28
+        .byte 1,1,255,0,28,1,1,255,0,28,255,1,31
 numsc:
         .byte 1
 nmedat:
         .byte 0,0,88,128,255
-NUMOBJ = 1
+NUMOBJ = 4
 objdta:
-        .byte 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,160,32,0,160,32
+        .byte 0,192,1,0,15,224,31,240,63,248,55,248,111,252,111,252,111,252,111,252,111,252,111,252,55,248,63,248,31,240,15,224,0,136,51,0,136,51
+        .byte 0,192,1,0,15,224,31,240,63,248,55,248,111,252,111,252,111,252,111,252,111,252,111,252,55,248,63,248,31,240,15,224,0,136,99,0,136,99
+        .byte 0,192,1,0,15,224,31,240,63,248,55,248,111,252,111,252,111,252,111,252,111,252,111,252,55,248,63,248,31,240,15,224,0,136,147,0,136,147
+        .byte 0,192,1,0,15,224,31,240,63,248,55,248,111,252,111,252,111,252,111,252,111,252,111,252,55,248,63,248,31,240,15,224,0,136,195,0,136,195
 font:
         .byte 0,0,0,0,0,0,0,0
         .byte 0,48,48,48,48,0,48,0

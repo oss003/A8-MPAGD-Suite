@@ -101,7 +101,6 @@
 
 ; System constants
 
-	ScreenAddr  = $e400	; Startaddress video RAM
 	ScrSelAddr  = $b000	; Screen selection address
 	KeyRowAddr  = $b000	; PIA key matrix row
 	KeyColAddr  = $b001	; PIA key matrix column
@@ -110,6 +109,12 @@
 	DatReg      = $b401	; Data register AtoMMC 
 	Timer2_Low  = $b808	; Timer 2 low byte
 	Timer2_High = $b809	; Timer 2 high byte
+	ScreenAddr  = $e400	; Startaddress video RAM
+
+	MAP 	    = $dd00		; properties map buffer (3x256 bytes)
+	SCADTB_lb   = MAP+3*256		; screen address table lo-byte (256 bytes)
+	SCADTB_hb   = SCADTB_lb+256	; screen address table hi-byte (256 bytes)
+	SHRAPN      = SCADTB_hb+256	; shrapnel table (55x6 bytes)
 
 ; System calls
 
@@ -140,17 +145,16 @@
 
 ; Clear variables
 
-	lda #0
-	ldx #0
-clrloop:
-	sta 0,x
-	inx
-	bne clrloop
+;	lda #0
+;	ldx #0
+;clrloop:
+;	sta 0,x
+;	inx
+;	bne clrloop
 
+gameloop:
 	jsr game	 	; start the game.
-	lda #12			; Clear screen + exit to Basic
-	jsr OSWRCH
-	jmp $C2B2		; Back to Basic
+	jmp gameloop		; Start again
 
 ; Definition of variables
 ; Make sure pointers are arranged in the same order as the data itself.
@@ -737,6 +741,7 @@ iniob0:
 ;-------------------------------------------------------------
 
 vsync:
+  rts
 	pha
 	tya
 	pha
@@ -841,13 +846,13 @@ rpblc1:
 ;----------------------------------------------------------------------
 ; Clear screen routine.
 ;
-; Fill screenmem $8000-$97ff with ScrFillByte
+; Fill screenmem $e400-$fbff with ScrFillByte
 ;----------------------------------------------------------------------
 
 cls:
 	lda #>ScreenAddr		; screen address.
 	sta clsloop+2
-	lda andeor+1
+	lda #ScrFillByte
 .if iflag
 	eor #$ff
 .endif
@@ -2959,7 +2964,7 @@ gprad:
 	lda tmp
 	clc
 	adc dispy		; get y
-	ora #$80		; add $80
+	adc #>ScreenAddr		; add $80
 	sta scraddr+1		; store hb address
 	rts
 
@@ -4140,6 +4145,8 @@ joyjo2:
 ; Set PORTB direction
 
 joyinit:
+	rts
+
 	lda #$ff   		; Write value to latch, bits 0-7 input
 	sta DatReg
 	jsr interwritedelay
@@ -6275,22 +6282,6 @@ roomtb:	.byte 7                      ; start room map offset.
 
 user:
 	.include "user.inc"
-
-;----------------------------------------------------
-; Missing vars 
-;----------------------------------------------------
-
-MAP 		= $9800			; properties map buffer (3x256 bytes)
-SCADTB_lb 	= MAP+3*256		; screen address table lo-byte (256 bytes)
-SCADTB_hb 	= SCADTB_lb+256		; screen address table hi-byte (256 bytes)
-SHRAPN 		= SCADTB_hb+256		; shrapnel table (55x6 bytes)
-
-;Fontpointer:	.byte 0,0
-;TmpAddr:	.byte 0,0
-
-;loopa:		.byte 0
-;loopb:		.byte 0
-;loopc:		.byte 0
 
 setfgcol:
 	and #3

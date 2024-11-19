@@ -1,0 +1,13 @@
+Press F8 to enter debugger
+.dumpdlist 		dumps the displaylist
+f e400 L1800 0		fills $e400-$fc00 with 0
+
+--------------------------------------------
+MEMORY MAP
+--------------------------------------------
+		Atom:		Atari 800:
+MAP		$9800-$9aff	$dd00-$dfff
+SCADTB_lb	$9b00-$9bff	$e000-$e0ff
+SCADTB_hb	$9c00-$9cff	$e100-$e1ff
+SHRAPN		$9d00-$9e4a	$e200-$e34a
+Screen		$8000-$97ff	$e400-$fbff

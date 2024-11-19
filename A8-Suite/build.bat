@@ -21,7 +21,7 @@ rem del %1.*
 rem Start emulator
  echo Starting emulator with %1.bin
  cd ..\altirra
- altirra64 /defprofile:800 /pal /memsize:64K /nobasic /run tapes\%1.bin
+ altirra64 /defprofile:xl /pal /memsize:64K /nobasic /run tapes\%1.bin
  echo Quiting emulator
  cd ..
  goto end

@@ -2964,7 +2964,7 @@ gprad:
 	lda tmp
 	clc
 	adc dispy		; get y
-	adc #>ScreenAddr		; add $80
+	ora #>ScreenAddr		; add $80
 	sta scraddr+1		; store hb address
 	rts
 
@@ -6315,18 +6315,116 @@ codcol:	.byte $00,$55,$aa,$ff
 WINDOWTOP = 1
 WINDOWLFT = 1
 WINDOWHGT = 22
-WINDOWWID = 30 ;a
+WINDOWWID = 22 ;a
 MAPWID = 3
         .byte 255,255,255
 mapdat:
         .byte 255,0,255
         .byte 255,255,255
-stmap:  .byte 1
+stmap:  .byte 2
 
 evnt00:
-        rts
+        lda #1		; AT
+        sta chary
+        lda #18
+        sta charx
+        lda #<displ0	; DISPLAYTRIPLE
+        sta z80_c
+        lda #>displ0
+        sta z80_b
+        ldy #8
+        lda (z80_ix),y
+        jsr num2td
+        jsr displ1
+        lda #2		; AT
+        sta chary
+        lda #18
+        sta charx
+        lda #<displ0	; DISPLAYTRIPLE
+        sta z80_c
+        lda #>displ0
+        sta z80_b
+        ldy #9
+        lda (z80_ix),y
+        jsr num2td
+        jsr displ1
+        jsr skobj	; DETECTOBJECT
+        sta varobj
+        lda #3		; AT
+        sta chary
+        lda #0
+        sta charx
+        lda #255
+        cmp varobj
+        bne *+5
+        jmp a00187
+        lda #1		; PRINT
+        jsr dmsg
+        jmp a00197
+a00187: lda #2		; PRINT
+        jsr dmsg
+a00197: lda joyval	; KEY
+        and #1
+        beq :+
+        jmp a00253
+:
+        ldy #9 		; SPRITERIGHT
+        lda (z80_ix),y
+        clc
+        adc #2
+        sta (z80_ix),y
+        lda #0		; ANIMATE
+        jsr animsp
+a00253: lda joyval	; KEY
+        and #2
+        beq :+
+        jmp a00309
+:
+        ldy #9 		; SPRITELEFT
+        lda (z80_ix),y
+        sec
+        sbc #2
+        sta (z80_ix),y
+        lda #0		; ANIMATE
+        jsr animsp
+a00309: lda joyval	; KEY
+        and #8
+        beq :+
+        jmp a00354
+:
+        ldy #8 		; SPRITEUP
+        lda (z80_ix),y
+        sec
+        sbc #2
+        sta (z80_ix),y
+a00354: lda joyval	; KEY
+        and #4
+        beq :+
+        jmp a00398
+:
+        ldy #8 		; SPRITEDOWN
+        lda (z80_ix),y
+        clc
+        adc #2
+        sta (z80_ix),y
+a00398: rts
 evnt01:
-        rts
+        lda #1		; AT
+        sta chary
+        lda #0
+        sta charx
+        lda #0 	; COLLISION
+        sta z80_b
+        jsr sktyp
+        bcs :+
+        jmp b00060
+:
+        lda #3		; PRINT
+        jsr dmsg
+        jmp b00070
+b00060: lda #4		; PRINT
+        jsr dmsg
+b00070: rts
 evnt02:
         rts
 evnt03:
@@ -6344,50 +6442,6 @@ evnt08:
 evnt09:
         rts
 evnt10:
-        lda #0		; AT
-        sta chary
-        lda #1
-        sta charx
-        lda #1		; PRINTMODE
-        sta prtmod
-        lda #0		; PRINT
-        jsr dmsg
-        lda #0		; PRINTMODE
-        sta prtmod
-        lda #3		; AT
-        sta chary
-        lda #1
-        sta charx
-        lda #1		; PRINT
-        jsr dmsg
-        lda clock	; DISPLAY
-        jsr disply
-        lda #2		; PRINT
-        jsr dmsg
-        lda #6		; AT
-        sta chary
-        lda #1
-        sta charx
-        lda #3		; PRINT
-        jsr dmsg
-        lda clock		; DISPLAYCLOCK
-        sta z80_d
-        lda #60
-        sta z80_e
-        jsr idiv
-        pha
-        lda z80_d
-        jsr disply
-        inc charx
-        lda #<displ0
-        sta z80_c
-        lda #>displ0
-        sta z80_b
-        pla
-        jsr num2dd
-        jsr displ1
-        lda #4		; PRINT
-        jsr dmsg
         rts
 evnt11:
         rts
@@ -6395,8 +6449,60 @@ evnt12:
         jsr cls		; CLS
         rts
 evnt13:
+        lda #3
+        sta numlif
+        lda #0		; AT
+        sta chary
+        lda #0
+        sta charx
+        lda #5		; PRINT
+        jsr dmsg
+        lda #0		; AT
+        sta chary
+        lda #15
+        sta charx
+        lda #6		; PRINT
+        jsr dmsg
+        lda #0		; AT
+        sta chary
+        lda #25
+        sta charx
+        lda #7		; PRINT
+        jsr dmsg
+        lda #1		; AT
+        sta chary
+        lda #29
+        sta charx
+        lda #8		; PRINT
+        jsr dmsg
+        lda #2		; AT
+        sta chary
+        lda #28
+        sta charx
+        lda #9		; PRINT
+        jsr dmsg
+        lda #4		; AT
+        sta chary
+        lda #25
+        sta charx
+        lda #10		; PRINT
+        jsr dmsg
+        lda #5		; AT
+        sta chary
+        lda #28
+        sta charx
+        lda #11		; PRINT
+        jsr dmsg
+        lda #6		; AT
+        sta chary
+        lda #29
+        sta charx
+        lda #12		; PRINT
+        jsr dmsg
         rts
 evnt14:
+        lda #25
+        sta charx
         rts
 evnt15:
         rts
@@ -6412,35 +6518,54 @@ evnt20:
         rts
 ptcusr: rts
 msgdat:
-        .byte "CLOCK TEST:",160
-        .byte "CURRENT CLOCK:",160
-        .byte " ",160
-        .byte "CURRENT TIME:",160
-        .byte " ",160
+        .byte " ",141
+        .byte "OBJEC",212
+        .byte "     ",160
+        .byte "SPRIT",197
+        .byte "     ",160
+        .byte "COLLISIO",206
+        .byte "PLAYE",210
+        .byte "SPRIT",197
+        .byte "8",176
+        .byte "12",176
+        .byte "OBJEC",212
+        .byte "14",176
+        .byte "4",184
 nummsg:
-        .byte 5
+        .byte 13
 chgfx:
         .byte 0,0,0,0,0,0,0,0
 bprop:
         .byte 0
 sprgfx:
-        .byte 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-        .byte 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-        .byte 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-        .byte 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+        .byte 255,255,192,1,192,1,160,1,144,1,144,1,136,1,132,1,132,1,130,1,129,1,129,1,128,129,128,129,128,65,128,33
+        .byte 255,255,112,0,112,0,104,0,100,0,100,0,98,0,97,0,97,0,96,128,96,64,96,64,96,32,96,32,96,16,96,8
+        .byte 255,255,28,0,28,0,26,0,25,0,25,0,24,128,24,64,24,64,24,32,24,16,24,16,24,8,24,8,24,4,24,2
+        .byte 255,255,7,0,7,0,6,128,6,64,6,64,6,32,6,16,6,16,6,8,6,4,6,4,6,2,6,2,6,1,134,0
+
+        .byte 128,33,128,17,128,9,128,9,128,5,128,3,128,3,255,255,255,255,128,3,128,3,128,5,128,9,128,9,128,17,128,33
+        .byte 96,8,96,4,96,2,96,2,96,1,224,0,224,0,255,255,255,255,224,0,224,0,96,1,96,2,96,2,96,4,96,8
+        .byte 24,2,24,1,152,0,152,0,88,0,56,0,56,0,255,255,255,255,56,0,56,0,88,0,152,0,152,0,24,1,24,2
+        .byte 134,0,70,0,38,0,38,0,22,0,14,0,14,0,255,255,255,255,14,0,14,0,22,0,38,0,38,0,70,0,134,0
+
+        .byte 255,255,128,1,128,1,128,1,128,1,128,1,128,1,128,1,128,1,128,1,128,1,128,1,128,1,128,1,128,1,128,1
+        .byte 255,255,96,0,96,0,96,0,96,0,96,0,96,0,96,0,96,0,96,0,96,0,96,0,96,0,96,0,96,0,96,0
+        .byte 255,255,24,0,24,0,24,0,24,0,24,0,24,0,24,0,24,0,24,0,24,0,24,0,24,0,24,0,24,0,24,0
+        .byte 255,255,6,0,6,0,6,0,6,0,6,0,6,0,6,0,6,0,6,0,6,0,6,0,6,0,6,0,6,0,6,0
 
 frmlst:
-        .byte 0,1,1,0
+        .byte 0,2
+        .byte 2,1,3,0
 scdat:
-        .word 9
-        .byte 255,0,0,255,0,0,255,0,148
+        .word 6
+        .byte 255,0,0,255,0,228
 numsc:
         .byte 1
 nmedat:
-        .byte 0,0,88,128,255
+        .byte 0,0,80,80,1,1,80,120,255
 NUMOBJ = 1
 objdta:
-        .byte 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,160,32,0,160,32
+        .byte 85,170,85,170,85,170,85,170,85,170,85,170,85,170,85,170,170,85,170,85,170,85,170,85,170,85,170,85,170,85,170,85,0,140,48,0,140,48
 font:
         .byte 0,0,0,0,0,0,0,0
         .byte 0,48,48,48,48,0,48,0
@@ -6540,4 +6665,4 @@ font:
         .byte 124,198,187,227,227,187,198,124
 jtab:
         .byte 99
-keys:   .byte 53,21,147,34,144,4,20,33,17,1,146
+keys:   .byte 20,36,99,4,144,21,53,33,17,1,146
