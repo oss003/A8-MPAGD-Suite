@@ -4050,11 +4050,11 @@ joykey:
 	lda contrl 		; control flag.
 	cmp #1
 	bne :+
-	jmp joyjoy 		; read keyboard joystick
+	jmp joy1 		; read keyboard joystick
 :
 	cmp #2
 	bne :+
-	jmp joysin 		; read MMC joystick.
+	jmp joy2 		; read MMC joystick.
 :
 ; Keyboard controls.
 
@@ -4069,87 +4069,9 @@ joyke0:
 
 	dey		 	; next key.
 	bpl joyke0 		; repeat for all keys.
-	jmp joyjo1 		; store the value.
-
-; Keyboard joystick controls.
-
-joyjoy:
-	lda #0		 	; zero reading.
-	sta z80_e
-
-	ldy #6	 		; address of last key.
-joyjo3:
-	lda jkeys,y 		; get key from table.
-	jsr ktest		; being pressed?
-	rol z80_e 		; rotate into reading.
-
-	dey		 	; next key.
-	bpl joyjo3 		; repeat for all keys.
-joyjo1:
 	lda z80_e 		; copy e register to accumulator.
-joyjo2:
 	sta joyval		; remember value.
 	rts
-
-
-; AtoMMC joystick controls.
-
-; Set PORTB direction
-
-joyinit:
-	rts
-
-	lda #$ff   		; Write value to latch, bits 0-7 input
-	sta DatReg
-	jsr interwritedelay
-	lda #$a1   		; Write direction in latch to PORTB
-	sta CmdReg
-
-wait_until_not_busy:
-	lda CmdReg
-	bmi wait_until_not_busy
-	rts
-
-; Get PORTB value
-
-joysin:
-	lda #$a2   		; Read value PORTB in latch
-	sta CmdReg
-	jsr interwritedelay
-
-	lda DatReg		; Read joystick status
-	and #$7f
-	sta joyval
-	sta $f0
-
-	lda keys+5		; check fire2
-	jsr ktest
-	bcs :+
-	lda joyval
-	and #$df
-	sta joyval
-:
-	lda keys+6		; check fire3
-	jsr ktest
-	bcs :+
-	lda joyval
-	and #$bf
-	sta joyval
-:
-	rts
-
-; Short delay
-; Enough to intersperse 2 writes to the FATPIC.
-
-interwritedelay:
-	lda  #8
-	sec
-loop:
-	sbc  #1
-	bne  loop
-	rts
-
-;tmp_byte:   .byte 0
 
 ;---------------------------------------------------------------
 ; Display message.
