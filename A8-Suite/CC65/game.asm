@@ -15,9 +15,6 @@
 	.word start_asm
 	.word eind_asm
 
-
-
-exec:
 start_asm:
 	.include "game.inc"
 	.include "lib.inc"
@@ -25,4 +22,4 @@ start_asm:
 eind_asm:
 eop:					; End Of Program
 
-.out .sprintf("Gamecode size = %d bytes, free space = %d bytes", (eind_asm - start_asm),(32000-eind_asm + start_asm))
+.out .sprintf("Gamecode size = %d bytes, free space = %d bytes", (eind_asm - start_asm),(49152-eind_asm + start_asm))

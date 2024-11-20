@@ -4,21 +4,21 @@ DEFINEWINDOW    1 2 21 28
 DEFINECONTROLS  'Q' 'A' 'O' 'P' ' ' 'H' 'F'
 
 DEFINEMESSAGES
-    "-GAME OVER-"
-    "THE LIFT"
-    "USE UP AND   DOWN"
-    "TIME"
-    "SPACE TO   EXIT"
-    "code zero"
-    "SELECT  CONTROL"
-    "1 KEYBOARD"
-    "2 KEMPSTON JOYSTICK"
-    " PAUL JENKINSON 2017"
-    "WITH THE VIRUS UPLOADED    YOUR MISSION IS COMPLETE"
-    "*WELL DONE*"
-    "OUT OF TIME"
-    "code"
-    "zero"
+    "-GAME OVER-"
+    "THE LIFT"
+    "USE UP AND   DOWN"
+    "TIME"
+    "SPACE TO   EXIT"
+    "code zero"
+    "SELECT  CONTROL"
+    "1 KEYBOARD"
+    "2 KEMPSTON JOYSTICK"
+    " PAUL JENKINSON 2017"
+    "WITH THE VIRUS UPLOADED    YOUR MISSION IS COMPLETE"
+    "*WELL DONE*"
+    "OUT OF TIME"
+    "code"
+    "zero"
 
 DEFINEFONT      0 0 0 0 0 0 0 0
                 0 48 48 48 48 0 48 0

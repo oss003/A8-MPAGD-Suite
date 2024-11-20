@@ -1,0 +1,26 @@
+Hardware addresses keyboard matrix:
+	$d209	KBCODE	Keyboard code register
+	     -> b0-b5=Keyboard scan code
+	     ->	b6=Shift key state
+	     -> b7=Control key state
+
+	$d02f	SKSTAT	Keyboard status (255 = no key pressed)
+		b0=1
+		b1=Serial input busy
+	     -> b2=Key depressed state
+		b3=Keyboard SHIFT state
+		b4=Serial input data line state
+		b5=Serial input overrun error
+		b6=Keyboard overrun error
+		b7=Serial input frame error
+
+Keyboard codes:
+		0	1	2	3	4	5	6	7
+	$00:	L	J	;:	F1	F2	K	+\	*^
+	$08:	O		P	U	Ret	I	-_	=|
+	$10:	V	Help	C	F3	F4	B	X	Z
+	$18:	4$		3#	6&	Esc	5%	2"	1!
+	$20:	,[	Space	.]	N		M	/?	Invert
+	$28:	R		E	Y	Tab	T	W	Q
+	$30:	9(		0)	7'	Bksp	8@	<	>
+	$38:	F	H	D		Caps	G	S	A
