@@ -22,4 +22,4 @@ start_asm:
 eind_asm:
 eop:					; End Of Program
 
-.out .sprintf("Gamecode size = %d bytes, free space = %d bytes", (eind_asm - start_asm),(49152-eind_asm + start_asm))
+.out .sprintf("Gamecode size = %d bytes, free space = %d bytes", (eind_asm - start_asm),(48384-eind_asm + start_asm))

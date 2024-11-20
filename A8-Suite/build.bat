@@ -6,7 +6,7 @@ rem Compile AGD file
  if errorlevel 1 goto copyerror
  cd AGD
  AGD %1 %2 %3 %4
- if errorlevel 1 goto agderror
+rem if errorlevel 1 goto agderror
  copy %1.inc ..\cc65\ >nul
  if errorlevel 1 goto copyerror
  copy game.cfg ..\cc65\ >nul
@@ -19,7 +19,7 @@ rem Assemble file
  call make %1 %2 %3 %4 %5 %6 %7 %8 %9
  copy %1.bin ..\altirra\tapes\*.xex >nul
  if errorlevel 1 goto copyerror1
-rem del %1.*
+ del %1.*
 
 rem Start emulator
  echo Starting emulator with %1.bin

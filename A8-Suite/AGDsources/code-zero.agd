@@ -1718,7 +1718,7 @@ IF D = 0
         ANIMATE
     ENDIF
 ENDIF
-IF X > = 224
+IF X >= 224
     LET X = 18
     SCREENRIGHT
 ENDIF

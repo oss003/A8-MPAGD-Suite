@@ -53,6 +53,9 @@
 .if iflag
 	.out "- Invert mode enabled" 
 .endif
+.if gflag
+	.out "- Colour mode enabled" 
+.endif
 .if rflag
 	.out "- RAM saving mode enabled" 
 .endif
@@ -723,46 +726,55 @@ iniob0:
 ;
 ;  - read joystick/keyboard
 ;  - handle sound
-;  - sync framerate with clock
 ;  - handle shrapnel every even frame
+;  - sync framerate to 25 Hz
 ;-------------------------------------------------------------
 
 vsync:
+
+; Save registers
+
 	pha
 	tya
 	pha
 	txa
 	pha
-	jsr joykey		; read joystick/keyboard.
-  jmp sndskip
 
-vsync1:
-	lda Timer2_High		; sync framerate with clock
-	cmp #$ff
-	bne vsync1
-	lda #>50000
-	sta Timer2_High
-	lda #<50000
-	sta Timer2_Low
+; Read joystick/keyboard
+
+	jsr joykey		; read joystick/keyboard.
+
+; Handle shrapnel every even frame
 
 	lda clock
 	and #1
 	bne:+
 	jsr proshr		; handle shrapnel every even frame
 :
+
+; Handle sound
+
 	lda sndtyp
 	beq sndskip
 sndloop:
-	lda SpeakerBit		; handle sound
-	ldy sndtyp
-sndwait:
-	dey
-	bne sndwait
-	eor #4
-	sta SpeakerBit
-	dec sndtyp
-	bne sndloop
+
 sndskip: 
+
+; Sync framerate to 25 Hz
+
+	lda #0			; sync framerate 25 Hz
+	sta frame_edge
+wait_for_frame_counter_1:
+	lda frame_counter
+	lsr a
+	ror frame_edge
+	lda frame_edge
+	and #%11000000
+	cmp #%01000000
+	bne wait_for_frame_counter_1
+
+; Restore registers
+
 	pla
 	tax
 	pla

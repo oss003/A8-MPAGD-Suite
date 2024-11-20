@@ -160,6 +160,11 @@ init:
 
 	rts
 
+; NMI interrupt handler
+
+frame_counter:	.byte 0,0
+frame_edge:	.byte 0
+
 nmi_handler:
 	bit NMIST
 	bmi dli_handler
@@ -181,13 +186,15 @@ nmi_not_dli:
 	tya
 	pha
 
-	lda #$FF
-	sta COLBK
-	sta WSYNC
-	sta WSYNC
-	lda #0
-	sta COLBK
-	sta NMIRES
+; Used for syncing to 25 Hz
+
+	inc frame_counter
+	bne skip_inc_frame_counter
+	inc frame_counter+1
+skip_inc_frame_counter:
+
+; Restore registers
+
 	pla
 	tay
 	pla
@@ -357,18 +364,24 @@ joy2:
 
 .align $100
 
+.if gflag 
+	GFXMODE = MODEE
+.else
+	GFXMODE = MODEF
+.endif
+
 BITMAP_DLIST:
 	.byte BLANK8
 	.byte BLANK8
 	.byte BLANK8
 
-	.byte LMS+MODEF
+	.byte LMS+GFXMODE
 	.word ScreenAddr
-	.res 95,MODEF
+	.res 95,GFXMODE
 
- 	.byte LMS+MODEF
+ 	.byte LMS+GFXMODE
 	.word ScreenAddr+96*32
-	.res 95,MODEF
+	.res 95,GFXMODE
 
 	.byte DLISTENDJUMP
 	.word BITMAP_DLIST
