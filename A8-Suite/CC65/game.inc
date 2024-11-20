@@ -1,1 +1,1 @@
-.include "fogbw.inc" 
+.include "testjoy.inc" 
