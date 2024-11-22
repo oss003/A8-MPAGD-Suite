@@ -762,16 +762,13 @@ sndskip:
 
 ; Sync framerate to 25 Hz
 
+check_if_enough_frames_passed:
+	lda frames_passed
+	cmp #2
+	bcc check_if_enough_frames_passed
+
 	lda #0			; sync framerate 25 Hz
-	sta frame_edge
-wait_for_frame_counter_1:
-	lda frame_counter
-	lsr a
-	ror frame_edge
-	lda frame_edge
-	and #%11000000
-	cmp #%01000000
-	bne wait_for_frame_counter_1
+	sta frames_passed
 
 ; Restore registers
 
@@ -1298,7 +1295,7 @@ laser:
 	ldy #1
 	lda (z80_ix),y 		; direction.
 	ror a 			; left or right?
-	bcs :+
+	bcc :+
 	jmp laserl		; move left.
 :
 ; Laser right
@@ -4921,6 +4918,10 @@ sprline:
 	.byte $80,$81,$a0,$a1,$c0,$c1,$e0,$e1
 	.byte $00,$01,$20,$21,$40,$41,$60,$61
 	.byte $80,$81,$a0,$a1,$c0,$c1,$e0,$e1
+.if bflag
+	.byte $00,$01,$20,$21,$40,$41,$60,$61
+	.byte $80,$81,$a0,$a1,$c0,$c1,$e0,$e1
+.endif
 
 ;----------------------------------------------------------------------
 ; Line drawn, now work out next target address.

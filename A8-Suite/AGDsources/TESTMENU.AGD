@@ -164,37 +164,37 @@ SPRITEPOSITION 66,0,88,128
 ; Coordinates are based on Spectrum screen, even for CPC so need to change for conversions
 
 ; Spectrum:
-DEFINEOBJECT    0,0,80,20     ; attribute, room, Y, X
+DEFINEOBJECT    0,0,72,20     ; attribute, room, Y, X
                 255 255 255 255 255 255 255 255
                 255 255 255 255 255 255 255 255
                 255 255 255 255 255 255 255 255
                 255 255 255 255 255 255 255 255
 
-DEFINEOBJECT    0,0,100,40     ; attribute, room, Y, X
+DEFINEOBJECT    0,0,92,40     ; attribute, room, Y, X
                 255 255 255 255 255 255 255 255
                 255 255 255 255 255 255 255 255
                 255 255 255 255 255 255 255 255
                 255 255 255 255 255 255 255 255
 
-DEFINEOBJECT    0,0,120,60     ; attribute, room, Y, X
+DEFINEOBJECT    0,0,112,60     ; attribute, room, Y, X
                 255 255 255 255 255 255 255 255
                 255 255 255 255 255 255 255 255
                 255 255 255 255 255 255 255 255
                 255 255 255 255 255 255 255 255
 
-DEFINEOBJECT    0,0,140,80     ; attribute, room, Y, X
+DEFINEOBJECT    0,0,132,80     ; attribute, room, Y, X
                 255 255 255 255 255 255 255 255
                 255 255 255 255 255 255 255 255
                 255 255 255 255 255 255 255 255
                 255 255 255 255 255 255 255 255
 
-DEFINEOBJECT    0,0,160,100     ; attribute, room, Y, X
+DEFINEOBJECT    0,0,152,100     ; attribute, room, Y, X
                 255 255 255 255 255 255 255 255
                 255 255 255 255 255 255 255 255
                 255 255 255 255 255 255 255 255
                 255 255 255 255 255 255 255 255
 
-DEFINEOBJECT    0,0,180,120     ; attribute, room, Y, X
+DEFINEOBJECT    0,0,172,120     ; attribute, room, Y, X
                 255 255 255 255 255 255 255 255
                 255 255 255 255 255 255 255 255
                 255 255 255 255 255 255 255 255
@@ -257,13 +257,13 @@ EVENT MAINLOOP1
 
  IF KEY OPTION2
   IF GOT 0
-    PUT 20,80,0
+    PUT 20,72,0
   ENDIF
   IF GOT 3
-    PUT 80,140,3
+    PUT 80,132,3
   ENDIF
   IF GOT 5
-    PUT 120,180,5
+    PUT 120,172,5
   ENDIF
   INV " OBJ0 , OBJ1 , OBJ2 , OBJ3 , OBJ4 , OBJ5"
   AT 23,5

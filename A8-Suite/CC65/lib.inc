@@ -163,7 +163,7 @@ init:
 ; NMI interrupt handler
 
 frame_counter:	.byte 0,0
-frame_edge:	.byte 0
+frames_passed:	.byte 0
 
 nmi_handler:
 	bit NMIST
@@ -187,6 +187,8 @@ nmi_not_dli:
 	pha
 
 ; Used for syncing to 25 Hz
+
+	inc frames_passed
 
 	inc frame_counter
 	bne skip_inc_frame_counter
@@ -361,8 +363,15 @@ joy2:
 ;---------------------------------------------------------------
 ; Bitmap display list must be aligned at $100
 ;---------------------------------------------------------------
+bitmaplist:
 
-.align $100
+; Align $100
+
+.repeat ((bitmaplist/256)+1)*256-bitmaplist
+	.byte 0
+.endrepeat
+
+; Set graphic mode
 
 .if gflag 
 	GFXMODE = MODEE
