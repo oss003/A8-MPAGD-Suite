@@ -164,6 +164,7 @@ init:
 
 frame_counter:	.byte 0,0
 frames_passed:	.byte 0
+frames_delay:	.byte 0
 
 nmi_handler:
 	bit NMIST
@@ -194,6 +195,10 @@ nmi_not_dli:
 	bne skip_inc_frame_counter
 	inc frame_counter+1
 skip_inc_frame_counter:
+
+; Adjust delay counter
+
+	dec frames_delay
 
 ; Restore registers
 
@@ -235,14 +240,20 @@ dli_handler:
 
 prskey:
 	lda SKSTAT		; Check keypress
-	cmp #255
+	and #127
+	cmp #127
 	beq :+
 	jmp prsend
 :
 	jsr joykey		; Check joystick move
-	cmp #255
+	and #127
+	cmp #127
 	beq prskey
 prsend:
+	lda SKSTAT		; Check release
+	and #127
+	cmp #127
+	bne prsend	
 	rts
 
 ;--------------------------------------------------------
@@ -358,7 +369,34 @@ joy2:
 	rol joyval
 
 	rts
+
+;-------------------------------------------------------
+; Colours
+;-------------------------------------------------------
+
+; INK sets foreground colour
+
+setfgcol:
+	tax
+	lda fgcolour,x
+	sta COLPF3
 	rts
+
+fgcolour:
+	.byte $00,$fe,$34,$98,$42,$c6,$80,$de
+	.byte $24,$28,$48,$9e,$6e,$be,$78,$1e
+
+; PAPER sets background colour
+
+setbgcol:
+	tax
+	lda bgcolour,x
+	sta COLBK
+	rts
+
+bgcolour:
+	.byte $00,$fe,$34,$98,$42,$c6,$80,$de
+	.byte $24,$28,$48,$9e,$6e,$be,$78,$1e
 
 ;---------------------------------------------------------------
 ; Bitmap display list must be aligned at $100
