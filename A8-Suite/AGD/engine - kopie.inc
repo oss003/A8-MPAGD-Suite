@@ -208,12 +208,6 @@ wnrgtx:		.byte ((WINDOWLFT * 8) + (WINDOWWID * 8) - 16)-2
 
 .if mflag
 minve:
-.if gflag
-	lda #$ff		; blue frontcolour
-	sta andeor
-	lda #$aa		; yellow backcoloour
-	sta andeor+1
-.endif
 	lda #<(invdis)		; routine address.
 	sta mod0+1		; set up menu routine.
 	sta mod2+1		; set up count routine.
@@ -776,12 +770,6 @@ sndtyp:	.byte 0
 ;-----------------------------------------------
 
 redraw:
-.if gflag
-	lda #$ff
-	sta andeor
-	lda #$00
-	sta andeor+1
-.endif
 	lda z80_i 		; place sprite pointer on stack.
 	pha
 	lda z80_x
@@ -844,9 +832,6 @@ cls:
 	lda #>ScreenAddr		; screen address.
 	sta clsloop+2
 	lda #ScrFillByte
-.if gflag
-	lda andeor+1
-.endif
 .if iflag
 	eor #$ff
 .endif
@@ -3026,10 +3011,6 @@ pchar0:
 	ldy #0
 	lda (fntaddr),y 	; get image byte.
 	ldy scrtab,x		; Get rowoffset
-.if gflag
-	and andeor
-	eor andeor+1
-.endif
 .if iflag
 	eor #$ff
 .endif
@@ -4220,10 +4201,6 @@ bchar0:
 	ldy #0
 	lda (z80_de),y 		; get a bit of the font.
 
-.if gflag
-	and andeor
-	eor andeor+1
-.endif
 .if iflag
 	eor #$ff
 .endif

@@ -377,33 +377,26 @@ joy2:
 ; INK sets foreground colour
 
 setfgcol:
-	and #3
-	tay
-	lda codcol,y
-	jmp calfgc
+;	tax
+;	lda fgcolour,x
+	sta COLPF1
+	rts
+
+;fgcolour:
+;	.byte $00,$fe,$34,$98,$42,$c6,$80,$de
+;	.byte $24,$28,$48,$9e,$6e,$be,$78,$1e
 
 ; PAPER sets background colour
 
 setbgcol:
-	and #3
-calbgc:
-	tay
-	lda codcol,y
-	pha
-	lda andeor
-	eor andeor+1
-	tax
-	pla
-	sta andeor+1
-	txa
-calfgc:
-	eor andeor+1
-	sta andeor
-calex1:
+;	tax
+;	lda bgcolour,x
+	sta COLBK
 	rts
 
-andeor:	.byte 0,0
-codcol:	.byte $00,$55,$aa,$ff
+;bgcolour:
+;	.byte $00,$fe,$34,$98,$42,$c6,$80,$de
+;	.byte $24,$28,$48,$9e,$6e,$be,$78,$1e
 
 ;---------------------------------------------------------------
 ; Bitmap display list must be aligned at $100
