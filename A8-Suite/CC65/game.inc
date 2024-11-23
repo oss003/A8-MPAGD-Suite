@@ -1,1 +1,1 @@
-.include "testcolour.inc" 
+.include "testticker.inc" 

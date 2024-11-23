@@ -1978,6 +1978,10 @@ EVENT MAINLOOP2
 
 
 EVENT INTROMENU
+  COLBK  $b8	; Set multi colour 0
+  COLPF0 $de	; Set multi colour 1
+  COLPF1 $00	; Set multi colour 2
+  COLPF2 $32	; Set multi colour 3
 PAPER 2
 CLS
 AT 2,10

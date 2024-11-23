@@ -169,6 +169,10 @@ enum
 	INS_CLS,
 	INS_BORDER,
 	INS_COLOUR,
+	INS_COLBK,
+	INS_COLPF0,
+	INS_COLPF1,
+	INS_COLPF2,
 	INS_PAPER,
 	INS_INK,
 	INS_CLUT,
@@ -380,6 +384,10 @@ void CR_Beep( void );
 void CR_Crash( void );
 void CR_Border( void );
 void CR_Colour( void );
+void CR_COLBK ( void );
+void CR_COLPF0( void );
+void CR_COLPF1( void );
+void CR_COLPF2( void );
 void CR_Paper( void );
 void CR_Ink( void );
 void CR_Clut( void );
@@ -604,6 +612,10 @@ unsigned const char *keywrd =
 	"CLS."				// clear screen.
 	"BORDER."			// set border.
 	"COLOUR."			// set all attributes.
+	"COLBK."			// set background colour
+	"COLPF0."			// Multicolour 0
+	"COLPF1."			// Multicolour 0
+	"COLPF2."			// Multicolour 0
 	"PAPER."			// set PAPER attributes.
 	"INK."				// set INK attributes.
 	"CLUT."				// set CLUT attributes.
@@ -2548,6 +2560,18 @@ void Compile( unsigned short int nInstruction )
 		case INS_COLOUR:
 			CR_Colour();
 			break;
+		case INS_COLBK:
+			CR_COLBK();
+			break;
+		case INS_COLPF0:
+			CR_COLPF0();
+			break;
+		case INS_COLPF1:
+			CR_COLPF1();
+			break;
+		case INS_COLPF2:
+			CR_COLPF2();
+			break;
 		case INS_PAPER:
 			CR_Paper();
 			break;
@@ -3873,6 +3897,34 @@ void CR_Colour( void )
 	WriteInstruction( "; COLOUR command" );								/* multiply by 8 to get paper. */
 }
 
+void CR_COLBK( void )
+{
+	CompileArgument();
+	WriteText( " 	; COLBK" );						/* set the permanent attributes. */
+	WriteInstruction("sta COLBK" );								/* multiply by 8 to get paper. */
+}
+
+void CR_COLPF0( void )
+{
+	CompileArgument();
+	WriteText( " 	; COLPF0" );						/* set the permanent attributes. */
+	WriteInstruction("sta COLPF0" );								/* multiply by 8 to get paper. */
+}
+
+void CR_COLPF1( void )
+{
+	CompileArgument();
+	WriteText( " 	; COLPF1" );						/* set the permanent attributes. */
+	WriteInstruction("sta COLPF1" );								/* multiply by 8 to get paper. */
+}
+
+void CR_COLPF2( void )
+{
+	CompileArgument();
+	WriteText( " 	; COLPF2" );						/* set the permanent attributes. */
+	WriteInstruction("sta COLPF2" );								/* multiply by 8 to get paper. */
+}
+
 void CR_Paper( void )
 {
 	CompileArgument();
@@ -4751,7 +4803,6 @@ void CR_Ticker( void )
 	unsigned short int nArg1 = NextKeyword();
 	unsigned short int nArg2;
 	unsigned char *cSrc;									/* source pointer. */
-
 
 	if ( nArg1 == INS_NUM )									/* first argument is numeric. */
 	{
