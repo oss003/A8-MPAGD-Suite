@@ -745,8 +745,20 @@ vsync:
 	lda sndtyp
 	beq sndskip
 sndloop:
-
+	ldy sndtyp
+sndwait:
+	dey
+	bne sndwait
+	lda sndtyp
+	sta AUDF1
+	lda #15
+	ora #%10100000
+	sta AUDC1
+	dec sndtyp
+	bne sndloop
 sndskip: 
+	lda #$00		
+	sta AUDC1		; disable sound
 
 ; Sync framerate to 25 Hz
 
